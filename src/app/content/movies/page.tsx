@@ -1,7 +1,7 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import { Movie } from '@/app/interfaces/movies';
-import Link from 'next/link';
+import MovieCard from '@/app/components/movies/MovieCard';
 
 export default function Movies() {
   const [currentPage, setCurrentPage] = useState(0);
@@ -24,17 +24,24 @@ export default function Movies() {
   }, []);
 
   return (
-    <div>
+    <div className="movies">
       Movies
-      {movies.map((movie: Movie, index: number) => {
-        return (
-          <div key={index}>
-            {movie.title}
-            <Link href={`/content/movies/${movie.id}`}>Details</Link>
-          </div>
-        );
-      })}
-      <button onClick={getMovies}>click</button>
+      <div className="movies__top-movies">
+        <div>Top Movies</div>
+        <div className="movies__top-movies__list">
+          {movies.slice(0, 3).map((movie: Movie, index: number) => {
+            return <MovieCard key={index} movie={movie} />;
+          })}
+        </div>
+      </div>
+      <div className="movies__normal-movies">
+        <div>Normal Movies</div>
+        <div className="movies__normal-movies__list">
+          {movies.map((movie: Movie, index: number) => {
+            return <MovieCard key={index} movie={movie} />;
+          })}
+        </div>
+      </div>
     </div>
   );
 }

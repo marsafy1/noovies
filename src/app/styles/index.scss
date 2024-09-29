@@ -1,8 +1,14 @@
 // Imports
+// Mixins
+@import './mixins.scss';
 // Pages
 @import './pages/home.scss';
 @import './variables.scss';
+// Content
+@import './content/movies.scss';
 //Components
+@import './components/appbars/navbar.scss';
+@import './components/movies/movieCard.scss';
 
 // Use border-box, to include padding, border into the width + height
 *,
@@ -24,6 +30,7 @@ h1 {
 body {
   border: 1px solid blue;
   height: 100vh;
+  color: white;
 }
 
 .content {

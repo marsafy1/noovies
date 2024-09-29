@@ -1,0 +1,26 @@
+.navbar {
+  @include between-flex-h;
+
+  padding: 20px;
+
+  &__start {
+    @include h-flex;
+    border: 2px solid red;
+    &__title {
+      color: var(--primary-color);
+      font-weight: bolder;
+      font-size: 30px;
+    }
+  }
+  &__end {
+    border: 2px solid lime;
+  }
+  &__items {
+    display: flex;
+    &__item {
+      border: 1px solid pink;
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+  }
+}

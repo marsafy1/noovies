@@ -1,0 +1,21 @@
+.movies {
+  border: 10px solid green;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  &__top-movies {
+    border: 4px solid white;
+    &__list {
+      @include around-flex-h;
+    }
+  }
+  &__normal-movies {
+    border: 5px solid lime;
+    &__list {
+      @include between-flex-h;
+      flex-wrap: wrap;
+    }
+  }
+}

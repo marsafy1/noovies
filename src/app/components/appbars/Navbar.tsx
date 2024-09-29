@@ -1,6 +1,6 @@
 import React from 'react';
 import ThemeSwitch from '@/app/components/appbars/ThemeSwitch';
-import Link from 'next/link';
+import NavItem from './NavItem';
 
 interface NavItem {
   name: string;
@@ -23,17 +23,19 @@ export default function Navbar() {
     },
   ];
   return (
-    <div>
-      Navbar
-      <ThemeSwitch />
-      <div>
-        {navItems.map((navItem, index) => {
-          return (
-            <div key={index}>
-              <Link href={navItem.href}>{navItem.name}</Link>
-            </div>
-          );
-        })}
+    <div className="navbar">
+      <div className="navbar__start">
+        <div className="navbar__start__title">Navbar</div>
+        <div className="navbar__items">
+          {navItems.map((navItem, index) => {
+            return (
+              <NavItem key={index} name={navItem.name} href={navItem.href} />
+            );
+          })}
+        </div>
+      </div>
+      <div className="navbar__end">
+        <ThemeSwitch />
       </div>
     </div>
   );
