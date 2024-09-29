@@ -11,11 +11,11 @@ export default function Navbar() {
   const navItems: NavItem[] = [
     {
       name: 'Movies',
-      href: '/content/movies',
+      href: '/',
     },
     {
       name: 'Movie Details',
-      href: '/content/movies/movie-details',
+      href: '/content/movies/12',
     },
     {
       name: 'Favorites',
@@ -34,6 +34,7 @@ export default function Navbar() {
           })}
         </div>
       </div>
+
       <div className="navbar__end">
         <ThemeSwitch />
       </div>

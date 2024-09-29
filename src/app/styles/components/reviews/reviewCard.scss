@@ -1,0 +1,41 @@
+.review {
+  @include between-flex-v;
+  border: 1px solid blue;
+  background-color: rgba(255, 255, 0, 0.612);
+  margin: 10px;
+  padding: 10px;
+  &__header {
+    border: 2px solid red;
+    &__author {
+      @include h-flex;
+      align-items: flex-end;
+      border: 1px solid orange;
+      &__meta {
+        margin-left: 5px;
+        &__name {
+          color: lightseagreen;
+        }
+        &__time {
+          border: 1px solid lime;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  &__content {
+    border: 2px solid greenyellow;
+  }
+}
+
+// <div className="review">
+// <div className="review__header">
+//   <div className="review__header__author">
+//     <Avatar
+//       src={`https://image.tmdb.org/t/p/w200${review.author_details.avatar_path}`}
+//     />
+//     <div className="review__header__author__name">{review.author}</div>
+//   </div>
+//   <div className="review__header__time">{review.updated_at}</div>
+// </div>
+// <div className="review__content">{review.content}</div>
+// </div>

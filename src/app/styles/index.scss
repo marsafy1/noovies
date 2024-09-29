@@ -6,10 +6,15 @@
 @import './variables.scss';
 // Content
 @import './content/movies.scss';
+@import './content/movieDetails.scss';
 //Components
 @import './components/appbars/navbar.scss';
 @import './components/movies/movieCard.scss';
-
+@import './components/movies/topMovieCard.scss';
+@import './components/utils/avatar.scss';
+@import './components/reviews/reviewCard.scss';
+// Layout
+@import './layout.scss';
 // Use border-box, to include padding, border into the width + height
 *,
 *::before,
@@ -29,7 +34,7 @@ h1 {
 
 body {
   border: 1px solid blue;
-  height: 100vh;
+  min-height: 100vh;
   color: white;
 }
 

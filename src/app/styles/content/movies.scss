@@ -1,14 +1,24 @@
 .movies {
-  border: 10px solid green;
-  height: 100%;
+  position: relative;
+  border: 10px solid rgb(255, 0, 0);
 
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   &__top-movies {
+    height: 80vh;
     border: 4px solid white;
     &__list {
-      @include around-flex-h;
+      display: grid;
+      grid-template-columns: 80% 20%;
+
+      position: relative;
+      height: 100%;
+      border: 8px solid brown;
+      &__top-side-movies {
+        border: 12px solid white;
+        overflow: scroll;
+        &__list {
+          border: 2px solid purple;
+        }
+      }
     }
   }
   &__normal-movies {

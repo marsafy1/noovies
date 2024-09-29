@@ -18,3 +18,27 @@
   @include h-flex;
   justify-content: space-around;
 }
+
+@mixin around-flex-v {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+@mixin between-flex-v {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@mixin darken-gradient-component {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
+}
+
+@mixin darken-component {
+  background: rgba(0, 0, 0, 0.6);
+}

@@ -1,6 +1,6 @@
 .navbar {
   @include between-flex-h;
-
+  height: $navbar-height;
   padding: 20px;
 
   &__start {
