@@ -1,0 +1,14 @@
+// Default for light theme
+
+:root {
+  // Colors
+  --primary-color: rgb(250, 238, 85);
+
+  // Background and cards
+  --background-color: rgb(255, 255, 255);
+}
+
+[data-theme='dark'] {
+  // Background and cards
+  --background-color: rgb(57, 59, 64);
+}
