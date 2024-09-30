@@ -9,6 +9,8 @@ import TopSideMovieCard from '@/app/components/movies/TopSideMovieCard';
 export default function Movies() {
   const [currentPage, setCurrentPage] = useState(0);
   const [movies, setMovies] = useState<Movie[]>([]);
+  const [isSearch, setIsSearch] = useState(false);
+
   const searchParams = useSearchParams(); // Get the search parameters
   const searchQuery = searchParams.get('search_query'); // Extract the 'search_query' parameter
 
@@ -26,7 +28,6 @@ export default function Movies() {
 
   async function searchForMovie(movie_query: string) {
     let searchUrl = `https://api.themoviedb.org/3/search/movie?query=${encodeURIComponent(movie_query)}`;
-    console.log(searchUrl);
     let res = await fetch(searchUrl, {
       headers: { Authorization: `Bearer ${apiToken}` },
     });
@@ -40,15 +41,17 @@ export default function Movies() {
   useEffect(() => {
     console.log('Search ' + searchQuery);
     if (searchQuery?.length === 0 || searchQuery === null) {
+      setIsSearch(false);
       getTopMovies();
     } else if (searchQuery !== null) {
+      setIsSearch(true);
       searchForMovie(searchQuery);
     }
   }, [searchParams]);
 
   return (
     <div className="movies">
-      {(searchQuery?.length === 0 || searchQuery === null) && (
+      {!isSearch && (
         <div className="movies__top-movies">
           <div className="movies__top-movies__list">
             <div>
@@ -71,8 +74,9 @@ export default function Movies() {
       )}
       <div className="movies__normal-movies">
         <div className="movies__normal-movies__subtitle">
-          <h3>Top Rated Movies</h3>
+          <h3>{isSearch ? 'Search Results' : 'Top Rated Movies'}</h3>
         </div>
+
         <div className="movies__normal-movies__list">
           {movies.map((movie: Movie, index: number) => {
             return <MovieCard key={index} movie={movie} />;

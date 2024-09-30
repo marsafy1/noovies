@@ -115,7 +115,9 @@ export default function page({ params }: { params: MovieIDParams }) {
         </div>
       </div>
       <div className="movie-details__reviews">
-        <div>Reviews</div>
+        <div className="movie-details__reviews__title">
+          <h3>Reviews</h3>
+        </div>
         <div className="movie-details__reviews__list">
           {reviews.map((review: Review, index: number) => {
             return <ReviewCard key={index} review={review} />;

@@ -14,10 +14,10 @@ export default function Navbar() {
       name: 'Movies',
       href: '/',
     },
-    {
-      name: 'Movie Details',
-      href: '/content/movies/12',
-    },
+    // {
+    //   name: 'Movie Details',
+    //   href: '/content/movies/12',
+    // },
     {
       name: 'Favorites',
       href: '/content/favorites',

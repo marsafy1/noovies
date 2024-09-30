@@ -6,6 +6,8 @@
   font-weight: 500;
   cursor: pointer;
   border-radius: $cards-border-radius;
+
+  transition: all 0.4s;
 }
 .primary-btn {
   background-color: var(--primary-color);
@@ -16,4 +18,9 @@
   background-color: transparent;
   border: 1px solid var(--primary-color);
   color: var(--primary-color);
+}
+
+.secondary-btn:hover {
+  background-color: var(--primary-color);
+  color: var(--background-color);
 }

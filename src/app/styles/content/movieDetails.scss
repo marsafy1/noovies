@@ -1,14 +1,12 @@
 .movie-details {
-  border: 10px solid red;
   min-height: calc(100vh - $navbar-height - 200px);
   &__info {
     position: relative;
-    border: 5px solid blue;
     &__cover {
       position: relative;
-      border: 8px solid green;
       overflow: hidden;
       height: 400px;
+
       &__gradient {
         position: absolute;
         top: 0;
@@ -24,16 +22,14 @@
     }
     &__meta {
       padding: 40px;
-      border: 2px solid orangered;
       position: relative;
       top: -200px;
       display: flex;
       &__poster {
-        border: 2px solid red;
+        border-radius: $cards-border-radius;
         width: 200px;
       }
       &__about {
-        border: 2px solid red;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -45,11 +41,11 @@
         }
         &__bottom {
           &__tags {
-            border: 2px solid red;
             @include between-flex-h;
           }
           &__overview {
-            color: orange;
+            color: grey;
+            margin-bottom: 10px;
           }
         }
       }
@@ -59,6 +55,10 @@
   &__reviews {
     position: relative;
     top: -200px;
+    padding: 40px;
+    &__title {
+      color: var(--primary-color);
+    }
   }
 }
 // 129
