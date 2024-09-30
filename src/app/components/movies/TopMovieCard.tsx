@@ -25,8 +25,8 @@ export default function TopMovieCard({ movie }: { movie: Movie }) {
                 <span>
                   <h1>{movie.title}</h1>
                 </span>
-                <VoteAverage />
-                <VoteCount />
+                <VoteAverage average={movie.vote_average} />
+                <VoteCount count={movie.vote_count} />
               </div>
               <p>{movie.overview}</p>
             </div>

@@ -1,5 +1,5 @@
 import React from 'react';
 
-export default function VoteAverage() {
-  return <div>VoteAverage</div>;
+export default function VoteAverage({ average }: { average: number }) {
+  return <div>Average {average}</div>;
 }

@@ -25,8 +25,6 @@ export default function TopSideMovieCard({ movie }: { movie: Movie }) {
                 <span>
                   <h4>{movie.title}</h4>
                 </span>
-                <VoteAverage />
-                <VoteCount />
               </div>
             </div>
           </div>

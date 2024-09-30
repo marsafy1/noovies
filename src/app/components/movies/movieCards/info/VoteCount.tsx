@@ -1,5 +1,5 @@
 import React from 'react';
 
-export default function VoteCount() {
-  return <div>VoteCount</div>;
+export default function VoteCount({ count }: { count: number }) {
+  return <div>Count {count}</div>;
 }

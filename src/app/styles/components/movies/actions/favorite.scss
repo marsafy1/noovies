@@ -1,0 +1,5 @@
+.favorite-btn-container {
+  position: relative;
+  border: 1px solid red;
+  @include center-flex;
+}

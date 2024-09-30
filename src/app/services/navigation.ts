@@ -4,5 +4,5 @@ export function navigateToMovieDetails(
   router: AppRouterInstance,
   movieId: number
 ) {
-  router.push(`/content/movies/${movieId}`); // Replace with your desired path
+  router.push(`/content/movies/${movieId}`);
 }

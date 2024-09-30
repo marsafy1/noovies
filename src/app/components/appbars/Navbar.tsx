@@ -1,7 +1,7 @@
 import React from 'react';
 import ThemeSwitch from '@/app/components/appbars/ThemeSwitch';
 import NavItem from './NavItem';
-
+import Search from './Search';
 interface NavItem {
   name: string;
   href: string;
@@ -26,6 +26,7 @@ export default function Navbar() {
     <div className="navbar">
       <div className="navbar__start">
         <div className="navbar__start__title">Navbar</div>
+        <Search />
         <div className="navbar__items">
           {navItems.map((navItem, index) => {
             return (
