@@ -11,6 +11,7 @@ import Adult from '@/app/components/movies/movieCards/info/Adult';
 import Language from '@/app/components/movies/movieCards/info/Language';
 import VoteAverage from '@/app/components/movies/movieCards/info/VoteAverage';
 import VoteCount from '@/app/components/movies/movieCards/info/VoteCount';
+import Favorite from '@/app/components/movies/movieCards/actions/Favorite';
 
 export default function page({ params }: { params: MovieIDParams }) {
   const apiToken = process.env.NEXT_PUBLIC_TMDB_API_TOKEN;
@@ -84,6 +85,9 @@ export default function page({ params }: { params: MovieIDParams }) {
               </div>
               <div className="movie-details__info__meta__about__bottom__overview">
                 {movieDetails.overview}
+              </div>
+              <div>
+                <Favorite movieId={movieDetails.id} />
               </div>
             </div>
           </div>

@@ -24,7 +24,7 @@
   &__normal-movies {
     border: 5px solid lime;
     &__list {
-      @include between-flex-h;
+      @include center-flex;
       flex-wrap: wrap;
     }
   }

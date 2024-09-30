@@ -30,8 +30,9 @@ export default function MovieCard({ movie }: { movie: Movie }) {
           </div>
         </div>
       </NavigationWrapper>
-
-      <Favorite movieId={movie.id} />
+      <div className="d-flex justify-content-center">
+        <Favorite movieId={movie.id} />
+      </div>
 
       {/* <Link href={`/content/movies/${movie.id}`}>Details</Link> */}
     </div>
