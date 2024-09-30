@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
-import DefaultAvatar from '@/app/assets/avatar/default_avatar.png';
+import DefaultAvatar from '@/app/assets/defaults/avatar/default_avatar.png';
 
 export default function Avatar({ src }: { src: string }) {
   const [error, setError] = useState(false);

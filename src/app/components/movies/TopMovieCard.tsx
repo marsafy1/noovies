@@ -22,7 +22,7 @@ export default function TopMovieCard({ movie }: { movie: Movie }) {
           <div className="top-movie-card__info__bottom">
             <div>
               <div className="d-flex align-items-center">
-                <span>
+                <span className="top-movie-card__info__bottom__title">
                   <h1>{movie.title}</h1>
                 </span>
                 <VoteAverage average={movie.vote_average} />

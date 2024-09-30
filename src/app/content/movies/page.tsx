@@ -48,11 +48,8 @@ export default function Movies() {
 
   return (
     <div className="movies">
-      Movies
-      <p>Search Query: {searchQuery}</p>
       {(searchQuery?.length === 0 || searchQuery === null) && (
         <div className="movies__top-movies">
-          <div>Top Movies</div>
           <div className="movies__top-movies__list">
             <div>
               {movies.slice(0, 1).map((movie: Movie, index: number) => {
@@ -60,9 +57,11 @@ export default function Movies() {
               })}
             </div>
             <div className="movies__top-movies__list__top-side-movies">
-              <div>Top 5</div>
+              <div className="movies__normal-movies__subtitle">
+                <h3>Hottest 5</h3>
+              </div>
               <div className="movies__top-movies__list__top-side-movies__list">
-                {movies.slice(0, 4).map((movie: Movie, index: number) => {
+                {movies.slice(0, 5).map((movie: Movie, index: number) => {
                   return <TopSideMovieCard key={index} movie={movie} />;
                 })}
               </div>
@@ -71,7 +70,9 @@ export default function Movies() {
         </div>
       )}
       <div className="movies__normal-movies">
-        <div>Normal Movies</div>
+        <div className="movies__normal-movies__subtitle">
+          <h3>Top Rated Movies</h3>
+        </div>
         <div className="movies__normal-movies__list">
           {movies.map((movie: Movie, index: number) => {
             return <MovieCard key={index} movie={movie} />;

@@ -12,8 +12,10 @@
 @import './components/appbars/navbar.scss';
 @import './components/movies/movieCard.scss';
 @import './components/movies/topMovieCard.scss';
+@import './components/movies/topSideMovie.scss';
 @import './components/movies/actions/favorite.scss';
 @import './components/utils/avatar.scss';
+@import './components/utils/buttons.scss';
 @import './components/reviews/reviewCard.scss';
 // Layout
 @import './layout.scss';
@@ -30,12 +32,7 @@
   padding: 0;
 }
 
-h1 {
-  color: red;
-}
-
 body {
-  border: 1px solid blue;
   min-height: 100vh;
   color: white;
   font-family: var(--font-geist-sans);

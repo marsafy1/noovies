@@ -12,6 +12,10 @@ import Language from '@/app/components/movies/movieCards/info/Language';
 import VoteAverage from '@/app/components/movies/movieCards/info/VoteAverage';
 import VoteCount from '@/app/components/movies/movieCards/info/VoteCount';
 import Favorite from '@/app/components/movies/movieCards/actions/Favorite';
+import SafeImage from '@/app/components/presentation/SafeImage';
+
+import BackdropPlaceholder from '@/app/assets/defaults/movies/backdrop-placeholder.png';
+import PosterPlaceholder from '@/app/assets/defaults/movies/poster-placeholder.png';
 
 export default function page({ params }: { params: MovieIDParams }) {
   const apiToken = process.env.NEXT_PUBLIC_TMDB_API_TOKEN;
@@ -54,17 +58,34 @@ export default function page({ params }: { params: MovieIDParams }) {
       <div className="movie-details__info">
         <div className="movie-details__info__cover">
           <div className="movie-details__info__cover__gradient"></div>
-          <img
-            src={
-              'https://image.tmdb.org/t/p/w780/' + movieDetails.backdrop_path
-            }
-          />
+          {movieDetails.backdrop_path && (
+            <img
+              src={
+                'https://image.tmdb.org/t/p/w780/' + movieDetails.backdrop_path
+              }
+            />
+          )}
+          {!movieDetails.backdrop_path && (
+            <SafeImage
+              src={
+                'https://image.tmdb.org/t/p/w780/' + movieDetails.backdrop_path
+              }
+              altSrc={BackdropPlaceholder}
+              imgClassName="movie-details__info__meta__poster"
+              alt="Movie Image"
+              width={780}
+              height={400}
+            />
+          )}
         </div>
         <div className="movie-details__info__meta">
-          <img
+          <SafeImage
             src={'https://image.tmdb.org/t/p/w780/' + movieDetails.poster_path}
-            className="movie-details__info__meta__poster"
+            altSrc={PosterPlaceholder}
+            imgClassName="movie-details__info__meta__poster"
             alt="Movie Image"
+            width={250}
+            height={350}
           />
           <div className="movie-details__info__meta__about">
             <div className="movie-details__info__meta__about__top">

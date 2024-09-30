@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import PrimaryButton from '@/app/components/utils/Buttons/Button';
 
 export default function Favorite({ movieId }: { movieId: number }) {
   const [isFavorite, setIsFavorite] = useState(false);
@@ -34,9 +35,14 @@ export default function Favorite({ movieId }: { movieId: number }) {
 
   return (
     <div className="favorite-btn-container">
-      <button onClick={toggleFavorite}>
+      {/* <button onClick={toggleFavorite}>
         {isFavorite ? 'Remove from Favorites' : 'Add to Favorites'}
-      </button>
+      </button> */}
+      <PrimaryButton
+        title={isFavorite ? 'Remove from Favorites' : 'Add to Favorites'}
+        handleClick={toggleFavorite}
+        type={isFavorite ? 'secondary' : 'primary'}
+      />
     </div>
   );
 }

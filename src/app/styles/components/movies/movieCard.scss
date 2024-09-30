@@ -1,9 +1,14 @@
+.movie-card-container {
+  margin: 20px;
+}
 .movie-card {
   position: relative;
-  border: 1px solid red;
+  border-radius: $cards-border-radius;
   width: $movie-card-width;
-  margin: 20px;
+  height: $movie-card-height;
+
   overflow: hidden;
+  margin-bottom: 10px;
   &__poster {
     object-fit: cover;
     width: $movie-card-width;
@@ -16,13 +21,12 @@
     height: 100%;
   }
   &__background {
-    border: 10px solid red;
   }
   &__info {
     position: absolute;
     top: 0;
     left: 0;
-    border: 10px solid lime;
+
     width: 100%;
     height: 100%;
 
