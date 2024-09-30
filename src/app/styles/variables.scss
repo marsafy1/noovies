@@ -6,7 +6,8 @@
 
   // Background and cards
   // --background-color: rgb(255, 255, 255);
-  --background-color: rgb(13, 15, 20);
+  --background-color: rgb(18, 18, 18);
+  --cards-background: rgb(8, 8, 8);
 }
 
 [data-theme='dark'] {
@@ -20,3 +21,6 @@ $navbar-height: 70px;
 // Cards
 $movie-card-width: 250px;
 $movie-card-height: 350px;
+
+// Navbar
+$active-item: var(--primary-color);
