@@ -1,0 +1,65 @@
+@import 'variables.scss';
+@import 'mixins.scss';
+
+.movieInfo {
+  position: relative;
+
+  &__meta {
+    padding: 40px;
+    position: relative;
+    top: -200px;
+    display: flex;
+    &__poster {
+      border-radius: $cards-border-radius;
+      width: 200px;
+    }
+    &__about {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 20px;
+      &__top {
+        &__title {
+          font-size: 50px;
+        }
+        &__genres {
+          border: 2px solid lime;
+          display: flex;
+          &__genre {
+            margin-right: 5px;
+          }
+          &__genre:last-child {
+            margin-right: 0px;
+          }
+        }
+      }
+      &__bottom {
+        &__tags {
+          @include between-flex-h;
+        }
+        &__cast {
+          border: 1px solid lime;
+          &__container {
+            border: 1px solid red;
+            display: flex;
+            justify-content: space-between;
+            // padding: 50px;
+            &__castGroup {
+              border: 1px solid purple;
+              &__title {
+                color: $primary-color;
+              }
+              &__list {
+                border: 1px solid blue;
+              }
+            }
+          }
+        }
+        &__overview {
+          color: grey;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}
