@@ -1,7 +1,10 @@
-.movie-card-container {
+@import 'variables.scss';
+@import 'mixins.scss';
+
+.movieCardContainer {
   margin: 20px;
 }
-.movie-card {
+.movieCard {
   position: relative;
   border-radius: $cards-border-radius;
   width: $movie-card-width;

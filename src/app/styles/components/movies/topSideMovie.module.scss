@@ -1,4 +1,7 @@
-.top-side-movie-card {
+@import 'variables.scss';
+@import 'mixins.scss';
+
+.topSideMovieCard {
   position: relative;
   max-height: 100%;
   width: 100%;

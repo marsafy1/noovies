@@ -8,19 +8,20 @@ import NavigationWrapper from './movieCards/wrappers/NavigationWrapper';
 import Favorite from './movieCards/actions/Favorite';
 import SafeImage from '../presentation/SafeImage';
 import PosterPlaceholder from '@/app/assets/defaults/movies/poster-placeholder.png';
+import styles from '@/app/styles/components/movies/movieCard.module.scss';
 
 export default function MovieCard({ movie }: { movie: Movie }) {
   const posterSrc: string =
     `https://image.tmdb.org/t/p/w780/${movie.poster_path}`.toString();
   return (
-    <div className="movie-card-container">
-      <div className="movie-card">
-        <div className="movie-card__darken"></div>
-        <div className="movie-card__background">
+    <div className={styles.movieCardContainer}>
+      <div className={styles.movieCard}>
+        <div className={styles.movieCard__darken}></div>
+        <div className={styles.movieCard__background}>
           <SafeImage
             src={posterSrc}
             altSrc={PosterPlaceholder}
-            imgClassName="movie-card__poster"
+            imgClassName="movieCard__poster"
             alt="Movie Image"
             width={250}
             height={350}
@@ -28,12 +29,12 @@ export default function MovieCard({ movie }: { movie: Movie }) {
         </div>
         <div>
           <NavigationWrapper movieId={movie.id}>
-            <div className="movie-card__info">
-              <div className="movie-card__info__top">
+            <div className={styles.movieCard__info}>
+              <div className={styles.movieCard__info__top}>
                 <Language lang={movie.original_language} />
                 <Adult adult={movie.adult} />
               </div>
-              <div className="movie-card__info__bottom">
+              <div className={styles.movieCard__info__bottom}>
                 <VoteAverage average={movie.vote_average} />
                 <VoteCount count={movie.vote_count} />
               </div>
