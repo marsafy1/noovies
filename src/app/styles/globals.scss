@@ -43,7 +43,7 @@ body {
   flex-direction: column;
   height: 100%;
 
-  background: var(--background-color);
+  background: $background-color;
 
   margin-top: calc($navbar-height - 5px);
 }

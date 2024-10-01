@@ -2,6 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import { Movie } from '@/app/interfaces/movies';
 import MovieCard from '@/app/components/movies/MovieCard';
+import moviesStyles from '@/app/styles/content/movies.module.scss';
+import styles from '@/app/styles/content/favorites.module.scss';
 
 export default function Favorites() {
   const [favoriteIds, setFavoriteIds] = useState<number[]>([]);
@@ -49,9 +51,9 @@ export default function Favorites() {
   }, []);
 
   return (
-    <div className="favorites">
+    <div className={styles.favorites}>
       <h1>Favorite Movies</h1>
-      <div className="movies__normal-movies__list">
+      <div className={moviesStyles.movies__normalMovies__list}>
         {favorites.length > 0 ? (
           favorites.map((movie: Movie, index: number) => {
             return <MovieCard key={index} movie={movie} />;

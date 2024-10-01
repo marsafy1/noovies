@@ -22,6 +22,7 @@ import SafeImage from '@/app/components/presentation/SafeImage';
 
 import BackdropPlaceholder from '@/app/assets/defaults/movies/backdrop-placeholder.png';
 import PosterPlaceholder from '@/app/assets/defaults/movies/poster-placeholder.png';
+import styles from '@/app/styles/content/movieDetails.module.scss';
 
 export default function page({ params }: { params: MovieIDParams }) {
   const apiToken = process.env.NEXT_PUBLIC_TMDB_API_TOKEN;
@@ -86,10 +87,10 @@ export default function page({ params }: { params: MovieIDParams }) {
   }, []);
 
   return (
-    <div className="movie-details">
-      <div className="movie-details__info">
-        <div className="movie-details__info__cover">
-          <div className="movie-details__info__cover__gradient"></div>
+    <div className={styles.movieDetails}>
+      <div className={styles.movieDetails__info}>
+        <div className={styles.movieDetails__info__cover}>
+          <div className={styles.movieDetails__info__cover__gradient}></div>
           {movieDetails.backdrop_path && (
             <img
               src={
@@ -103,34 +104,40 @@ export default function page({ params }: { params: MovieIDParams }) {
                 'https://image.tmdb.org/t/p/w780/' + movieDetails.backdrop_path
               }
               altSrc={BackdropPlaceholder}
-              imgClassName="movie-details__info__meta__poster"
+              imgClassName={styles.movieDetails__info__meta__poster}
               alt="Movie Image"
               width={780}
               height={400}
             />
           )}
         </div>
-        <div className="movie-details__info__meta">
+        <div className={styles.movieDetails__info__meta}>
           <SafeImage
             src={'https://image.tmdb.org/t/p/w780/' + movieDetails.poster_path}
             altSrc={PosterPlaceholder}
-            imgClassName="movie-details__info__meta__poster"
+            imgClassName={styles.movieDetails__info__meta__poster}
             alt="Movie Image"
             width={250}
             height={350}
           />
-          <div className="movie-details__info__meta__about">
-            <div className="movie-details__info__meta__about__top">
-              <div className="movie-details__info__meta__about__top__title">
+          <div className={styles.movieDetails__info__meta__about}>
+            <div className={styles.movieDetails__info__meta__about__top}>
+              <div
+                className={styles.movieDetails__info__meta__about__top__title}
+              >
                 {movieDetails.title}
                 <br />
                 {movieDetails.release_date}
               </div>
-              <div className="movie-details__info__meta__about__top__genres">
+              <div
+                className={styles.movieDetails__info__meta__about__top__genres}
+              >
                 {movieDetails.genres.map((genre) => {
                   return (
                     <div
-                      className="movie-details__info__meta__about__top__genres__genre"
+                      className={
+                        styles.movieDetails__info__meta__about__top__genres__genre
+                      }
                       key={genre.id}
                     >
                       {genre.name}
@@ -139,8 +146,10 @@ export default function page({ params }: { params: MovieIDParams }) {
                 })}
               </div>
             </div>
-            <div className="movie-details__info__meta__about__bottom">
-              <div className="movie-details__info__meta__about__bottom__tags">
+            <div className={styles.movieDetails__info__meta__about__bottom}>
+              <div
+                className={styles.movieDetails__info__meta__about__bottom__tags}
+              >
                 <div className="d-flex">
                   <VoteAverage average={movieDetails.vote_average} />
                   <VoteCount count={movieDetails.vote_count} />
@@ -151,13 +160,31 @@ export default function page({ params }: { params: MovieIDParams }) {
                   <Adult adult={movieDetails.adult} />
                 </div>
               </div>
-              <div className="movie-details__info__meta__about__bottom__cast">
-                <div className="movie-details__info__meta__about__bottom__cast__container">
-                  <div className="movie-details__info__meta__about__bottom__cast__container__cast-group">
-                    <div className="movie-details__info__meta__about__bottom__cast__container__cast-group__title">
+              <div
+                className={styles.movieDetails__info__meta__about__bottom__cast}
+              >
+                <div
+                  className={
+                    styles.movieDetails__info__meta__about__bottom__cast__container
+                  }
+                >
+                  <div
+                    className={
+                      styles.movieDetails__info__meta__about__bottom__cast__container__castGroup
+                    }
+                  >
+                    <div
+                      className={
+                        styles.movieDetails__info__meta__about__bottom__cast__container__castGroup__title
+                      }
+                    >
                       <h4>Directors</h4>
                     </div>
-                    <div className="movie-details__info__meta__about__bottom__cast__container__cast-group__list">
+                    <div
+                      className={
+                        styles.movieDetails__info__meta__about__bottom__cast__container__castGroup__list
+                      }
+                    >
                       {directors.map((director: CrewMember) => {
                         return (
                           <div key={director.id}>{director.original_name}</div>
@@ -165,11 +192,23 @@ export default function page({ params }: { params: MovieIDParams }) {
                       })}
                     </div>
                   </div>
-                  <div className="movie-details__info__meta__about__bottom__cast__container__cast-group">
-                    <div className="movie-details__info__meta__about__bottom__cast__container__cast-group__title">
+                  <div
+                    className={
+                      styles.movieDetails__info__meta__about__bottom__cast__container__castGroup
+                    }
+                  >
+                    <div
+                      className={
+                        styles.movieDetails__info__meta__about__bottom__cast__container__castGroup__title
+                      }
+                    >
                       <h4>Cast</h4>
                     </div>
-                    <div className="movie-details__info__meta__about__bottom__cast__container__cast-group__list">
+                    <div
+                      className={
+                        styles.movieDetails__info__meta__about__bottom__cast__container__castGroup__list
+                      }
+                    >
                       {cast.map((castMember: CastMember) => {
                         return (
                           <div key={castMember.id}>
@@ -181,7 +220,11 @@ export default function page({ params }: { params: MovieIDParams }) {
                   </div>
                 </div>
               </div>
-              <div className="movie-details__info__meta__about__bottom__overview">
+              <div
+                className={
+                  styles.movieDetails__info__meta__about__bottom__overview
+                }
+              >
                 {movieDetails.overview}
               </div>
               <div>
@@ -191,11 +234,11 @@ export default function page({ params }: { params: MovieIDParams }) {
           </div>
         </div>
       </div>
-      <div className="movie-details__reviews">
-        <div className="movie-details__reviews__title">
+      <div className={styles.movieDetails__reviews}>
+        <div className={styles.movieDetails__reviews__title}>
           <h3>Reviews</h3>
         </div>
-        <div className="movie-details__reviews__list">
+        <div className={styles.movieDetails__reviews__list}>
           {reviews.map((review: Review, index: number) => {
             return <ReviewCard key={index} review={review} />;
           })}

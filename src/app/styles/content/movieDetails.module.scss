@@ -1,4 +1,7 @@
-.movie-details {
+@import 'variables.scss';
+@import 'mixins.scss';
+
+.movieDetails {
   min-height: calc(100vh - $navbar-height - 200px);
   &__info {
     position: relative;
@@ -60,7 +63,7 @@
               display: flex;
               justify-content: space-between;
               // padding: 50px;
-              &__cast-group {
+              &__castGroup {
                 border: 1px solid purple;
                 &__title {
                   color: $primary-color;

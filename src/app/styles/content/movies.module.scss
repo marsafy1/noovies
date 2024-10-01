@@ -1,7 +1,10 @@
+@import 'variables.scss';
+@import 'mixins.scss';
+
 .movies {
   position: relative;
   min-height: calc(100vh - $navbar-height);
-  &__top-movies {
+  &__topMovies {
     height: 80vh;
 
     padding: 20px;
@@ -11,7 +14,7 @@
 
       position: relative;
       height: 100%;
-      &__top-side-movies {
+      &__topSideMovies {
         margin-left: 20px;
         height: 100%;
         overflow: hidden;
@@ -23,7 +26,7 @@
       }
     }
   }
-  &__normal-movies {
+  &__normalMovies {
     padding: 20px;
     &__subtitle {
       color: $primary-color;

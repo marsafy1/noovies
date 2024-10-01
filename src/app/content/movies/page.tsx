@@ -5,6 +5,7 @@ import { Movie } from '@/app/interfaces/movies';
 import MovieCard from '@/app/components/movies/MovieCard';
 import TopMovieCard from '@/app/components/movies/TopMovieCard';
 import TopSideMovieCard from '@/app/components/movies/TopSideMovieCard';
+import styles from '@/app/styles/content/movies.module.scss';
 
 export default function Movies() {
   const [currentPage, setCurrentPage] = useState(0);
@@ -50,20 +51,22 @@ export default function Movies() {
   }, [searchParams]);
 
   return (
-    <div className="movies">
+    <div className={styles.movies}>
       {!isSearch && (
-        <div className="movies__top-movies">
-          <div className="movies__top-movies__list">
+        <div className={styles.movies__topMovies}>
+          <div className={styles.movies__topMovies__list}>
             <div>
               {movies.slice(0, 1).map((movie: Movie, index: number) => {
                 return <TopMovieCard key={index} movie={movie} />;
               })}
             </div>
-            <div className="movies__top-movies__list__top-side-movies">
-              <div className="movies__normal-movies__subtitle">
+            <div className={styles.movies__topMovies__list__topSideMovies}>
+              <div className={styles.movies__normalMovies__subtitle}>
                 <h3>Hottest 5</h3>
               </div>
-              <div className="movies__top-movies__list__top-side-movies__list">
+              <div
+                className={styles.movies__topMovies__list__topSideMovies__list}
+              >
                 {movies.slice(0, 5).map((movie: Movie, index: number) => {
                   return <TopSideMovieCard key={index} movie={movie} />;
                 })}
@@ -72,12 +75,12 @@ export default function Movies() {
           </div>
         </div>
       )}
-      <div className="movies__normal-movies">
-        <div className="movies__normal-movies__subtitle">
+      <div className={styles.movies__normalMovies}>
+        <div className={styles.movies__normalMovies__subtitle}>
           <h3>{isSearch ? 'Search Results' : 'Top Rated Movies'}</h3>
         </div>
 
-        <div className="movies__normal-movies__list">
+        <div className={styles.movies__normalMovies__list}>
           {movies.map((movie: Movie, index: number) => {
             return <MovieCard key={index} movie={movie} />;
           })}
