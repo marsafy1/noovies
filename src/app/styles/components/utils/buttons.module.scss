@@ -1,3 +1,6 @@
+@import 'variables.scss';
+@import 'mixins.scss';
+
 .btn {
   @include center-flex;
   width: 100%;
@@ -9,18 +12,18 @@
 
   transition: all 0.4s;
 }
-.primary-btn {
-  background-color: var(--primary-color);
-  color: var(--background-color);
+.primaryBtn {
+  background-color: $primary-color;
+  color: $background-color;
 }
 
-.secondary-btn {
+.secondaryBtn {
   background-color: transparent;
-  border: 1px solid var(--primary-color);
-  color: var(--primary-color);
+  border: 1px solid $primary-color;
+  color: $primary-color;
 }
 
-.secondary-btn:hover {
-  background-color: var(--primary-color);
-  color: var(--background-color);
+.secondaryBtn:hover {
+  background-color: $primary-color;
+  color: $background-color;
 }

@@ -1,7 +1,10 @@
+@import 'variables.scss';
+@import 'mixins.scss';
+
 .review {
   @include between-flex-v;
 
-  background-color: var(--cards-background);
+  background-color: $cards-background;
   border-radius: $cards-border-radius;
 
   margin: 10px;
@@ -14,7 +17,7 @@
       &__meta {
         margin-left: 5px;
         &__name {
-          color: var(--primary-color);
+          color: $primary-color;
         }
         &__time {
           font-size: 12px;
@@ -27,16 +30,3 @@
     padding: 15px;
   }
 }
-
-// <div className="review">
-// <div className="review__header">
-//   <div className="review__header__author">
-//     <Avatar
-//       src={`https://image.tmdb.org/t/p/w200${review.author_details.avatar_path}`}
-//     />
-//     <div className="review__header__author__name">{review.author}</div>
-//   </div>
-//   <div className="review__header__time">{review.updated_at}</div>
-// </div>
-// <div className="review__content">{review.content}</div>
-// </div>

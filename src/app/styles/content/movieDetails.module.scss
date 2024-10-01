@@ -63,7 +63,7 @@
               &__cast-group {
                 border: 1px solid purple;
                 &__title {
-                  color: var(--primary-color);
+                  color: $primary-color;
                 }
                 &__list {
                   border: 1px solid blue;
@@ -84,7 +84,7 @@
     top: -200px;
     padding: 40px;
     &__title {
-      color: var(--primary-color);
+      color: $primary-color;
     }
   }
 }

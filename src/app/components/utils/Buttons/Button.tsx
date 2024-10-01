@@ -1,4 +1,5 @@
 import React, { MouseEventHandler } from 'react';
+import styles from '@/app/styles/components/utils/buttons.module.scss';
 
 export default function PrimaryButton({
   title,
@@ -9,12 +10,15 @@ export default function PrimaryButton({
   handleClick: MouseEventHandler;
   type?: string;
 }) {
-  let btnTypeClassName = 'primary-btn';
+  let btnTypeClassName = 'primaryBtn';
   if (type === 'secondary') {
-    btnTypeClassName = 'secondary-btn';
+    btnTypeClassName = 'secondaryBtn';
   }
   return (
-    <div className={`btn ${btnTypeClassName}`} onClick={handleClick}>
+    <div
+      className={`${styles.btn} ${styles[btnTypeClassName]}`}
+      onClick={handleClick}
+    >
       {title}
     </div>
   );
