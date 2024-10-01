@@ -1,12 +1,18 @@
 'use client';
 import React, { useState, useEffect, use } from 'react';
 import { MovieIDParams } from '@/app/interfaces/movies';
-import { Movie, Review, DEFAULT_MOVIE } from '@/app/interfaces/movies';
+import {
+  DetailedMovie,
+  CrewMember,
+  CastMember,
+  Review,
+  DEFAULT_DETAILED_MOVIE,
+  DEFAULT_CREW_MEMBER,
+} from '@/app/interfaces/movies';
 import TopMovieCard from '@/app/components/movies/TopMovieCard';
 import Video from '@/app/components/presentation/Video';
 import ReviewCard from '@/app/components/reviews/ReviewCard';
 import Image from 'next/image';
-
 import Adult from '@/app/components/movies/movieCards/info/Adult';
 import Language from '@/app/components/movies/movieCards/info/Language';
 import VoteAverage from '@/app/components/movies/movieCards/info/VoteAverage';
@@ -19,9 +25,12 @@ import PosterPlaceholder from '@/app/assets/defaults/movies/poster-placeholder.p
 
 export default function page({ params }: { params: MovieIDParams }) {
   const apiToken = process.env.NEXT_PUBLIC_TMDB_API_TOKEN;
-  const [movieDetails, setMovieDetails] = useState<Movie>(DEFAULT_MOVIE);
+  const [movieDetails, setMovieDetails] = useState<DetailedMovie>(
+    DEFAULT_DETAILED_MOVIE
+  );
   const [reviews, setReviews] = useState<Review[]>([]);
-
+  const [directors, setDirectors] = useState<CrewMember[]>([]);
+  const [cast, setCast] = useState<CastMember[]>([]);
   const [trailerKey, setTrailerKey] = useState<string>('');
 
   async function getMovieDetails() {
@@ -32,6 +41,7 @@ export default function page({ params }: { params: MovieIDParams }) {
     let result = await res.json();
 
     if (result.videos.results.length > 0) {
+      console.log(result);
       setTrailerKey(result.videos.results[0]['key']);
     }
 
@@ -44,13 +54,35 @@ export default function page({ params }: { params: MovieIDParams }) {
       headers: { Authorization: `Bearer ${apiToken}` },
     });
     let result = await res.json();
-    console.log(result);
     setReviews(result.results);
+  }
+
+  async function getMovieCredits() {
+    let movieCreditsUrl = `https://api.themoviedb.org/3/movie/${params.movie_id}/credits`;
+    let res = await fetch(movieCreditsUrl, {
+      headers: { Authorization: `Bearer ${apiToken}` },
+    });
+    let result = await res.json();
+    let crew = result.crew;
+    console.log(result.cast);
+    let directors: CrewMember[] = [];
+    let cast = result.cast;
+    cast = cast
+      .sort((a: CrewMember, b: CrewMember) => b.popularity - a.popularity)
+      .slice(0, 10); // Get the 10 most popular from the cast
+    crew.forEach((crewMember: CrewMember) => {
+      if (crewMember['job'] == 'Director') {
+        directors.push(crewMember);
+      }
+    });
+    setDirectors(directors);
+    setCast(cast);
   }
 
   useEffect(() => {
     getMovieDetails();
     getMovieReviews();
+    getMovieCredits();
   }, []);
 
   return (
@@ -91,6 +123,20 @@ export default function page({ params }: { params: MovieIDParams }) {
             <div className="movie-details__info__meta__about__top">
               <div className="movie-details__info__meta__about__top__title">
                 {movieDetails.title}
+                <br />
+                {movieDetails.release_date}
+              </div>
+              <div className="movie-details__info__meta__about__top__genres">
+                {movieDetails.genres.map((genre) => {
+                  return (
+                    <div
+                      className="movie-details__info__meta__about__top__genres__genre"
+                      key={genre.id}
+                    >
+                      {genre.name}
+                    </div>
+                  );
+                })}
               </div>
             </div>
             <div className="movie-details__info__meta__about__bottom">
@@ -100,8 +146,39 @@ export default function page({ params }: { params: MovieIDParams }) {
                   <VoteCount count={movieDetails.vote_count} />
                 </div>
                 <div className="d-flex">
+                  {`${movieDetails.runtime} mins`}
                   <Language lang={movieDetails.original_language} />
                   <Adult adult={movieDetails.adult} />
+                </div>
+              </div>
+              <div className="movie-details__info__meta__about__bottom__cast">
+                <div className="movie-details__info__meta__about__bottom__cast__container">
+                  <div className="movie-details__info__meta__about__bottom__cast__container__cast-group">
+                    <div className="movie-details__info__meta__about__bottom__cast__container__cast-group__title">
+                      <h4>Directors</h4>
+                    </div>
+                    <div className="movie-details__info__meta__about__bottom__cast__container__cast-group__list">
+                      {directors.map((director: CrewMember) => {
+                        return (
+                          <div key={director.id}>{director.original_name}</div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                  <div className="movie-details__info__meta__about__bottom__cast__container__cast-group">
+                    <div className="movie-details__info__meta__about__bottom__cast__container__cast-group__title">
+                      <h4>Cast</h4>
+                    </div>
+                    <div className="movie-details__info__meta__about__bottom__cast__container__cast-group__list">
+                      {cast.map((castMember: CastMember) => {
+                        return (
+                          <div key={castMember.id}>
+                            {castMember.original_name}
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
                 </div>
               </div>
               <div className="movie-details__info__meta__about__bottom__overview">

@@ -38,10 +38,38 @@
           &__title {
             font-size: 50px;
           }
+          &__genres {
+            border: 2px solid lime;
+            display: flex;
+            &__genre {
+              margin-right: 5px;
+            }
+            &__genre:last-child {
+              margin-right: 0px;
+            }
+          }
         }
         &__bottom {
           &__tags {
             @include between-flex-h;
+          }
+          &__cast {
+            border: 1px solid lime;
+            &__container {
+              border: 1px solid red;
+              display: flex;
+              justify-content: space-between;
+              // padding: 50px;
+              &__cast-group {
+                border: 1px solid purple;
+                &__title {
+                  color: var(--primary-color);
+                }
+                &__list {
+                  border: 1px solid blue;
+                }
+              }
+            }
           }
           &__overview {
             color: grey;
@@ -51,8 +79,7 @@
       }
     }
   }
-
-  &__reviews {
+  > &__reviews {
     position: relative;
     top: -200px;
     padding: 40px;
