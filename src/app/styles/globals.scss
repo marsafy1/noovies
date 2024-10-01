@@ -1,0 +1,49 @@
+// Imports
+// Mixins
+@import 'mixins.scss';
+// Pages
+// @import './pages/home.scss';
+@import 'variables.scss';
+// Content
+// @import './content/movies.scss';
+// @import './content/movieDetails.scss';
+// @import './content/favorites.scss';
+//Components
+// @import './components/appbars/navbar.scss';
+// @import './components/movies/movieCard.scss';
+// @import './components/movies/topMovieCard.scss';
+// @import './components/movies/topSideMovie.scss';
+// @import './components/movies/actions/favorite.scss';
+// @import './components/utils/avatar.scss';
+// @import './components/utils/buttons.scss';
+// @import './components/reviews/reviewCard.scss';
+// Layout
+@import 'layout.scss';
+// Use border-box, to include padding, border into the width + height
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+// Remove any default margin or padding
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  color: white;
+  font-family: var(--font-geist-sans);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  background: var(--background-color);
+
+  margin-top: calc($navbar-height - 5px);
+}

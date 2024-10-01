@@ -1,5 +1,6 @@
 'use client';
 import React, { use, useState } from 'react';
+import styles from '@/app/styles/components/appbars/navbar.module.scss';
 import { useRouter } from 'next/navigation';
 
 export default function Search() {
@@ -18,9 +19,9 @@ export default function Search() {
   };
 
   return (
-    <div className="navbar__start__search">
+    <div className={styles.navbar__start__search}>
       <input
-        className="navbar__start__search__input-field"
+        className={styles.navbar__start__search__inputField}
         placeholder="Search"
         value={query}
         onChange={(e) => setQuery(e.target.value)} // Update query state on input change

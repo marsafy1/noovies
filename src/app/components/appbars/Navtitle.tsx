@@ -1,5 +1,6 @@
 'use client';
 import { useRouter } from 'next/navigation';
+import styles from '@/app/styles/components/appbars/navbar.module.scss';
 import React from 'react';
 
 export default function Navtitle() {
@@ -8,7 +9,7 @@ export default function Navtitle() {
     router.push('/');
   }
   return (
-    <div className="navbar__start__title" onClick={goHome}>
+    <div className={styles.navbar__start__title} onClick={goHome}>
       noovies
     </div>
   );

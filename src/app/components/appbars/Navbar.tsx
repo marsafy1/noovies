@@ -3,6 +3,7 @@ import ThemeSwitch from '@/app/components/appbars/ThemeSwitch';
 import Navtitle from './Navtitle';
 import NavItem from './NavItem';
 import Search from './Search';
+import styles from '@/app/styles/components/appbars/navbar.module.scss';
 interface NavItem {
   name: string;
   href: string;
@@ -24,13 +25,13 @@ export default function Navbar() {
     },
   ];
   return (
-    <div className="navbar">
-      <div className="navbar__start">
+    <div className={styles.navbar}>
+      <div className={styles.navbar__start}>
         <Navtitle />
         <Search />
       </div>
 
-      <div className="navbar__end">
+      <div className={styles.navbar__end}>
         {/* <ThemeSwitch /> */}
         <div className="d-flex">
           {navItems.map((navItem, index) => {

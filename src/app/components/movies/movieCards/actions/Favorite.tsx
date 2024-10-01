@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PrimaryButton from '@/app/components/utils/Buttons/Button';
+import styles from '@/app/styles/components/movies/actions/favorite.module.scss';
 
 export default function Favorite({ movieId }: { movieId: number }) {
   const [isFavorite, setIsFavorite] = useState(false);
@@ -34,7 +35,7 @@ export default function Favorite({ movieId }: { movieId: number }) {
   };
 
   return (
-    <div className="favorite-btn-container">
+    <div className={styles.favoriteBtnContainer}>
       {/* <button onClick={toggleFavorite}>
         {isFavorite ? 'Remove from Favorites' : 'Add to Favorites'}
       </button> */}

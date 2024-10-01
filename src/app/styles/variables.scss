@@ -1,20 +1,7 @@
-// Default for light theme
-
-:root {
-  // Colors
-  --primary-color: rgb(250, 238, 85);
-
-  // Background and cards
-  // --background-color: rgb(255, 255, 255);
-  --background-color: rgb(18, 18, 18);
-  --cards-background: rgb(8, 8, 8);
-}
-
-[data-theme='dark'] {
-  // Background and cards
-  --background-color: rgb(13, 15, 20);
-}
-
+// Colors
+$primary-color: rgb(250, 238, 85);
+$background-color: rgb(18, 18, 18);
+$cards-background: rgb(8, 8, 8);
 // Constants
 $navbar-height: 70px;
 
