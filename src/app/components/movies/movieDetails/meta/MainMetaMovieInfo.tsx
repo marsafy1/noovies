@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-  DetailedMovie,
-  CrewMember,
-  CastMember,
-  Review,
-  DEFAULT_CREW_MEMBER,
-} from '@/app/interfaces/movies';
+import { DetailedMovie } from '@/app/interfaces/movies';
 import styles from '@/app/styles/components/movieDetails/meta/mainMetaMovieInfo.module.scss';
 import VoteAverage from '../../movieCards/info/VoteAverage';
 import VoteCount from '../../movieCards/info/VoteCount';

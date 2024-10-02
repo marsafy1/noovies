@@ -1,5 +1,5 @@
 'use client';
-import React, { use, useState } from 'react';
+import React, { useState } from 'react';
 import styles from '@/app/styles/components/appbars/navbar.module.scss';
 import { useRouter } from 'next/navigation';
 

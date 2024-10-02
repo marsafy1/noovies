@@ -1,27 +1,9 @@
 'use client';
 import React, { useState, useEffect, use } from 'react';
 import { MovieIDParams } from '@/app/interfaces/movies';
-import {
-  DetailedMovie,
-  CrewMember,
-  CastMember,
-  Review,
-  DEFAULT_DETAILED_MOVIE,
-  DEFAULT_CREW_MEMBER,
-} from '@/app/interfaces/movies';
-import TopMovieCard from '@/app/components/movies/TopMovieCard';
-import Video from '@/app/components/presentation/Video';
-import ReviewCard from '@/app/components/reviews/ReviewCard';
-import Image from 'next/image';
-import Adult from '@/app/components/movies/movieCards/info/Adult';
-import Language from '@/app/components/movies/movieCards/info/Language';
-import VoteAverage from '@/app/components/movies/movieCards/info/VoteAverage';
-import VoteCount from '@/app/components/movies/movieCards/info/VoteCount';
-import Favorite from '@/app/components/movies/movieCards/actions/Favorite';
-import SafeImage from '@/app/components/presentation/SafeImage';
+import { DetailedMovie, DEFAULT_DETAILED_MOVIE } from '@/app/interfaces/movies';
 import MovieCover from '@/app/components/movies/movieDetails/MovieCover';
 import MovieInfo from '@/app/components/movies/movieDetails/MovieInfo';
-import PosterPlaceholder from '@/app/assets/defaults/movies/poster-placeholder.png';
 import styles from '@/app/styles/content/movieDetails.module.scss';
 import MovieReviews from '@/app/components/movies/movieDetails/MovieReviews';
 

@@ -1,9 +1,7 @@
-import React, { use } from 'react';
+import React from 'react';
 import { Movie } from '@/app/interfaces/movies';
 import Adult from './movieCards/info/Adult';
 import Language from './movieCards/info/Language';
-import VoteAverage from './movieCards/info/VoteAverage';
-import VoteCount from './movieCards/info/VoteCount';
 import NavigationWrapper from './movieCards/wrappers/NavigationWrapper';
 import styles from '@/app/styles/components/movies/topSideMovie.module.scss';
 
