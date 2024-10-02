@@ -2,6 +2,10 @@
   display: flex;
 }
 
+.flex-column {
+  flex-direction: column;
+}
+
 .justify-content-between {
   justify-content: space-between;
 }
@@ -16,4 +20,10 @@
 
 .align-items-center {
   align-items: center;
+}
+
+// margin sides
+.ms-4 {
+  margin-left: 5px;
+  margin-right: 5px;
 }

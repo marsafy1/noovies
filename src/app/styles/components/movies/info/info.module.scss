@@ -11,9 +11,9 @@
 // Scores
 .score {
   @include h-flex;
+
   &__icon {
     @include center-flex;
-
     width: 24px;
   }
   &__number {

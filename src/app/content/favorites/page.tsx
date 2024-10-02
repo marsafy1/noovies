@@ -16,11 +16,12 @@ import styles from '@/app/styles/content/favorites.module.scss';
 
 // Service imports
 import { get } from '@/app/services/api/requests';
+import Loading from '@/app/components/feedback/Loading';
 
 export default function Favorites() {
   const [favoriteIds, setFavoriteIds] = useState<number[]>([]);
   const [favorites, setFavorites] = useState<Movie[]>([]);
-
+  const [loading, setLoading] = useState<boolean>(true);
   // Function to retrieve favorites from localStorage
   const getFavorites = () => {
     const favorites = localStorage.getItem('favorites');
@@ -50,6 +51,7 @@ export default function Favorites() {
       });
       const movies = await Promise.all(moviePromises);
       setFavorites(movies);
+      setLoading(false);
     };
 
     fetchAllMovies();
@@ -58,7 +60,11 @@ export default function Favorites() {
   return (
     <div className={styles.favorites}>
       <h1>Favorite Movies</h1>
-      {favorites.length > 0 ? (
+      {loading ? (
+        <div className="h-100-without-nav">
+          <Loading />
+        </div>
+      ) : favorites.length > 0 ? (
         <div className={moviesStyles.movies__normalMovies__list}>
           {favorites.map((movie: Movie, index: number) => {
             return <MovieCard key={index} movie={movie} />;

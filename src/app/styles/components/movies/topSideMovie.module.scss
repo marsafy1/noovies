@@ -7,7 +7,15 @@
   width: 100%;
   overflow: hidden;
   border-radius: $cards-border-radius;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
+  transition: all 0.4s;
+  transform: scale(0.9);
+  cursor: pointer;
+  &Choosen {
+    border: 5px solid $primary-color;
+    transform: scale(1);
+  }
+
   &__backdrop {
     width: 100%;
     object-fit: cover;
@@ -29,8 +37,17 @@
     &__bottom {
       &__title {
         color: $primary-color;
+        font-size: max(1vw, 14px);
       }
       width: 100%;
     }
+  }
+}
+
+@media only screen and (max-width: $first-break-point) {
+  .topSideMovieCard {
+    width: 200px;
+    margin-bottom: 0px;
+    margin-right: 10px;
   }
 }

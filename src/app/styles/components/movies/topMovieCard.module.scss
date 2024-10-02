@@ -31,7 +31,14 @@
       width: 100%;
       &__title {
         color: $primary-color;
+        font-size: 35px;
       }
     }
+  }
+}
+
+@media only screen and (max-width: $first-break-point) {
+  .topMovieCard__info__bottom__overview {
+    display: none;
   }
 }

@@ -13,6 +13,7 @@ import Runtime from '@/app/components/movies/movieCards/info/Runtime';
 import ReleaseDate from '@/app/components/movies/movieCards/info/ReleaseDate';
 import NavigationWrapper from '@/app/components/movies/movieCards/wrappers/NavigationWrapper';
 import SafeImage from '@/app/components/presentation/SafeImage';
+import MovieRank from '@/app/components/movies/movieCards/wrappers/MovieRank';
 
 // Asset imports
 import BackdropPlaceholder from '@/app/assets/defaults/movies/backdrop-placeholder.png';
@@ -39,14 +40,27 @@ export default function TopMovieCard({ movie }: { movie: Movie }) {
           </div>
           <div className={styles.topMovieCard__info__bottom}>
             <div>
-              <div className="d-flex align-items-center">
-                <span className={styles.topMovieCard__info__bottom__title}>
-                  <h1>{movie.title}</h1>
-                </span>
-                <VoteAverage average={movie.vote_average} />
-                <VoteCount count={movie.vote_count} />
+              <div className="d-flex align-items-center justify-content-between">
+                <div className="d-flex flex-column ">
+                  <span className={styles.topMovieCard__info__bottom__title}>
+                    <h1>{movie.title}</h1>
+                  </span>
+                </div>
+
+                <div className="d-flex align-items-center">
+                  <div className="ms-4">
+                    <VoteAverage average={movie.vote_average} />
+                  </div>
+                  <div className="ms-4">
+                    <VoteCount count={movie.vote_count} />
+                  </div>
+                  {/* <div className="white-circle"></div> */}
+                  {/* <ReleaseDate releaseDate={movie.release_date} /> */}
+                </div>
               </div>
-              <p>{movie.overview}</p>
+              <p className={styles.topMovieCard__info__bottom__overview}>
+                {movie.overview}
+              </p>
             </div>
           </div>
         </div>

@@ -4,8 +4,9 @@
 .movies {
   position: relative;
   min-height: calc(100vh - $navbar-height);
+
   &__topMovies {
-    height: 80vh;
+    // min-height: 80vh;
 
     padding: 20px;
     margin-bottom: 50px;
@@ -16,13 +17,14 @@
     &__list {
       display: grid;
       grid-template-columns: 80% 20%;
-
       position: relative;
       height: 100%;
       &__topSideMovies {
         margin-left: 20px;
-        height: 100%;
+
+        max-height: 650px;
         overflow: hidden;
+
         &__list {
           height: 100%;
           // margin-top: 10px;
@@ -44,5 +46,25 @@
       @include center-flex;
       flex-wrap: wrap;
     }
+  }
+}
+
+@media only screen and (max-width: $first-break-point) {
+  .movies__topMovies__list {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .movies__topMovies__list__topSideMovies {
+    margin-left: 0px;
+    margin-top: 10px;
+  }
+  .movies__topMovies__list__topSideMovies__list {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+  }
+  .movies__topMovies__list__topSideMovies__list *:not(:last-child) {
+    margin-right: 5px;
   }
 }

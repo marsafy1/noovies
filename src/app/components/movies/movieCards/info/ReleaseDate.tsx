@@ -7,11 +7,10 @@ export default function ReleaseDate({
   releaseDate: string;
   fullDate?: boolean;
 }) {
-  var displayedReleaseDate = releaseDate;
   if (!fullDate) {
     if (releaseDate) {
-      displayedReleaseDate = releaseDate.split('-')[0];
+      releaseDate.split('-')[0];
     }
   }
-  return <div>{displayedReleaseDate}</div>;
+  return <div>{releaseDate.replaceAll('-', '/')}</div>;
 }
