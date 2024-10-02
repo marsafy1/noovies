@@ -16,7 +16,10 @@ export default function NavigationWrapper({
 }) {
   const router = useRouter();
   return (
-    <div onClick={() => navigateToMovieDetails(router, movieId)}>
+    <div
+      className="cursor-pointer"
+      onClick={() => navigateToMovieDetails(router, movieId)}
+    >
       {children}
     </div>
   );

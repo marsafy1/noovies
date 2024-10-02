@@ -41,15 +41,29 @@ body {
 .content {
   display: flex;
   flex-direction: column;
-  height: 100%;
-
+  min-height: calc(100vh - $navbar-height);
+  width: 100%;
   background: $background-color;
 
-  margin-top: calc($navbar-height - 5px);
+  position: absolute;
+  top: $navbar-height;
+  left: 0;
+}
+
+.h-100 {
+  width: 100%;
 }
 
 .h-100vh {
   height: 100vh;
+}
+
+.h-100-without-nav {
+  height: calc(100vh - $navbar-height);
+}
+
+.min-100vh {
+  min-height: 100vh;
 }
 
 .white-circle {
@@ -57,4 +71,8 @@ body {
   height: 10px;
   background-color: white;
   border-radius: 50%;
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }

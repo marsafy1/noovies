@@ -8,6 +8,7 @@ import { Movie } from '@/app/interfaces/movies';
 
 // Component imports
 import MovieCard from '@/app/components/movies/MovieCard';
+import Empty from '@/app/components/feedback/Empty';
 
 // Styles
 import moviesStyles from '@/app/styles/content/movies.module.scss';
@@ -57,15 +58,17 @@ export default function Favorites() {
   return (
     <div className={styles.favorites}>
       <h1>Favorite Movies</h1>
-      <div className={moviesStyles.movies__normalMovies__list}>
-        {favorites.length > 0 ? (
-          favorites.map((movie: Movie, index: number) => {
+      {favorites.length > 0 ? (
+        <div className={moviesStyles.movies__normalMovies__list}>
+          {favorites.map((movie: Movie, index: number) => {
             return <MovieCard key={index} movie={movie} />;
-          })
-        ) : (
-          <p>No favorites yet.</p>
-        )}
-      </div>
+          })}
+        </div>
+      ) : (
+        <div className="h-100-without-nav">
+          <Empty title="No Favorites yet!" />
+        </div>
+      )}
     </div>
   );
 }
