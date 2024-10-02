@@ -8,6 +8,11 @@
     height: 80vh;
 
     padding: 20px;
+    margin-bottom: 50px;
+    &__subtitle {
+      color: $primary-color;
+      margin-bottom: 20px;
+    }
     &__list {
       display: grid;
       grid-template-columns: 80% 20%;
@@ -20,7 +25,7 @@
         overflow: hidden;
         &__list {
           height: 100%;
-          margin-top: 10px;
+          // margin-top: 10px;
           overflow: scroll;
         }
       }

@@ -4,7 +4,7 @@
 .movieCover {
   position: relative;
   overflow: hidden;
-  height: 400px;
+  height: $detailed-movie-cover-height;
 
   &__gradient {
     position: absolute;

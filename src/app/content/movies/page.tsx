@@ -18,11 +18,12 @@ export default function Movies() {
   const apiToken = process.env.NEXT_PUBLIC_TMDB_API_TOKEN;
 
   async function getTopMovies() {
-    let res = await fetch('https://api.themoviedb.org/3/movie/top_rated', {
+    let res = await fetch('https://api.themoviedb.org/3/trending/movie/week', {
       headers: { Authorization: `Bearer ${apiToken}` },
     });
 
     const data = await res.json();
+    console.log(data);
     setCurrentPage(data['page']);
     setMovies(data['results']);
   }
@@ -54,6 +55,9 @@ export default function Movies() {
     <div className={styles.movies}>
       {!isSearch && (
         <div className={styles.movies__topMovies}>
+          <div className={styles.movies__topMovies__subtitle}>
+            <h3>Movies on Fire 🔥</h3>
+          </div>
           <div className={styles.movies__topMovies__list}>
             <div>
               {movies.slice(0, 1).map((movie: Movie, index: number) => {
@@ -61,9 +65,6 @@ export default function Movies() {
               })}
             </div>
             <div className={styles.movies__topMovies__list__topSideMovies}>
-              <div className={styles.movies__normalMovies__subtitle}>
-                <h3>Hottest 5</h3>
-              </div>
               <div
                 className={styles.movies__topMovies__list__topSideMovies__list}
               >
@@ -77,7 +78,7 @@ export default function Movies() {
       )}
       <div className={styles.movies__normalMovies}>
         <div className={styles.movies__normalMovies__subtitle}>
-          <h3>{isSearch ? 'Search Results' : 'Top Rated Movies'}</h3>
+          <h3>{isSearch ? 'Search Results' : 'Trending Movies'}</h3>
         </div>
 
         <div className={styles.movies__normalMovies__list}>

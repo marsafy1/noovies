@@ -54,26 +54,19 @@ export default function DetailedMetaMovieInfo({
   }, []);
   return (
     <div className={styles.detailedMetaMovieInfo}>
-      <div className={styles.detailedMetaMovieInfo__tags}>
-        <div className="d-flex">
-          <VoteAverage average={movieDetails.vote_average} />
-          <VoteCount count={movieDetails.vote_count} />
-        </div>
-        <div className="d-flex">
-          {`${movieDetails.runtime} mins`}
-          <Language lang={movieDetails.original_language} />
-          <Adult adult={movieDetails.adult} />
-        </div>
-      </div>
-
+      {/* <div className={styles.detailedMetaMovieInfo__overview}>
+        <h4>Overview</h4>
+        <span>{movieDetails.overview}</span>
+      </div> */}
       <div className={styles.detailedMetaMovieInfo__cast}>
         <div className={styles.detailedMetaMovieInfo__cast__container}>
-          <MovieMembers movieId={movieDetails.id} castType="directors" />
-          <MovieMembers movieId={movieDetails.id} castType="cast" />
+          <div
+            className={styles.detailedMetaMovieInfo__cast__container__members}
+          >
+            <MovieMembers movieId={movieDetails.id} castType="cast" />
+            <MovieMembers movieId={movieDetails.id} castType="directors" />
+          </div>
         </div>
-      </div>
-      <div className={styles.detailedMetaMovieInfo__overview}>
-        {movieDetails.overview}
       </div>
     </div>
   );

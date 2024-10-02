@@ -2,18 +2,48 @@
 @import 'mixins.scss';
 .mainMetaMovieInfo {
   position: relative;
-
-  &__title {
-    font-size: 50px;
+  // border: 1px solid blue;
+  &__header {
+    &__title {
+      font-size: 50px;
+    }
+    &__releaseDate {
+      font-size: small;
+    }
   }
-  &__genres {
-    border: 2px solid lime;
-    display: flex;
-    &__genre {
+
+  &__infoTags {
+    @include between-flex-h;
+    &__quicksAndtips {
+      display: flex;
+    }
+    &__quicksAndtips *:not(:last-child) {
       margin-right: 5px;
     }
-    &__genre:last-child {
-      margin-right: 0px;
+    &__genres {
+      display: flex;
+      align-items: center;
+      &__genre {
+        margin-right: 5px;
+      }
+      &__genre:last-child {
+        margin-right: 0px;
+      }
     }
+    &__genres *:not(:last-child) {
+      margin-right: 5px;
+    }
+  }
+  &__overview {
+    margin-top: 10px;
+    color: white;
+    h4 {
+      color: $primary-color;
+    }
+    span {
+      display: block;
+      padding: 30px;
+    }
+    // border: 1px solid red;
   }
 }

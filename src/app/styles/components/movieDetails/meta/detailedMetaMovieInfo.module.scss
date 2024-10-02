@@ -7,16 +7,26 @@
     @include between-flex-h;
   }
   &__cast {
-    border: 1px solid lime;
     &__container {
-      border: 1px solid red;
-      display: flex;
-      justify-content: space-between;
-      // padding: 50px;
+      h4 {
+        color: $primary-color;
+      }
+      &__members {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+      }
     }
   }
   &__overview {
-    color: grey;
-    margin-bottom: 10px;
+    // color: grey;
+    // margin-bottom: 10px;
+    h4 {
+      color: $primary-color;
+    }
+    span {
+      display: block;
+      padding: 10px;
+    }
   }
 }

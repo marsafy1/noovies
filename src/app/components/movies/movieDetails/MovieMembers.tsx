@@ -16,7 +16,7 @@ import Favorite from '@/app/components/movies/movieCards/actions/Favorite';
 import Poster from '@/app/components/movies/movieCards/info/Poster';
 import MainMetaMovieInfo from '@/app/components/movies/movieDetails/meta/MainMetaMovieInfo';
 
-import styles from '@/app/styles/components/movieDetails/movieCast.module.scss';
+import styles from '@/app/styles/components/movieDetails/movieMembers.module.scss';
 
 export default function MovieMembers({
   movieId,
@@ -48,7 +48,7 @@ export default function MovieMembers({
       members = result.cast;
       members = members
         .sort((a: Member, b: Member) => b.popularity - a.popularity)
-        .slice(0, 10); // Get the 10 most popular from the cast
+        .slice(0, 5); // Get the 10 most popular from the cast
     }
     setMembers(members);
   }
@@ -62,7 +62,15 @@ export default function MovieMembers({
       </div>
       <div className={styles.cast__list}>
         {members.map((member: Member) => {
-          return <div key={member.id}>{member.original_name}</div>;
+          return (
+            <div key={member.id}>
+              {member.original_name}
+              {/* {' as '}
+              <b>
+                {castType === 'cast' ? (member as CastMember).character : ''}
+              </b> */}
+            </div>
+          );
         })}
       </div>
     </div>

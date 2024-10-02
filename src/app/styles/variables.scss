@@ -11,4 +11,8 @@ $movie-card-height: 350px;
 
 $cards-border-radius: 5px;
 // Navbar
-$active-item: var(--primary-color);
+$active-item: $primary-color;
+
+// Sizes
+$detailed-movie-cover-height: 600px;
+$movie-info-move-top-by: calc($detailed-movie-cover-height / -2);

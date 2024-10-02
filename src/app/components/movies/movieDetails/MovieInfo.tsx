@@ -24,13 +24,16 @@ export default function MovieInfo({
 }) {
   return (
     <div className={styles.movieInfo__meta}>
-      <Poster poster_path={movieDetails.poster_path} />
-      <div className={styles.movieInfo__meta__about}>
-        <MainMetaMovieInfo movieDetails={movieDetails} />
-        <DetailedMetaMovieInfo movieDetails={movieDetails} />
+      <div>
+        <Poster poster_path={movieDetails.poster_path} />
         <div className={styles.movieInfo__meta__about__bottom}>
           <Favorite movieId={movieDetails.id} />
         </div>
+      </div>
+
+      <div className={styles.movieInfo__meta__about}>
+        <MainMetaMovieInfo movieDetails={movieDetails} />
+        <DetailedMetaMovieInfo movieDetails={movieDetails} />
       </div>
     </div>
   );
