@@ -23,46 +23,42 @@ import MovieCover from '@/app/components/movies/movieDetails/MovieCover';
 import MovieInfo from '@/app/components/movies/movieDetails/MovieInfo';
 import PosterPlaceholder from '@/app/assets/defaults/movies/poster-placeholder.png';
 import styles from '@/app/styles/content/movieDetails.module.scss';
-import MovieReviews from '@/app/components/movies/movieDetails/MovieReviews';
 
-export default function page({ params }: { params: MovieIDParams }) {
+export default function MovieReviews({ movieId }: { movieId: number }) {
   const apiToken = process.env.NEXT_PUBLIC_TMDB_API_TOKEN;
-  const [movieDetails, setMovieDetails] = useState<DetailedMovie>(
-    DEFAULT_DETAILED_MOVIE
-  );
+  const [reviews, setReviews] = useState<Review[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
 
-  const [trailerKey, setTrailerKey] = useState<string>('');
-
-  async function getMovieDetails() {
+  async function getMovieReviews() {
     setLoading(true);
-    let movieDetailsUrl = `https://api.themoviedb.org/3/movie/${params.movie_id}?append_to_response=videos`;
-    let res = await fetch(movieDetailsUrl, {
+    let movieReviewsUrl = `https://api.themoviedb.org/3/movie/${movieId}/reviews`;
+    let res = await fetch(movieReviewsUrl, {
       headers: { Authorization: `Bearer ${apiToken}` },
     });
     let result = await res.json();
 
-    if (result.videos.results.length > 0) {
-      console.log(result);
-      setTrailerKey(result.videos.results[0]['key']);
-    }
     setLoading(false);
-    setMovieDetails(result);
+    setReviews(result.results);
   }
 
   useEffect(() => {
-    getMovieDetails();
+    getMovieReviews();
   }, []);
-
   return (
-    <div className={styles.movieDetails}>
-      {!loading && (
-        <div className={styles.movieDetails__info}>
-          <MovieCover movieDetails={movieDetails} />
-          <MovieInfo movieDetails={movieDetails} />
+    <div className={styles.movieDetails__reviews}>
+      <div className={styles.movieDetails__reviews__title}>
+        <h3>Reviews</h3>
+      </div>
+      {!loading && reviews.length > 0 && (
+        <div className={styles.movieDetails__reviews__list}>
+          {reviews.map((review: Review, index: number) => {
+            return <ReviewCard key={index} review={review} />;
+          })}
         </div>
       )}
-      {!loading && <MovieReviews movieId={movieDetails.id} />}
+      {!loading && reviews.length == 0 && (
+        <div className={styles.movieDetails__reviews__list}>Nothing yet!</div>
+      )}
     </div>
   );
 }

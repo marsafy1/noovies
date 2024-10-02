@@ -1,0 +1,22 @@
+@import 'variables.scss';
+@import 'mixins.scss';
+
+.detailedMetaMovieInfo {
+  position: relative;
+  &__tags {
+    @include between-flex-h;
+  }
+  &__cast {
+    border: 1px solid lime;
+    &__container {
+      border: 1px solid red;
+      display: flex;
+      justify-content: space-between;
+      // padding: 50px;
+    }
+  }
+  &__overview {
+    color: grey;
+    margin-bottom: 10px;
+  }
+}

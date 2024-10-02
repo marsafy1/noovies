@@ -1,0 +1,14 @@
+@import 'variables.scss';
+.member {
+  border: 1px solid lime;
+
+  &__membersGroup {
+    border: 1px solid purple;
+    &__title {
+      color: $primary-color;
+    }
+    &__list {
+      border: 1px solid blue;
+    }
+  }
+}

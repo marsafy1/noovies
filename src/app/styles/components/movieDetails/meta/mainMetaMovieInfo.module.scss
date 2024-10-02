@@ -1,0 +1,19 @@
+@import 'variables.scss';
+@import 'mixins.scss';
+.mainMetaMovieInfo {
+  position: relative;
+
+  &__title {
+    font-size: 50px;
+  }
+  &__genres {
+    border: 2px solid lime;
+    display: flex;
+    &__genre {
+      margin-right: 5px;
+    }
+    &__genre:last-child {
+      margin-right: 0px;
+    }
+  }
+}
