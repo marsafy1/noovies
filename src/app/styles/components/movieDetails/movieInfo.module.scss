@@ -24,6 +24,8 @@
       padding-right: 20px;
 
       &__bottom {
+        position: relative;
+        height: 50px;
         &__overview {
           color: grey;
           margin-bottom: 10px;

@@ -4,7 +4,7 @@
 import React, { useEffect, useState } from 'react';
 
 // Component imports
-import PrimaryButton from '@/app/components/utils/Buttons/Button';
+import PrimaryButton from '@/app/components/utils/Buttons/PrimaryButton';
 import FavoriteButtonFeedback from '@/app/components/feedback/FavoriteButtonFeedback';
 
 // Styles

@@ -22,7 +22,7 @@ export default function PrimaryButton({
       className={`${styles.btn} ${styles[btnTypeClassName]}`}
       onClick={handleClick}
     >
-      {title}
+      <span>{title}</span>
     </div>
   );
 }

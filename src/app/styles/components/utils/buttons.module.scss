@@ -11,7 +11,12 @@
   border-radius: $cards-border-radius;
 
   transition: all 0.4s;
+
+  span {
+    font-size: max(1vw, 10px);
+  }
 }
+
 .primaryBtn {
   background-color: $primary-color;
   color: $background-color;
