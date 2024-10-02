@@ -10,7 +10,7 @@ export default function Search() {
 
   function handleSearch() {
     // content/movies?search_query=ahmed
-    router.push(`/content/movies?search_query=${query}`);
+    router.push(`/content/movies/search?search_query=${query}`);
   }
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === 'Enter') {

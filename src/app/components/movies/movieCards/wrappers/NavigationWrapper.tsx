@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import { navigateToMovieDetails } from '@/app/services/navigation';
 import { useRouter } from 'next/navigation';

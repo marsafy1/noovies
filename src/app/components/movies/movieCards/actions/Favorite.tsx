@@ -1,3 +1,4 @@
+'use client';
 import React, { useEffect, useState } from 'react';
 import PrimaryButton from '@/app/components/utils/Buttons/Button';
 import styles from '@/app/styles/components/movies/actions/favorite.module.scss';

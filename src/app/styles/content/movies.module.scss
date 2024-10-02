@@ -35,6 +35,10 @@
     padding: 20px;
     &__subtitle {
       color: $primary-color;
+      span {
+        color: white;
+        font-weight: lighter;
+      }
     }
     &__list {
       @include center-flex;

@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useEffect, use } from 'react';
+import React, { useState, useEffect } from 'react';
 import { MovieIDParams } from '@/app/interfaces/movies';
 import { DetailedMovie, DEFAULT_DETAILED_MOVIE } from '@/app/interfaces/movies';
 import MovieCover from '@/app/components/movies/movieDetails/MovieCover';
