@@ -1,3 +1,4 @@
+'use client';
 import React, { useState } from 'react';
 import Image from 'next/image';
 import DefaultAvatar from '@/app/assets/defaults/avatar/default_avatar.png';

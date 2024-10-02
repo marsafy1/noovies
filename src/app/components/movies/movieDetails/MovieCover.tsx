@@ -14,9 +14,7 @@ export default function MovieCover({
       <div className={styles.movieCover__gradient}></div>
       {movieDetails.backdrop_path && (
         <img
-          src={
-            'https://image.tmdb.org/t/p/original/' + movieDetails.backdrop_path
-          }
+          src={'https://image.tmdb.org/t/p/w780/' + movieDetails.backdrop_path}
         />
       )}
       {!movieDetails.backdrop_path && (

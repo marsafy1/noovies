@@ -1,5 +1,4 @@
-'use client';
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { MovieIDParams } from '@/app/interfaces/movies';
 import { DetailedMovie, DEFAULT_DETAILED_MOVIE } from '@/app/interfaces/movies';
 import MovieCover from '@/app/components/movies/movieDetails/MovieCover';
@@ -7,17 +6,13 @@ import MovieInfo from '@/app/components/movies/movieDetails/MovieInfo';
 import styles from '@/app/styles/content/movieDetails.module.scss';
 import MovieReviews from '@/app/components/movies/movieDetails/MovieReviews';
 
-export default function page({ params }: { params: MovieIDParams }) {
+export default async function page({ params }: { params: MovieIDParams }) {
   const apiToken = process.env.NEXT_PUBLIC_TMDB_API_TOKEN;
-  const [movieDetails, setMovieDetails] = useState<DetailedMovie>(
-    DEFAULT_DETAILED_MOVIE
-  );
-  const [loading, setLoading] = useState<boolean>(true);
-
-  const [trailerKey, setTrailerKey] = useState<string>('');
+  var loading = true;
+  const movieDetails = await getMovieDetails();
+  var loading = false;
 
   async function getMovieDetails() {
-    setLoading(true);
     let movieDetailsUrl = `https://api.themoviedb.org/3/movie/${params.movie_id}?append_to_response=videos`;
     let res = await fetch(movieDetailsUrl, {
       headers: { Authorization: `Bearer ${apiToken}` },
@@ -26,15 +21,11 @@ export default function page({ params }: { params: MovieIDParams }) {
 
     if (result.videos.results.length > 0) {
       console.log(result);
-      setTrailerKey(result.videos.results[0]['key']);
+      // setTrailerKey(result.videos.results[0]['key']);
     }
-    setLoading(false);
-    setMovieDetails(result);
-  }
 
-  useEffect(() => {
-    getMovieDetails();
-  }, []);
+    return result;
+  }
 
   return (
     <div className={styles.movieDetails}>
