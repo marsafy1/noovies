@@ -1,6 +1,9 @@
 // External libraries
 import React, { useState, useEffect } from 'react';
 
+// Enum imports
+import { memberTypes } from '@/app/enums/memberType';
+
 // Interface imports
 import { CrewMember, CastMember } from '@/app/interfaces/members';
 
@@ -15,9 +18,9 @@ export default function MovieMembers({
   castType,
 }: {
   movieId: number;
-  castType: 'directors' | 'cast';
+  castType: memberTypes;
 }) {
-  const title = castType == 'directors' ? 'Directors' : 'Cast';
+  const title = castType == memberTypes.directors ? 'Directors' : 'Cast';
   type Member = CrewMember | CastMember;
 
   const [members, setMembers] = useState<Member[]>([]);
@@ -44,9 +47,9 @@ export default function MovieMembers({
       let data = await get(`movie/${movieId}/credits`);
       let members: Member[] = [];
 
-      if (castType == 'directors') {
+      if (castType == memberTypes.directors) {
         members = handleDirectorsPopulation(data.crew);
-      } else if (castType == 'cast') {
+      } else if (castType == memberTypes.cast) {
         members = handleCastPopulation(data.cast);
       }
       setMembers(members);

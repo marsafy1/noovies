@@ -6,6 +6,9 @@ import React, { useState, useEffect } from 'react';
 // Styles
 import styles from '@/app/styles/components/movieDetails/meta/detailedMetaMovieInfo.module.scss';
 
+// Enums imports
+import { memberTypes } from '@/app/enums/memberType';
+
 // Interface imports
 import { DetailedMovie } from '@/app/interfaces/movies';
 import { CrewMember, CastMember } from '@/app/interfaces/members';
@@ -58,8 +61,14 @@ export default function DetailedMetaMovieInfo({
           <div
             className={styles.detailedMetaMovieInfo__cast__container__members}
           >
-            <MovieMembers movieId={movieDetails.id} castType="cast" />
-            <MovieMembers movieId={movieDetails.id} castType="directors" />
+            <MovieMembers
+              movieId={movieDetails.id}
+              castType={memberTypes.cast}
+            />
+            <MovieMembers
+              movieId={movieDetails.id}
+              castType={memberTypes.directors}
+            />
           </div>
         </div>
       </div>
