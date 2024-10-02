@@ -5,26 +5,26 @@ import MovieCover from '@/app/components/movies/movieDetails/MovieCover';
 import MovieInfo from '@/app/components/movies/movieDetails/MovieInfo';
 import styles from '@/app/styles/content/movieDetails.module.scss';
 import MovieReviews from '@/app/components/movies/movieDetails/MovieReviews';
+import { get } from '@/app/services/api/requests';
 
 export default async function page({ params }: { params: MovieIDParams }) {
-  const apiToken = process.env.NEXT_PUBLIC_TMDB_API_TOKEN;
   var loading = true;
   const movieDetails = await getMovieDetails();
   var loading = false;
+  var trailerKey: string =
+    movieDetails.videos.results.length > 0
+      ? movieDetails.videos.results[0].key
+      : null;
 
   async function getMovieDetails() {
-    let movieDetailsUrl = `https://api.themoviedb.org/3/movie/${params.movie_id}?append_to_response=videos`;
-    let res = await fetch(movieDetailsUrl, {
-      headers: { Authorization: `Bearer ${apiToken}` },
-    });
-    let result = await res.json();
-
-    if (result.videos.results.length > 0) {
-      console.log(result);
-      // setTrailerKey(result.videos.results[0]['key']);
+    try {
+      let data = await get(`movie/${params.movie_id}`, {
+        append_to_response: 'videos',
+      });
+      return data;
+    } catch (error) {
+      console.log(error);
     }
-
-    return result;
   }
 
   return (

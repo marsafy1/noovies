@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { Review } from '@/app/interfaces/movies';
 import ReviewCard from '@/app/components/reviews/ReviewCard';
 import styles from '@/app/styles/content/movieDetails.module.scss';
+import { get } from '@/app/services/api/requests';
 
 export default function MovieReviews({ movieId }: { movieId: number }) {
   const apiToken = process.env.NEXT_PUBLIC_TMDB_API_TOKEN;
@@ -11,20 +12,22 @@ export default function MovieReviews({ movieId }: { movieId: number }) {
   const [loading, setLoading] = useState<boolean>(true);
 
   async function getMovieReviews() {
-    setLoading(true);
-    let movieReviewsUrl = `https://api.themoviedb.org/3/movie/${movieId}/reviews`;
-    let res = await fetch(movieReviewsUrl, {
-      headers: { Authorization: `Bearer ${apiToken}` },
-    });
-    let result = await res.json();
+    try {
+      setLoading(true);
 
-    setLoading(false);
-    setReviews(result.results);
+      let data = await get(`/movie/${movieId}/reviews`);
+
+      setReviews(data.results);
+      setLoading(false);
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   useEffect(() => {
     getMovieReviews();
   }, []);
+
   return (
     <div className={styles.movieDetails__reviews}>
       <div className={styles.movieDetails__reviews__title}>

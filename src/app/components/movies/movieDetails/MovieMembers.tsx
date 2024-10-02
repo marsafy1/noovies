@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { CrewMember, CastMember } from '@/app/interfaces/movies';
 import styles from '@/app/styles/components/movieDetails/movieMembers.module.scss';
-
+import { get } from '@/app/services/api/requests';
 export default function MovieMembers({
   movieId,
   castType,
@@ -13,32 +13,44 @@ export default function MovieMembers({
   type Member = CrewMember | CastMember;
 
   const [members, setMembers] = useState<Member[]>([]);
-  const apiToken = process.env.NEXT_PUBLIC_TMDB_API_TOKEN;
-  async function getMovieCredits() {
-    let movieCreditsUrl = `https://api.themoviedb.org/3/movie/${movieId}/credits`;
-    let res = await fetch(movieCreditsUrl, {
-      headers: { Authorization: `Bearer ${apiToken}` },
+
+  function handleDirectorsPopulation(crew: CrewMember[]): CrewMember[] {
+    let directors: CrewMember[] = [];
+    crew.forEach((crewMember: CrewMember) => {
+      if (crewMember['job'] == 'Director') {
+        directors.push(crewMember);
+      }
     });
-    let members: Member[] = [];
-    let result = await res.json();
-    if (castType == 'directors') {
-      let crew = result.crew;
-      crew.forEach((crewMember: CrewMember) => {
-        if (crewMember['job'] == 'Director') {
-          members.push(crewMember);
-        }
-      });
-    } else if (castType == 'cast') {
-      members = result.cast;
-      members = members
-        .sort((a: Member, b: Member) => b.popularity - a.popularity)
-        .slice(0, 5); // Get the 10 most popular from the cast
-    }
-    setMembers(members);
+    return directors;
   }
+
+  function handleCastPopulation(cast: CastMember[]): CastMember[] {
+    cast = cast
+      .sort((a: Member, b: Member) => b.popularity - a.popularity)
+      .slice(0, 5); // Get the 5 most popular from the cast
+    return cast;
+  }
+
+  async function getMovieCredits() {
+    try {
+      let data = await get(`movie/${movieId}/credits`);
+      let members: Member[] = [];
+
+      if (castType == 'directors') {
+        members = handleDirectorsPopulation(data.crew);
+      } else if (castType == 'cast') {
+        members = handleCastPopulation(data.cast);
+      }
+      setMembers(members);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   useEffect(() => {
     getMovieCredits();
   }, []);
+
   return (
     <div className={styles.cast}>
       <div className={styles.cast__title}>

@@ -4,20 +4,19 @@ import TopMovieCard from '@/app/components/movies/TopMovieCard';
 import TopSideMovieCard from '@/app/components/movies/TopSideMovieCard';
 import styles from '@/app/styles/content/movies.module.scss';
 import MoviesContainer from '@/app/components/movies/MoviesContainer';
+import { get } from '@/app/services/api/requests';
 
 export default async function Movies() {
   var movies: Movie[] = await getTopMovies();
 
   async function getTopMovies() {
-    const apiToken = process.env.NEXT_PUBLIC_TMDB_API_TOKEN;
-    let res = await fetch('https://api.themoviedb.org/3/trending/movie/week', {
-      headers: { Authorization: `Bearer ${apiToken}` },
-    });
-
-    const data = await res.json();
-    const movies = data['results'];
-
-    return movies;
+    try {
+      let data = await get('trending/movie/week');
+      let movies = data['results'];
+      return movies;
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   return (

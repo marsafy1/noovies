@@ -4,6 +4,7 @@ import { Movie } from '@/app/interfaces/movies';
 import MovieCard from '@/app/components/movies/MovieCard';
 import moviesStyles from '@/app/styles/content/movies.module.scss';
 import styles from '@/app/styles/content/favorites.module.scss';
+import { get } from '@/app/services/api/requests';
 
 export default function Favorites() {
   const [favoriteIds, setFavoriteIds] = useState<number[]>([]);
@@ -16,18 +17,12 @@ export default function Favorites() {
   };
 
   async function getMovieDetails(movieId: number) {
-    const apiToken = process.env.NEXT_PUBLIC_TMDB_API_TOKEN;
-    let movieDetailsUrl = `https://api.themoviedb.org/3/movie/${movieId}`;
-    console.log(movieDetailsUrl);
-    let res = await fetch(movieDetailsUrl, {
-      headers: { Authorization: `Bearer ${apiToken}` },
-    });
-    let result = await res.json();
-    console.log(result);
-    return result;
-    // let updatedFavorites = favorites;
-    // updatedFavorites.push(result);
-    // setFavorites(updatedFavorites);
+    try {
+      let data = await get(`movie/${movieId}`);
+      return data;
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   // Load favorite movie IDs and fetch movie details
@@ -43,7 +38,6 @@ export default function Favorites() {
         }
       });
       const movies = await Promise.all(moviePromises);
-      console.log(movies);
       setFavorites(movies);
     };
 

@@ -3,6 +3,7 @@ import { useSearchParams } from 'next/navigation';
 import React, { useState, useEffect } from 'react';
 import MoviesContainer from '@/app/components/movies/MoviesContainer';
 import { Movie } from '@/app/interfaces/movies';
+import { get } from '@/app/services/api/requests';
 
 export default function Search() {
   const searchParams = useSearchParams(); // Get the search parameters
@@ -14,15 +15,16 @@ export default function Search() {
   }
 
   async function searchForMovie() {
-    const apiToken = process.env.NEXT_PUBLIC_TMDB_API_TOKEN;
-    searchQuery = getSafeQuery();
-    let searchUrl = `https://api.themoviedb.org/3/search/movie?query=${encodeURIComponent(searchQuery)}`;
-    let res = await fetch(searchUrl, {
-      headers: { Authorization: `Bearer ${apiToken}` },
-    });
+    try {
+      searchQuery = getSafeQuery();
+      let data = await get('search/movie', {
+        query: encodeURIComponent(searchQuery),
+      });
 
-    const data = await res.json();
-    setMovies(data['results']);
+      setMovies(data['results']);
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   useEffect(() => {
