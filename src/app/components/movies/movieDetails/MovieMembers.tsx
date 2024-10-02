@@ -1,7 +1,15 @@
+// External libraries
 import React, { useState, useEffect } from 'react';
+
+// Interface imports
 import { CrewMember, CastMember } from '@/app/interfaces/members';
+
+// Styles
 import styles from '@/app/styles/components/movieDetails/movieMembers.module.scss';
+
+// Service imports
 import { get } from '@/app/services/api/requests';
+
 export default function MovieMembers({
   movieId,
   castType,

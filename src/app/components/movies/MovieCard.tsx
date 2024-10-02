@@ -1,17 +1,24 @@
+// External libraries
 import React from 'react';
+
+// Interface imports
 import { Movie } from '@/app/interfaces/movies';
 
+// Component imports
 import VoteAverage from '@/app/components/movies/movieCards/info/VoteAverage';
 import VoteCount from '@/app/components/movies/movieCards/info/VoteCount';
 import Language from '@/app/components/movies/movieCards/info/Language';
 import Adult from '@/app/components/movies/movieCards/info/Adult';
 import Runtime from '@/app/components/movies/movieCards/info/Runtime';
 import ReleaseDate from '@/app/components/movies/movieCards/info/ReleaseDate';
-
 import NavigationWrapper from '@/app/components/movies/movieCards/wrappers/NavigationWrapper';
 import Favorite from '@/app/components/movies/movieCards/actions/Favorite';
 import SafeImage from '@/app/components/presentation/SafeImage';
+
+// Asset imports
 import PosterPlaceholder from '@/app/assets/defaults/movies/poster-placeholder.png';
+
+// Styles
 import styles from '@/app/styles/components/movies/movieCard.module.scss';
 
 export default function MovieCard({ movie }: { movie: Movie }) {

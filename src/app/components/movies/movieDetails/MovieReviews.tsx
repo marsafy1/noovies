@@ -1,9 +1,18 @@
 'use client';
+
+// External libraries
 import React, { useState, useEffect } from 'react';
 
+// Interface imports
 import { Review } from '@/app/interfaces/reviews';
+
+// Component imports
 import ReviewCard from '@/app/components/reviews/ReviewCard';
+
+// Styles
 import styles from '@/app/styles/content/movieDetails.module.scss';
+
+// Service imports
 import { get } from '@/app/services/api/requests';
 
 export default function MovieReviews({ movieId }: { movieId: number }) {

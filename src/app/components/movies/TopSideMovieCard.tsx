@@ -1,5 +1,10 @@
+// External libraries
 import React from 'react';
+
+// Interface imports
 import { Movie } from '@/app/interfaces/movies';
+
+// Component imports
 import VoteAverage from '@/app/components/movies/movieCards/info/VoteAverage';
 import VoteCount from '@/app/components/movies/movieCards/info/VoteCount';
 import Language from '@/app/components/movies/movieCards/info/Language';
@@ -7,6 +12,8 @@ import Adult from '@/app/components/movies/movieCards/info/Adult';
 import Runtime from '@/app/components/movies/movieCards/info/Runtime';
 import ReleaseDate from '@/app/components/movies/movieCards/info/ReleaseDate';
 import NavigationWrapper from './movieCards/wrappers/NavigationWrapper';
+
+// Styles
 import styles from '@/app/styles/components/movies/topSideMovie.module.scss';
 
 export default function TopSideMovieCard({ movie }: { movie: Movie }) {

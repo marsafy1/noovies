@@ -1,4 +1,7 @@
+// External libraries
 import React, { MouseEventHandler } from 'react';
+
+// Styles
 import styles from '@/app/styles/components/utils/buttons.module.scss';
 
 export default function PrimaryButton({

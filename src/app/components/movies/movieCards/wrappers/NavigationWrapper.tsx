@@ -1,7 +1,11 @@
 'use client';
+
+// External libraries
 import React from 'react';
-import { navigateToMovieDetails } from '@/app/services/navigation';
 import { useRouter } from 'next/navigation';
+
+// Service imports
+import { navigateToMovieDetails } from '@/app/services/navigation';
 
 export default function NavigationWrapper({
   children,

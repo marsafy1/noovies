@@ -1,9 +1,18 @@
+// External libraries
 import React from 'react';
+
+// Interface imports
 import { Movie } from '@/app/interfaces/movies';
+
+// Component imports
 import TopMovieCard from '@/app/components/movies/TopMovieCard';
 import TopSideMovieCard from '@/app/components/movies/TopSideMovieCard';
-import styles from '@/app/styles/content/movies.module.scss';
 import MoviesContainer from '@/app/components/movies/MoviesContainer';
+
+// Styles
+import styles from '@/app/styles/content/movies.module.scss';
+
+// Service imports
 import { get } from '@/app/services/api/requests';
 
 export default async function Movies() {

@@ -1,6 +1,12 @@
 'use client';
+
+// External libraries
 import React, { useEffect, useState } from 'react';
+
+// Component imports
 import PrimaryButton from '@/app/components/utils/Buttons/Button';
+
+// Styles
 import styles from '@/app/styles/components/movies/actions/favorite.module.scss';
 
 export default function Favorite({ movieId }: { movieId: number }) {

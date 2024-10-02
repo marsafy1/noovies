@@ -1,6 +1,11 @@
+// Next.js types and utilities
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
+
+// Styles
 import '@/app/styles/globals.scss';
+
+// Component imports
 import Navbar from '@/app/components/appbars/Navbar';
 
 const geistSans = localFont({

@@ -1,6 +1,9 @@
+// External libraries
 import React from 'react';
-import styles from '@/app/styles/components/movies/info/info.module.scss';
 import { UsersIcon } from '@heroicons/react/24/solid';
+
+// Styles
+import styles from '@/app/styles/components/movies/info/info.module.scss';
 
 export default function VoteCount({ count }: { count: number }) {
   return (

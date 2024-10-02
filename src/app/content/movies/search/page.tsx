@@ -1,8 +1,16 @@
 'use client';
-import { useSearchParams } from 'next/navigation';
+
+// External libraries
 import React, { useState, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
+
+// Component imports
 import MoviesContainer from '@/app/components/movies/MoviesContainer';
+
+// Interface imports
 import { Movie } from '@/app/interfaces/movies';
+
+// Service imports
 import { get } from '@/app/services/api/requests';
 
 export default function Search() {

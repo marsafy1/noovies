@@ -1,6 +1,9 @@
 'use client';
 
+// External libraries
 import { useEffect } from 'react';
+
+// Store imports
 import { useThemeStore } from '@/app/store/themeStore';
 
 export default function ThemeSwitch() {

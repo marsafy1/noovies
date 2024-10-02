@@ -1,7 +1,11 @@
 'use client';
-import { useRouter } from 'next/navigation';
-import styles from '@/app/styles/components/appbars/navbar.module.scss';
+
+// External libraries
 import React from 'react';
+import { useRouter } from 'next/navigation';
+
+// Styles
+import styles from '@/app/styles/components/appbars/navbar.module.scss';
 
 export default function Navtitle() {
   const router = useRouter();

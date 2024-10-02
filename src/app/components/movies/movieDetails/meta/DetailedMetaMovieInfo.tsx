@@ -1,8 +1,16 @@
 'use client';
+
+// External libraries
 import React, { useState, useEffect } from 'react';
+
+// Styles
 import styles from '@/app/styles/components/movieDetails/meta/detailedMetaMovieInfo.module.scss';
+
+// Interface imports
 import { DetailedMovie } from '@/app/interfaces/movies';
 import { CrewMember, CastMember } from '@/app/interfaces/members';
+
+// Component imports
 import MovieMembers from '@/app/components/movies/movieDetails/MovieMembers';
 
 export default function DetailedMetaMovieInfo({

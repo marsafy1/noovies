@@ -1,7 +1,16 @@
+// External libraries
 import React, { useState } from 'react';
+
+// Interface imports
 import { DetailedMovie } from '@/app/interfaces/movies';
+
+// Asset imports
 import BackdropPlaceholder from '@/app/assets/defaults/movies/backdrop-placeholder.png';
+
+// Component imports
 import SafeImage from '@/app/components/presentation/SafeImage';
+
+// Styles
 import styles from '@/app/styles/components/movieDetails/movieCover.module.scss';
 
 export default function MovieCover({

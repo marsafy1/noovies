@@ -1,7 +1,11 @@
 'use client';
+
+// External libraries
 import React, { useState } from 'react';
-import styles from '@/app/styles/components/appbars/navbar.module.scss';
 import { useRouter } from 'next/navigation';
+
+// Styles
+import styles from '@/app/styles/components/appbars/navbar.module.scss';
 
 export default function Search() {
   const router = useRouter();

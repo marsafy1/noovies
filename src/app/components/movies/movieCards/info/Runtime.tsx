@@ -1,6 +1,9 @@
+// External libraries
 import React from 'react';
-import styles from '@/app/styles/components/movies/info/info.module.scss';
 import { ClockIcon } from '@heroicons/react/24/solid';
+
+// Styles
+import styles from '@/app/styles/components/movies/info/info.module.scss';
 
 export default function Runtime({ runtime }: { runtime: number | undefined }) {
   function formatRuntime(runtime_minutes: number) {

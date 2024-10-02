@@ -1,9 +1,19 @@
 'use client';
+
+// External libraries
 import React, { useState, useEffect } from 'react';
+
+// Interface imports
 import { Movie } from '@/app/interfaces/movies';
+
+// Component imports
 import MovieCard from '@/app/components/movies/MovieCard';
+
+// Styles
 import moviesStyles from '@/app/styles/content/movies.module.scss';
 import styles from '@/app/styles/content/favorites.module.scss';
+
+// Service imports
 import { get } from '@/app/services/api/requests';
 
 export default function Favorites() {

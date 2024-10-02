@@ -1,9 +1,15 @@
+// External libraries
 import React from 'react';
+
+// Component imports
 import ThemeSwitch from '@/app/components/appbars/ThemeSwitch';
 import Navtitle from '@/app/components/appbars/Navtitle';
 import NavItem from '@/app/components/appbars/NavItem';
 import Search from '@/app/components/appbars/Search';
+
+// Styles
 import styles from '@/app/styles/components/appbars/navbar.module.scss';
+
 interface NavItem {
   name: string;
   href: string;

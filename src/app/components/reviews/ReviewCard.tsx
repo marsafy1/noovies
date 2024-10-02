@@ -1,6 +1,13 @@
+// External libraries
 import React from 'react';
+
+// Interface imports
 import { Review } from '@/app/interfaces/reviews';
+
+// Component imports
 import Avatar from '@/app/components/utils/Avatar';
+
+// Styles
 import styles from '@/app/styles/components/reviews/reviewCard.module.scss';
 
 export default function ReviewCard({ review }: { review: Review }) {

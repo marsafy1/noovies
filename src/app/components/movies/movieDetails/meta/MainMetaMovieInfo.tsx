@@ -1,6 +1,13 @@
+// External libraries
 import React from 'react';
+
+// Interface imports
 import { DetailedMovie } from '@/app/interfaces/movies';
+
+// Styles
 import styles from '@/app/styles/components/movieDetails/meta/mainMetaMovieInfo.module.scss';
+
+// Component imports
 import VoteAverage from '@/app/components/movies/movieCards/info/VoteAverage';
 import VoteCount from '@/app/components/movies/movieCards/info/VoteCount';
 import Language from '@/app/components/movies/movieCards/info/Language';

@@ -1,7 +1,13 @@
+// External libraries
 import React from 'react';
+
+// Interface imports
 import { Movie } from '@/app/interfaces/movies';
+
+// Component imports
 import MovieCard from '@/app/components/movies/MovieCard';
 
+// Styles
 import styles from '@/app/styles/content/movies.module.scss';
 
 export default function MoviesList({ movies }: { movies: Movie[] }) {

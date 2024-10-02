@@ -1,10 +1,22 @@
+// External libraries
 import React from 'react';
-import { MovieIDParams } from '@/app/interfaces/movies';
-import { DetailedMovie, DEFAULT_DETAILED_MOVIE } from '@/app/interfaces/movies';
+
+// Interface imports
+import {
+  MovieIDParams,
+  DetailedMovie,
+  DEFAULT_DETAILED_MOVIE,
+} from '@/app/interfaces/movies';
+
+// Component imports
 import MovieCover from '@/app/components/movies/movieDetails/MovieCover';
 import MovieInfo from '@/app/components/movies/movieDetails/MovieInfo';
-import styles from '@/app/styles/content/movieDetails.module.scss';
 import MovieReviews from '@/app/components/movies/movieDetails/MovieReviews';
+
+// Styles
+import styles from '@/app/styles/content/movieDetails.module.scss';
+
+// Service imports
 import { get } from '@/app/services/api/requests';
 
 export default async function page({ params }: { params: MovieIDParams }) {
