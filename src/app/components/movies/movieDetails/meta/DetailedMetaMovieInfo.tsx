@@ -1,7 +1,8 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import styles from '@/app/styles/components/movieDetails/meta/detailedMetaMovieInfo.module.scss';
-import { DetailedMovie, CrewMember, CastMember } from '@/app/interfaces/movies';
+import { DetailedMovie } from '@/app/interfaces/movies';
+import { CrewMember, CastMember } from '@/app/interfaces/members';
 import MovieMembers from '@/app/components/movies/movieDetails/MovieMembers';
 
 export default function DetailedMetaMovieInfo({

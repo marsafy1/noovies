@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { CrewMember, CastMember } from '@/app/interfaces/movies';
+import { CrewMember, CastMember } from '@/app/interfaces/members';
 import styles from '@/app/styles/components/movieDetails/movieMembers.module.scss';
 import { get } from '@/app/services/api/requests';
 export default function MovieMembers({

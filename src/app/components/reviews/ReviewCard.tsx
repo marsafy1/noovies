@@ -1,5 +1,5 @@
 import React from 'react';
-import { Review } from '@/app/interfaces/movies';
+import { Review } from '@/app/interfaces/reviews';
 import Avatar from '../utils/Avatar';
 import styles from '@/app/styles/components/reviews/reviewCard.module.scss';
 
