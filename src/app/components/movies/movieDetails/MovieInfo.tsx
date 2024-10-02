@@ -15,8 +15,10 @@ import DetailedMetaMovieInfo from '@/app/components/movies/movieDetails/meta/Det
 
 export default function MovieInfo({
   movieDetails,
+  trailerKey,
 }: {
   movieDetails: DetailedMovie;
+  trailerKey: number;
 }) {
   return (
     <div className={styles.movieInfo__meta}>
@@ -28,7 +30,10 @@ export default function MovieInfo({
       </div>
 
       <div className={styles.movieInfo__meta__about}>
-        <MainMetaMovieInfo movieDetails={movieDetails} />
+        <MainMetaMovieInfo
+          movieDetails={movieDetails}
+          trailerKey={trailerKey}
+        />
         <DetailedMetaMovieInfo movieDetails={movieDetails} />
       </div>
     </div>

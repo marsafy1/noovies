@@ -63,9 +63,9 @@ export default function Favorite({ movieId }: { movieId: number }) {
         className={`${styles.favoriteBtnContainer__btn} ${isFavorite ? styles.favoriteBtnContainer__btnRight : styles.favoriteBtnContainer__btnLeft} ${isExpanded ? styles.favoriteBtnContainer__btnCollapsed : ''}`}
       >
         <PrimaryButton
-          title={isFavorite ? 'Remove from Favorites' : 'Add to Favorites'}
+          title={isFavorite ? 'Liked' : 'Like'}
           handleClick={toggleFavorite}
-          type={isFavorite ? 'secondary' : 'primary'}
+          type={isFavorite ? 'primary' : 'secondary'}
         />
       </div>
       <FavoriteButtonFeedback

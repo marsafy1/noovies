@@ -30,6 +30,7 @@
 // Language
 .language {
   padding: 5px;
+  background: $primary-color;
   background: $gradient-primary-color;
   border-radius: 5px;
   @include center-flex;
@@ -41,4 +42,32 @@
     color: white;
     font-weight: bold;
   }
+}
+
+// Play Trailer
+.playTrailer {
+  @include center-flex;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: $primary-color;
+  background: $gradient-primary-color;
+  padding: 5px;
+  cursor: pointer;
+
+  &__icon {
+    @include center-flex;
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.playTrailer:hover {
+  background: transparent;
+  color: $primary-color;
+  border: 1px solid $primary-color;
+}
+.playTrailer:hover [class*='tooltip'] {
+  opacity: 1;
+  visibility: visible; /* Show the tooltip on hover */
 }

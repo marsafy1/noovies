@@ -14,11 +14,14 @@ import Language from '@/app/components/movies/movieCards/info/Language';
 import Adult from '@/app/components/movies/movieCards/info/Adult';
 import Runtime from '@/app/components/movies/movieCards/info/Runtime';
 import ReleaseDate from '@/app/components/movies/movieCards/info/ReleaseDate';
+import PlayTrailer from '@/app/components/movies/movieCards/info/PlayTrailer';
 
 export default function MainMetaMovieInfo({
   movieDetails,
+  trailerKey,
 }: {
   movieDetails: DetailedMovie;
+  trailerKey: number;
 }) {
   return (
     <div className={styles.mainMetaMovieInfo}>
@@ -57,10 +60,19 @@ export default function MainMetaMovieInfo({
         </div>
       </div>
       <div className={styles.mainMetaMovieInfo__overview}>
-        <span>
+        <div>
           <h4>Overview </h4>
-          {movieDetails.overview}
-        </span>
+          {/* <iframe
+            width="300"
+            height="200"
+            src={`https://www.youtube.com/embed/${trailerKey}?autoplay=1&mute=1`} // Autoplay and mute parameters
+            title="YouTube video player"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe> */}
+          <PlayTrailer trailerKey={trailerKey} />
+        </div>
+        <span>{movieDetails.overview}</span>
       </div>
     </div>
   );

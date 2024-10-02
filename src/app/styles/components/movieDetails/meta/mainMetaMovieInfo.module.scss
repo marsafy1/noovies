@@ -37,12 +37,16 @@
   &__overview {
     margin-top: 10px;
     color: white;
+    div {
+      @include h-flex;
+    }
     h4 {
+      margin-right: 10px;
       color: $primary-color;
     }
     span {
       display: block;
-      padding: 30px;
+      padding: 20px;
     }
     // border: 1px solid red;
   }

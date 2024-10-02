@@ -26,6 +26,8 @@
       &__bottom {
         position: relative;
         height: 50px;
+        display: flex;
+
         &__overview {
           color: grey;
           margin-bottom: 10px;

@@ -23,7 +23,7 @@ export default async function page({ params }: { params: MovieIDParams }) {
   var loading = true;
   const movieDetails = await getMovieDetails();
   var loading = false;
-  var trailerKey: string =
+  var trailerKey: number =
     movieDetails.videos.results.length > 0
       ? movieDetails.videos.results[0].key
       : null;
@@ -44,7 +44,7 @@ export default async function page({ params }: { params: MovieIDParams }) {
       {!loading && (
         <div className={styles.movieDetails__info}>
           <MovieCover movieDetails={movieDetails} />
-          <MovieInfo movieDetails={movieDetails} />
+          <MovieInfo movieDetails={movieDetails} trailerKey={trailerKey} />
         </div>
       )}
       {!loading && <MovieReviews movieId={movieDetails.id} />}
