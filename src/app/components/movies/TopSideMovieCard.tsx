@@ -12,6 +12,10 @@ import Adult from '@/app/components/movies/movieCards/info/Adult';
 import Runtime from '@/app/components/movies/movieCards/info/Runtime';
 import ReleaseDate from '@/app/components/movies/movieCards/info/ReleaseDate';
 import NavigationWrapper from './movieCards/wrappers/NavigationWrapper';
+import SafeImage from '@/app/components/presentation/SafeImage';
+
+// Asset imports
+import BackdropPlaceholder from '@/app/assets/defaults/movies/backdrop-placeholder.png';
 
 // Styles
 import styles from '@/app/styles/components/movies/topSideMovie.module.scss';
@@ -20,9 +24,11 @@ export default function TopSideMovieCard({ movie }: { movie: Movie }) {
   return (
     <NavigationWrapper movieId={movie.id}>
       <div className={styles.topSideMovieCard}>
-        <img
-          className={styles.topSideMovieCard__backdrop}
+        <SafeImage
           src={'https://image.tmdb.org/t/p/w780/' + movie.backdrop_path}
+          altSrc={BackdropPlaceholder}
+          imgClassName={styles.topSideMovieCard__backdrop}
+          alt="Movie Image"
         />
         <div className={styles.topSideMovieCard__info}>
           <div

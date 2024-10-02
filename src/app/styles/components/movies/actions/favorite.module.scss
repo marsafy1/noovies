@@ -1,4 +1,67 @@
+@import 'variables.scss';
+@import 'mixins.scss';
+
 .favoriteBtnContainer {
-  position: relative;
+  position: absolute;
+  height: 100%;
   width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  &Red {
+    background-color: $error-color;
+  }
+  &Green {
+    background-color: $success-color;
+  }
+  &__success {
+    display: none;
+    width: 0%;
+    overflow: hidden;
+    transition: expandFeedBack 0.3s ease;
+    p {
+      font-weight: lighter;
+    }
+    span {
+      margin-left: 4px;
+      height: 20px;
+      width: 20px;
+    }
+  }
+
+  &__successExpanded {
+    // Expanded state for success
+    @include center-flex;
+
+    width: 100%; // Width when expanded
+  }
+
+  &__btn {
+    width: 100%;
+    overflow: hidden;
+    transition: width 0.3s ease;
+  }
+  &__btnLeft {
+    position: absolute;
+    left: 0;
+  }
+  &__btnRight {
+    position: absolute;
+    right: 0;
+  }
+  &__btnCollapsed {
+    width: 0%; // Width when expanded
+  }
+}
+
+@keyframes expandFeedBack {
+  0% {
+    display: block;
+    width: 100%;
+  }
+  100% {
+    display: none;
+    width: 0%;
+  }
 }

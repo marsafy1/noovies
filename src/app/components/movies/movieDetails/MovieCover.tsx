@@ -21,22 +21,11 @@ export default function MovieCover({
   return (
     <div className={styles.movieCover}>
       <div className={styles.movieCover__gradient}></div>
-      {movieDetails.backdrop_path && (
-        <img
-          src={'https://image.tmdb.org/t/p/w780/' + movieDetails.backdrop_path}
-        />
-      )}
-      {!movieDetails.backdrop_path && (
-        <SafeImage
-          src={
-            'https://image.tmdb.org/t/p/original/' + movieDetails.backdrop_path
-          }
-          altSrc={BackdropPlaceholder}
-          alt="Movie Image"
-          width={780}
-          height={400}
-        />
-      )}
+      <SafeImage
+        src={'https://image.tmdb.org/t/p/w780/' + movieDetails.backdrop_path}
+        altSrc={BackdropPlaceholder}
+        alt="Movie Image"
+      />
     </div>
   );
 }

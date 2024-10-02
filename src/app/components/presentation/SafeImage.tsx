@@ -7,15 +7,15 @@ export default function SafeImage({
   altSrc,
   alt,
   imgClassName,
-  height,
-  width,
+  width = 16,
+  height = 9,
 }: {
   src: string;
   altSrc: StaticImageData;
   alt: string;
   imgClassName?: string;
-  height: number;
-  width: number;
+  height?: number;
+  width?: number;
 }) {
   const [error, setError] = React.useState(false);
   return (
@@ -26,6 +26,7 @@ export default function SafeImage({
       onError={() => setError(true)}
       width={width}
       height={height}
+      layout="responsive"
     />
   );
 }

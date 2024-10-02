@@ -23,7 +23,8 @@ export default function MoviesContainer({
     <div className={styles.movies__normalMovies}>
       <div className={styles.movies__normalMovies__subtitle}>
         <h3>
-          {title} - <span>{subtitle}</span>
+          {title}
+          {subtitle && <span> - {subtitle}</span>}
         </h3>
       </div>
       <MoviesList movies={movies} />

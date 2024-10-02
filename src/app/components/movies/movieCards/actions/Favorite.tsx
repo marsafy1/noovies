@@ -5,12 +5,15 @@ import React, { useEffect, useState } from 'react';
 
 // Component imports
 import PrimaryButton from '@/app/components/utils/Buttons/Button';
+import FavoriteButtonFeedback from '@/app/components/feedback/FavoriteButtonFeedback';
 
 // Styles
 import styles from '@/app/styles/components/movies/actions/favorite.module.scss';
+import btnStyles from '@/app/styles/components/utils/buttons.module.scss';
 
 export default function Favorite({ movieId }: { movieId: number }) {
   const [isFavorite, setIsFavorite] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
 
   // Utility function to get favorites from localStorage
   const getFavorites = () => {
@@ -26,6 +29,7 @@ export default function Favorite({ movieId }: { movieId: number }) {
 
   // Toggle favorite status
   const toggleFavorite = () => {
+    setIsExpanded(true);
     const favorites = getFavorites();
 
     if (isFavorite) {
@@ -39,6 +43,10 @@ export default function Favorite({ movieId }: { movieId: number }) {
       localStorage.setItem('favorites', JSON.stringify(favorites));
       setIsFavorite(true);
     }
+
+    setTimeout(() => {
+      setIsExpanded(false);
+    }, 3000);
   };
 
   return (
@@ -46,10 +54,23 @@ export default function Favorite({ movieId }: { movieId: number }) {
       {/* <button onClick={toggleFavorite}>
         {isFavorite ? 'Remove from Favorites' : 'Add to Favorites'}
       </button> */}
-      <PrimaryButton
-        title={isFavorite ? 'Remove from Favorites' : 'Add to Favorites'}
-        handleClick={toggleFavorite}
-        type={isFavorite ? 'secondary' : 'primary'}
+
+      <FavoriteButtonFeedback
+        isExpanded={isExpanded && !isFavorite}
+        isFavorite={isFavorite}
+      />
+      <div
+        className={`${styles.favoriteBtnContainer__btn} ${isFavorite ? styles.favoriteBtnContainer__btnRight : styles.favoriteBtnContainer__btnLeft} ${isExpanded ? styles.favoriteBtnContainer__btnCollapsed : ''}`}
+      >
+        <PrimaryButton
+          title={isFavorite ? 'Remove from Favorites' : 'Add to Favorites'}
+          handleClick={toggleFavorite}
+          type={isFavorite ? 'secondary' : 'primary'}
+        />
+      </div>
+      <FavoriteButtonFeedback
+        isExpanded={isExpanded && isFavorite}
+        isFavorite={isFavorite}
       />
     </div>
   );

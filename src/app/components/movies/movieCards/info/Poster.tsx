@@ -12,9 +12,9 @@ export default function Poster({ poster_path }: { poster_path: string }) {
     <SafeImage
       src={'https://image.tmdb.org/t/p/w780/' + poster_path}
       altSrc={PosterPlaceholder}
-      alt="Movie Image"
-      width={250}
-      height={350}
+      alt="Poster Image"
+      width={2}
+      height={3}
     />
   );
 }

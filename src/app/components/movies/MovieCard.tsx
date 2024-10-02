@@ -32,10 +32,9 @@ export default function MovieCard({ movie }: { movie: Movie }) {
           <SafeImage
             src={posterSrc}
             altSrc={PosterPlaceholder}
-            imgClassName="movieCard__poster"
             alt="Movie Image"
-            width={250}
-            height={350}
+            width={2}
+            height={3}
           />
         </div>
         <div>
@@ -43,7 +42,7 @@ export default function MovieCard({ movie }: { movie: Movie }) {
             <div className={styles.movieCard__info}>
               <div className={styles.movieCard__info__top}>
                 <Language lang={movie.original_language} />
-                <Adult adult={movie.adult} />
+                {/* <Adult adult={movie.adult} /> */}
               </div>
               <div className={styles.movieCard__info__bottom}>
                 <VoteAverage average={movie.vote_average} />
@@ -53,7 +52,7 @@ export default function MovieCard({ movie }: { movie: Movie }) {
           </NavigationWrapper>
         </div>
       </div>
-      <div className="d-flex justify-content-center">
+      <div className={styles.movieCard__fav}>
         <Favorite movieId={movie.id} />
       </div>
     </div>

@@ -33,6 +33,8 @@
     width: 100%;
     height: 100%;
 
+    padding: 10px;
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -43,7 +45,11 @@
     &__bottom {
       @include between-flex-h;
     }
-
-    padding: 20px;
+  }
+  &__fav {
+    @include center-flex;
+    position: relative;
+    overflow: hidden;
+    height: 50px;
   }
 }
