@@ -1,8 +1,8 @@
 import React from 'react';
 import ThemeSwitch from '@/app/components/appbars/ThemeSwitch';
-import Navtitle from './Navtitle';
-import NavItem from './NavItem';
-import Search from './Search';
+import Navtitle from '@/app/components/appbars/Navtitle';
+import NavItem from '@/app/components/appbars/NavItem';
+import Search from '@/app/components/appbars/Search';
 import styles from '@/app/styles/components/appbars/navbar.module.scss';
 interface NavItem {
   name: string;

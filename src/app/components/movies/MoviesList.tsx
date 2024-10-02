@@ -1,6 +1,7 @@
 import React from 'react';
 import { Movie } from '@/app/interfaces/movies';
-import MovieCard from './MovieCard';
+import MovieCard from '@/app/components/movies/MovieCard';
+
 import styles from '@/app/styles/content/movies.module.scss';
 
 export default function MoviesList({ movies }: { movies: Movie[] }) {

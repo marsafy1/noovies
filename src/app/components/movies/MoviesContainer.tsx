@@ -1,7 +1,7 @@
 import React from 'react';
 import { Movie } from '@/app/interfaces/movies';
 import styles from '@/app/styles/content/movies.module.scss';
-import MoviesList from './MoviesList';
+import MoviesList from '@/app/components/movies/MoviesList';
 
 export default function MoviesContainer({
   movies,

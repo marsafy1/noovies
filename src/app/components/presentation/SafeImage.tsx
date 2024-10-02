@@ -1,7 +1,6 @@
 'use client';
-import { StaticImageData } from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import React from 'react';
-import Image from 'next/image';
 
 export default function SafeImage({
   src,

@@ -1,12 +1,12 @@
 import React from 'react';
 import { DetailedMovie } from '@/app/interfaces/movies';
 import styles from '@/app/styles/components/movieDetails/meta/mainMetaMovieInfo.module.scss';
-import VoteAverage from '../../movieCards/info/VoteAverage';
-import VoteCount from '../../movieCards/info/VoteCount';
-import Language from '../../movieCards/info/Language';
-import Adult from '../../movieCards/info/Adult';
-import Runtime from '../../movieCards/info/Runtime';
-import ReleaseDate from '../../movieCards/info/ReleaseDate';
+import VoteAverage from '@/app/components/movies/movieCards/info/VoteAverage';
+import VoteCount from '@/app/components/movies/movieCards/info/VoteCount';
+import Language from '@/app/components/movies/movieCards/info/Language';
+import Adult from '@/app/components/movies/movieCards/info/Adult';
+import Runtime from '@/app/components/movies/movieCards/info/Runtime';
+import ReleaseDate from '@/app/components/movies/movieCards/info/ReleaseDate';
 
 export default function MainMetaMovieInfo({
   movieDetails,

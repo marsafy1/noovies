@@ -1,6 +1,6 @@
 import React from 'react';
 import { Review } from '@/app/interfaces/reviews';
-import Avatar from '../utils/Avatar';
+import Avatar from '@/app/components/utils/Avatar';
 import styles from '@/app/styles/components/reviews/reviewCard.module.scss';
 
 export default function ReviewCard({ review }: { review: Review }) {
