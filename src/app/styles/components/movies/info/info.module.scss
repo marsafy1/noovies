@@ -1,0 +1,44 @@
+@import 'variables.scss';
+@import 'mixins.scss';
+
+// Adult
+.adult {
+  border: 2px solid lime;
+  height: 40px;
+  width: 40px;
+}
+
+// Scores
+.score {
+  @include h-flex;
+  &__icon {
+    @include center-flex;
+
+    width: 24px;
+  }
+  &__number {
+  }
+}
+
+// Runtime
+.runtime {
+  &__value {
+    color: red;
+  }
+}
+
+// Language
+.language {
+  padding: 5px;
+  background: $gradient-primary-color;
+  border-radius: 5px;
+  @include center-flex;
+  &__icon {
+    @include center-flex;
+    width: 24px;
+  }
+  &__value {
+    color: white;
+    font-weight: bold;
+  }
+}

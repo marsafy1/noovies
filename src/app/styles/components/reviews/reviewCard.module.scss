@@ -17,7 +17,9 @@
       &__meta {
         margin-left: 5px;
         &__name {
-          color: $primary-color;
+          // color: $primary-color;
+          color: white;
+          font-weight: bold;
         }
         &__time {
           font-size: 12px;

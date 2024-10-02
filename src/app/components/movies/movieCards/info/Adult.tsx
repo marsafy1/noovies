@@ -1,5 +1,7 @@
 import React from 'react';
+import { BeakerIcon } from '@heroicons/react/24/solid';
+import styles from '@/app/styles/components/movies/info/info.module.scss';
 
 export default function Adult({ adult }: { adult: boolean }) {
-  return <div>{adult ? '18+' : 'Safe'}</div>;
+  return <div className={styles.adult}>{adult ? '18+' : <BeakerIcon />}</div>;
 }

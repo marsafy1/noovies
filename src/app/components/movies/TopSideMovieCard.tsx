@@ -17,8 +17,8 @@ export default function TopSideMovieCard({ movie }: { movie: Movie }) {
           <div
             className={`${styles.topSideMovieCard__info__top} d-flex justify-content-between`}
           >
-            <Adult adult={movie.adult} />
-            <Language lang={movie.original_language} />
+            {/* <Adult adult={movie.adult} /> */}
+            {/* <Language lang={movie.original_language} /> */}
           </div>
           <div className={styles.topSideMovieCard__info__bottom}>
             <div>

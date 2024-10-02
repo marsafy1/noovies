@@ -33,6 +33,7 @@ export default function MainMetaMovieInfo({
               </div>
             );
           })}
+          <div className="white-circle"></div>
           <b>
             <ReleaseDate
               releaseDate={movieDetails.release_date}
@@ -45,7 +46,7 @@ export default function MainMetaMovieInfo({
           <VoteCount count={movieDetails.vote_count} />
           <Runtime runtime={movieDetails.runtime} />
           <Language lang={movieDetails.original_language} />
-          <Adult adult={movieDetails.adult} />
+          {/* <Adult adult={movieDetails.adult} /> */}
         </div>
       </div>
       <div className={styles.mainMetaMovieInfo__overview}>
