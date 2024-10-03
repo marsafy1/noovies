@@ -26,7 +26,7 @@ export default function TopMovieCard({ movie }: { movie: Movie }) {
     <NavigationWrapper movieId={movie.id}>
       <div className={styles.topMovieCard}>
         <SafeImage
-          src={'https://image.tmdb.org/t/p/w780/' + movie.backdrop_path}
+          src={'https://image.tmdb.org/t/p/original/' + movie.backdrop_path}
           altSrc={BackdropPlaceholder}
           imgClassName={styles.topMovieCard__backdrop}
           alt="Movie Image"

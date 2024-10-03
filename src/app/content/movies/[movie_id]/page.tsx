@@ -12,6 +12,7 @@ import {
 import MovieCover from '@/app/components/movies/movieDetails/MovieCover';
 import MovieInfo from '@/app/components/movies/movieDetails/MovieInfo';
 import MovieReviews from '@/app/components/movies/movieDetails/MovieReviews';
+import DetailedMetaMovieInfo from '@/app/components/movies/movieDetails/meta/DetailedMetaMovieInfo';
 
 // Styles
 import styles from '@/app/styles/content/movieDetails.module.scss';
@@ -47,6 +48,7 @@ export default async function page({ params }: { params: MovieIDParams }) {
           <MovieInfo movieDetails={movieDetails} trailerKey={trailerKey} />
         </div>
       )}
+      {/* <DetailedMetaMovieInfo movieDetails={movieDetails} /> */}
       {!loading && <MovieReviews movieId={movieDetails.id} />}
     </div>
   );

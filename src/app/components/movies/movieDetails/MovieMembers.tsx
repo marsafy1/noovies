@@ -1,5 +1,5 @@
 // External libraries
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 // Enum imports
 import { memberTypes } from '@/app/enums/memberType';
@@ -7,13 +7,16 @@ import { memberTypes } from '@/app/enums/memberType';
 // Interface imports
 import { CrewMember, CastMember } from '@/app/interfaces/members';
 
+// Component imports
+import Avatar from '@/app/components/utils/Avatar';
+
 // Styles
 import styles from '@/app/styles/components/movieDetails/movieMembers.module.scss';
 
 // Service imports
 import { get } from '@/app/services/api/requests';
 
-export default function MovieMembers({
+export default async function MovieMembers({
   movieId,
   castType,
 }: {
@@ -23,7 +26,7 @@ export default function MovieMembers({
   const title = castType == memberTypes.directors ? 'Directors' : 'Cast';
   type Member = CrewMember | CastMember;
 
-  const [members, setMembers] = useState<Member[]>([]);
+  var members: Member[] = await getMovieCredits();
 
   function handleDirectorsPopulation(crew: CrewMember[]): CrewMember[] {
     let directors: CrewMember[] = [];
@@ -39,43 +42,43 @@ export default function MovieMembers({
     cast = cast
       .sort((a: Member, b: Member) => b.popularity - a.popularity)
       .slice(0, 5); // Get the 5 most popular from the cast
+
     return cast;
   }
 
   async function getMovieCredits() {
+    let members: Member[] = [];
     try {
       let data = await get(`movie/${movieId}/credits`);
-      let members: Member[] = [];
-
+      console.log(data);
       if (castType == memberTypes.directors) {
         members = handleDirectorsPopulation(data.crew);
       } else if (castType == memberTypes.cast) {
         members = handleCastPopulation(data.cast);
       }
-      setMembers(members);
     } catch (error) {
       console.log(error);
+    } finally {
+      return members;
     }
   }
 
-  useEffect(() => {
-    getMovieCredits();
-  }, []);
-
   return (
-    <div className={styles.cast}>
-      <div className={styles.cast__title}>
+    <div className={styles.member}>
+      <div className={styles.member__title}>
         <h4>{title}</h4>
       </div>
-      <div className={styles.cast__list}>
+      <div className={styles.member__list}>
         {members.map((member: Member) => {
           return (
-            <div key={member.id}>
-              {member.original_name}
-              {/* {' as '}
-              <b>
-                {castType === 'cast' ? (member as CastMember).character : ''}
-              </b> */}
+            <div key={member.id} className={styles.member__list__item}>
+              <Avatar
+                src={`https://image.tmdb.org/t/p/w92${member.profile_path}`}
+              />
+              <span>
+                <strong>{member.original_name}</strong>
+                <small>{(member as CastMember).character}</small>
+              </span>
             </div>
           );
         })}

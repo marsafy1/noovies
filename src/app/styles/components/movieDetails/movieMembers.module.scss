@@ -2,13 +2,31 @@
 .member {
   border: 1px solid lime;
 
-  &__membersGroup {
-    border: 1px solid purple;
-    &__title {
-      color: var(--primary-color);
-    }
-    &__list {
-      border: 1px solid blue;
+  &__title {
+    color: var(--primary-color);
+  }
+  &__list {
+    border: 1px solid blue;
+    // display: flex;
+    // display: grid;
+    // grid-template-columns: repeat(3, 1fr);
+    // gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    &__item {
+      min-width: 100px;
+      margin: 5px;
+      display: flex;
+      align-items: center;
+      span {
+        display: flex;
+        flex-direction: column;
+        margin-left: 5px;
+        small {
+          color: grey;
+        }
+      }
     }
   }
 }
