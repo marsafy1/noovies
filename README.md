@@ -7,14 +7,25 @@
 
 noovies is a movie platform built with React and Next.js integrated with [TMDB API](https://www.themoviedb.org/documentation/api) that allows users to explore trending and new movies. Users can view detailed information about movies, including cast and reviews. Additionally, users can like or dislike movies and save them to their favorites and discover similar movies based on a current movie. The platform includes a dark and light theme toggle for a personalized viewing experience.
 
+
+## Table of Contents
+
+- [Application Design](#application-design)
+- [Naming Conventions](#naming-conventions)
+- [Structure](#structure)
+- [Getting Started](#getting-started)
+
+  
 ## Application Design
 - **No external** UI libraries (such as Tailwind, Bootstrap, or MUI5) were used, highlighting my ability to tailor custom styles from scratch. The only installed package is Heroicons, used solely for icons.
 - **Performance Optimization**
      - **Server-Side Rendering (SSR)**: Was used for fetching data to leave the client with less responsibilities and to enhance SEO as well. Some data were left for the client because they are lightweight and not crucial for SEO such as movie reviews!
      - **Static Site Generation (SSG)**: Was utilized for pages that do not require real-time data.
      - **Lazy Loading**: Was mostly use for images. Utilizing the power of nextJS.
+     - **Client Components**: Was used whenever we needed interaction with a DOM element.
      - **Appropriate Images Size**: TMDB provides multiple sizes, instead of getting the best, we get the appropriate size depending on the component size.
      - **Paging**: Getting movies in batches(pages) in the homeland page.
+     - **Handling errors**: All errors are handled gracefully with try/catch statements. Including searching for a movie with invalid ID.
      
 
 ## Naming Conventions
