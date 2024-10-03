@@ -7,6 +7,7 @@ import '@/app/styles/globals.scss';
 
 // Component imports
 import Navbar from '@/app/components/appbars/Navbar';
+import ScrollUp from '@/app/components/utils/ScrollUp';
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -33,6 +34,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <Navbar />
+        <ScrollUp />
         <div className="content">{children}</div>
       </body>
     </html>

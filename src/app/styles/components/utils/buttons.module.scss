@@ -63,3 +63,15 @@
   background-color: var(--primary-color);
   color: var(--background-color);
 }
+
+// Circle Button
+.circleBtn {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 7px;
+  background: var(--primary-color);
+  background: $gradient-primary-color;
+}

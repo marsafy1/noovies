@@ -19,6 +19,7 @@ export default function MoviesList({
 }: {
   initialMovies: Movie[];
 }) {
+  const MAX_PAGES = 10;
   const [movies, setMovies] = useState<Movie[]>(initialMovies);
   const [page, setPage] = useState<number>(1);
 
@@ -39,10 +40,12 @@ export default function MoviesList({
 
   // Scroll handler to fetch more movies when reaching the bottom
   function handleScroll() {
-    const bottom =
-      window.innerHeight + window.scrollY >= document.body.offsetHeight - 2;
-    if (bottom) {
-      setPage((prevPage) => prevPage + 1); // Increment page when bottom is reached
+    if (page < MAX_PAGES) {
+      const bottom =
+        window.innerHeight + window.scrollY >= document.body.offsetHeight - 2;
+      if (bottom) {
+        setPage((prevPage) => prevPage + 1); // Increment page when bottom is reached
+      }
     }
   }
 

@@ -1,3 +1,4 @@
+'use client';
 // External libraries
 import React, { MouseEventHandler } from 'react';
 

@@ -23,7 +23,7 @@ import styles from '@/app/styles/components/movies/movieCard.module.scss';
 
 export default function MovieCard({ movie }: { movie: Movie }) {
   const posterSrc: string =
-    `https://image.tmdb.org/t/p/original/${movie.poster_path}`.toString();
+    `https://image.tmdb.org/t/p/w342/${movie.poster_path}`.toString();
   return (
     <div className={styles.movieCardContainer}>
       <div className={styles.movieCard}>

@@ -27,6 +27,7 @@ export default function SafeImage({
       width={width}
       height={height}
       layout="responsive"
+      loading="lazy"
     />
   );
 }
