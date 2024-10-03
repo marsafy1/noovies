@@ -3,6 +3,10 @@
 
 .movieCardContainer {
   margin: 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .movieCard {
   position: relative;
@@ -12,6 +16,7 @@
 
   overflow: hidden;
   margin-bottom: 10px;
+
   &__poster {
     object-fit: cover;
     width: $movie-card-width;

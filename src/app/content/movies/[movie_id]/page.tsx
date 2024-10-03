@@ -8,6 +8,7 @@ import { MovieIDParams, DetailedMovie } from '@/app/interfaces/movies';
 import MovieCoverSection from '@/app/sections/movieDetails/MovieCoverSection';
 import MovieInfoSection from '@/app/sections/movieDetails/MovieInfoSection';
 import MovieReviewsSection from '@/app/sections/movieDetails/MovieReviewsSection';
+import MovieSlider from '@/app/sections/moviesContainer/MovieSliderContainer';
 import Empty from '@/app/components/feedback/Empty';
 
 // Styles
@@ -62,6 +63,11 @@ export default async function page({ params }: { params: MovieIDParams }) {
         <MovieCoverSection movieDetails={movieDetails} />
         <MovieInfoSection movieDetails={movieDetails} trailerKey={trailerKey} />
       </div>
+
+      <MovieSlider
+        title="Similiar Movies"
+        path={`movie/${movieDetails.id}/similar`}
+      />
       <MovieReviewsSection movieId={movieDetails.id} />
     </div>
   );

@@ -1,5 +1,6 @@
 // External libraries
 import React, { useState, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation'; // Import for URL params
 
 // Interfaces
 import { Movie } from '@/app/interfaces/movies';
@@ -27,6 +28,10 @@ export default function MoviesList({
   const MAX_PAGES = 10;
   const [movies, setMovies] = useState<Movie[]>(initialMovies);
   const [page, setPage] = useState<number>(1);
+  const searchParams = useSearchParams(); // Access URL params
+
+  // Get the search query from the URL if it exists
+  const searchQuery = searchParams.get('search_query');
 
   async function getMoreMovies(page: number) {
     try {
@@ -60,8 +65,10 @@ export default function MoviesList({
   }
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    if (!searchQuery) {
+      window.addEventListener('scroll', handleScroll);
+      return () => window.removeEventListener('scroll', handleScroll);
+    }
   }, []);
 
   useEffect(() => {
