@@ -41,6 +41,7 @@
 
     &__top {
       @include between-flex-h;
+      color: white;
     }
     &__bottom {
       @include between-flex-h;
