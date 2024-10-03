@@ -35,7 +35,7 @@ export default function MovieListRow({
           return <MovieCard key={index} movie={movie} />;
         })}
       {isEmptyMovies() && !loading && (
-        <div className="h-100-without-nav">
+        <div style={{ height: '150px', width: '100%' }}>
           <Empty title="Nothing found" />
         </div>
       )}
