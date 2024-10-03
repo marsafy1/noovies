@@ -24,7 +24,7 @@ export default function Search() {
   const [query, setQuery] = useState<string>('');
 
   function handleSearch() {
-    // content/movies?search_query=ahmed
+    if (!query || query.length == 0) return;
     router.push(`/content/movies/search?search_query=${query}`);
   }
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
@@ -37,7 +37,7 @@ export default function Search() {
     <div className={styles.navbar__start__search}>
       <input
         className={styles.navbar__start__search__inputField}
-        placeholder="Search"
+        placeholder="Search Movies"
         value={query}
         onChange={(e) => setQuery(e.target.value)} // Update query state on input change
         onKeyDown={handleKeyDown} // Detect when the Enter key is pressed
