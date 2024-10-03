@@ -13,7 +13,7 @@ import SafeImage from '@/app/components/presentation/SafeImage';
 // Styles
 import styles from '@/app/styles/components/movieDetails/movieCover.module.scss';
 
-export default function MovieCover({
+export default function MovieCoverSection({
   movieDetails,
 }: {
   movieDetails: DetailedMovie;

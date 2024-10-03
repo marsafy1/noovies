@@ -9,9 +9,9 @@ import {
 } from '@/app/interfaces/movies';
 
 // Component imports
-import MovieCover from '@/app/components/movies/movieDetails/MovieCover';
-import MovieInfo from '@/app/components/movies/movieDetails/MovieInfo';
-import MovieReviews from '@/app/components/movies/movieDetails/MovieReviews';
+import MovieCoverSection from '@/app/sections/movieDetails/MovieCoverSection';
+import MovieInfoSection from '@/app/sections/movieDetails/MovieInfoSection';
+import MovieReviewsSection from '@/app/sections/movieDetails/MovieReviewsSection';
 import DetailedMetaMovieInfo from '@/app/components/movies/movieDetails/meta/DetailedMetaMovieInfo';
 
 // Styles
@@ -44,12 +44,15 @@ export default async function page({ params }: { params: MovieIDParams }) {
     <div className={styles.movieDetails}>
       {!loading && (
         <div className={styles.movieDetails__info}>
-          <MovieCover movieDetails={movieDetails} />
-          <MovieInfo movieDetails={movieDetails} trailerKey={trailerKey} />
+          <MovieCoverSection movieDetails={movieDetails} />
+          <MovieInfoSection
+            movieDetails={movieDetails}
+            trailerKey={trailerKey}
+          />
         </div>
       )}
       {/* <DetailedMetaMovieInfo movieDetails={movieDetails} /> */}
-      {!loading && <MovieReviews movieId={movieDetails.id} />}
+      {!loading && <MovieReviewsSection movieId={movieDetails.id} />}
     </div>
   );
 }

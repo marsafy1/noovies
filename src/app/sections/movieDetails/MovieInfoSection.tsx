@@ -13,7 +13,7 @@ import Poster from '@/app/components/movies/movieCards/info/Poster';
 import MainMetaMovieInfo from '@/app/components/movies/movieDetails/meta/MainMetaMovieInfo';
 import DetailedMetaMovieInfo from '@/app/components/movies/movieDetails/meta/DetailedMetaMovieInfo';
 
-export default function MovieInfo({
+export default function MovieInfoSection({
   movieDetails,
   trailerKey,
 }: {

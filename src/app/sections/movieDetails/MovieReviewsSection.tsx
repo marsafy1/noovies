@@ -16,7 +16,7 @@ import styles from '@/app/styles/content/movieDetails.module.scss';
 // Service imports
 import { get } from '@/app/services/api/requests';
 
-export default function MovieReviews({ movieId }: { movieId: number }) {
+export default function MovieReviewsSection({ movieId }: { movieId: number }) {
   const apiToken = process.env.NEXT_PUBLIC_TMDB_API_TOKEN;
   const [reviews, setReviews] = useState<Review[]>([]);
   const [loading, setLoading] = useState<boolean>(true);

@@ -12,7 +12,7 @@ import TopSideMovieCard from '@/app/components/movies/movieCards/TopSideMovieCar
 // Styles
 import styles from '@/app/styles/content/movies.module.scss';
 
-export default function TrendingPlayshow({
+export default function TrendingPlayshowSection({
   trendingMovies,
 }: {
   trendingMovies: Movie[];

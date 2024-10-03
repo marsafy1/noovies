@@ -5,17 +5,17 @@ import React from 'react';
 import { Movie } from '@/app/interfaces/movies';
 
 // Component imports
-import MoviesContainer from '@/app/components/movies/moviesContainer/MoviesContainer';
-import MovieSlider from '@/app/components/movies/moviesContainer/MovieSliderContainer';
+import MoviesContainer from '@/app/sections/moviesContainer/MoviesContainer';
+import MovieSlider from '@/app/sections/moviesContainer/MovieSliderContainer';
 import Loading from '@/app/components/feedback/Loading';
-import TrendingPlayshow from '@/app/sections/TrendingPlayshow';
+import TrendingPlayshowSection from '@/app/sections/TrendingPlayshowSection';
+import MoviesDisplaySection from '@/app/sections/MoviesDisplaySection';
 
 // Styles
 import styles from '@/app/styles/content/movies.module.scss';
 
 // Service imports
 import { get } from '@/app/services/api/requests';
-import MoviesDisplay from '@/app/sections/MoviesDisplay';
 
 export default async function Movies() {
   var loading = true;
@@ -38,11 +38,13 @@ export default async function Movies() {
         <div className={styles.movies__topMovies__subtitle}>
           <h3>Movies on Fire 🔥</h3>
         </div>
-        {!loading && <TrendingPlayshow trendingMovies={movies.slice(0, 5)} />}
+        {!loading && (
+          <TrendingPlayshowSection trendingMovies={movies.slice(0, 5)} />
+        )}
         {loading && <Loading />}
       </div>
 
-      <MoviesDisplay movies={movies} />
+      <MoviesDisplaySection movies={movies} />
     </div>
   );
 }

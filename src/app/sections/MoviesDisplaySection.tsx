@@ -9,10 +9,10 @@ import { Movie } from '@/app/interfaces/movies';
 import { Bars3Icon, Squares2X2Icon } from '@heroicons/react/24/solid';
 
 // Component imports
-import MoviesContainer from '@/app/components/movies/moviesContainer/MoviesContainer';
-import MovieSlider from '@/app/components/movies/moviesContainer/MovieSliderContainer';
+import MoviesContainer from '@/app/sections/moviesContainer/MoviesContainer';
+import MovieSlider from '@/app/sections/moviesContainer/MovieSliderContainer';
 import Loading from '@/app/components/feedback/Loading';
-import TrendingPlayshow from '@/app/sections/TrendingPlayshow';
+import TrendingPlayshow from '@/app/sections/TrendingPlayshowSection';
 import ViewSwitchButton from '@/app/components/utils/Buttons/ViewSwitchButton';
 
 // Styles
@@ -21,7 +21,7 @@ import styles from '@/app/styles/components/movies/movieDisplay.module.scss';
 // Service imports
 import { get } from '@/app/services/api/requests';
 
-export default function MoviesDisplay({ movies }: { movies: Movie[] }) {
+export default function MoviesDisplaySection({ movies }: { movies: Movie[] }) {
   // const [isGrid, setIsGrid] = useState<boolean>(() => {
   //   // Get the initial value from localStorage or set it to true by default
   //   const storedValue = localStorage.getItem('isGrid');
