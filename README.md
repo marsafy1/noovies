@@ -24,7 +24,7 @@ Install the dependencies and run the server.
 bun install
 
 # Run the development server
-bun dev
+bun run dev
 ```
 
 ## Features
