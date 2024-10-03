@@ -7,6 +7,11 @@ import { useRouter } from 'next/navigation';
 // Styles
 import styles from '@/app/styles/components/appbars/navbar.module.scss';
 
+/*
+  NavTitle component for the Navbar (Client Component)
+  - Displays the title of the navbar.
+*/
+
 export default function Navtitle() {
   const router = useRouter();
   function goHome() {

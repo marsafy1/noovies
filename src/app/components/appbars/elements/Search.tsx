@@ -13,6 +13,11 @@ import CircleButton from '@/app/components/utils/Buttons/CircleButton';
 // Styles
 import styles from '@/app/styles/components/appbars/navbar.module.scss';
 
+/*
+  SearchBar component for the Navbar (Client Component)
+  - Provides a search functionality within the navbar.
+*/
+
 export default function Search() {
   const router = useRouter();
 

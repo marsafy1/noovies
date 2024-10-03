@@ -1,30 +1,29 @@
 // External libraries
 import React from 'react';
 
-// Component imports
+// Components
 import ThemeSwitch from '@/app/components/appbars/elements/ThemeSwitch';
 import Navtitle from '@/app/components/appbars/elements/Navtitle';
 import NavItem from '@/app/components/appbars/elements/NavItem';
 import Search from '@/app/components/appbars/elements/Search';
 
+// Interfaces
+import { NavItemElem } from '@/app/interfaces/navItem';
+
 // Styles
 import styles from '@/app/styles/components/appbars/navbar.module.scss';
 
-interface NavItem {
-  name: string;
-  href: string;
-}
+/*
+  Navbar component (Client Component)
+  - The main navigation bar component that includes navigation items, search, and theme switching functionality.
+*/
 
 export default function Navbar() {
-  const navItems: NavItem[] = [
+  const navItems: NavItemElem[] = [
     {
       name: 'Movies',
       href: '/',
     },
-    // {
-    //   name: 'Movie Details',
-    //   href: '/content/movies/12',
-    // },
     {
       name: 'Favorites',
       href: '/content/favorites',
