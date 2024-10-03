@@ -24,7 +24,7 @@ export default function MovieInfoSection({
     <div className={styles.movieInfo__meta}>
       <div className={styles.movieInfo__meta__top}>
         <div className={styles.movieInfo__meta__top__poster}>
-          <Poster poster_path={movieDetails.poster_path} />
+          <Poster poster_path={movieDetails.poster_path} size="w780" />
         </div>
         <div className={styles.movieInfo__meta__about__bottom}>
           <Favorite movieId={movieDetails.id} />
