@@ -11,7 +11,7 @@ import BackdropPlaceholder from '@/app/assets/defaults/movies/backdrop-placehold
 import SafeImage from '@/app/components/presentation/SafeImage';
 
 // Styles
-import styles from '@/app/styles/components/movieDetails/movieCover.module.scss';
+import styles from '@/app/styles/sections/movieDetails/movieCover.module.scss';
 
 export default function MovieCoverSection({
   movieDetails,

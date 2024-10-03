@@ -16,7 +16,7 @@ import TrendingPlayshow from '@/app/sections/TrendingPlayshowSection';
 import ViewSwitchButton from '@/app/components/utils/Buttons/ViewSwitchButton';
 
 // Styles
-import styles from '@/app/styles/components/movies/movieDisplay.module.scss';
+import styles from '@/app/styles/sections/movieDisplay.module.scss';
 
 // Service imports
 import { get } from '@/app/services/api/requests';
