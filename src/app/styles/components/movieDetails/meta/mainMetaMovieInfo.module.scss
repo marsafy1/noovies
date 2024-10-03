@@ -14,6 +14,7 @@
 
   &__infoTags {
     @include between-flex-h;
+
     &__quicksAndtips {
       display: flex;
     }
@@ -49,5 +50,25 @@
       padding: 20px;
     }
     // border: 1px solid red;
+  }
+}
+
+@media only screen and (max-width: $first-break-point) {
+  .mainMetaMovieInfo__infoTags {
+    flex-direction: column;
+    align-items: flex-start;
+    & > div {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    &__quicksAndtips {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  .mainMetaMovieInfo__overview {
+    span {
+      padding: 5px;
+    }
   }
 }

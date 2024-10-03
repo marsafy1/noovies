@@ -22,8 +22,10 @@ export default function MovieInfo({
 }) {
   return (
     <div className={styles.movieInfo__meta}>
-      <div>
-        <Poster poster_path={movieDetails.poster_path} />
+      <div className={styles.movieInfo__meta__top}>
+        <div className={styles.movieInfo__meta__top__poster}>
+          <Poster poster_path={movieDetails.poster_path} />
+        </div>
         <div className={styles.movieInfo__meta__about__bottom}>
           <Favorite movieId={movieDetails.id} />
         </div>

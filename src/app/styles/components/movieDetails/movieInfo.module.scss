@@ -3,17 +3,19 @@
 
 .movieInfo {
   position: relative;
-
   &__meta {
     padding: 40px;
     position: relative;
     // top: -200px;
     top: $movie-info-move-top-by;
     display: flex;
-    &__poster {
-      border-radius: $cards-border-radius;
-      width: 200px;
+    &__top {
+      &__poster {
+        border-radius: $cards-border-radius;
+        overflow: hidden;
+      }
     }
+
     &__about {
       display: flex;
       flex-direction: column;
@@ -32,6 +34,20 @@
           color: grey;
           margin-bottom: 10px;
         }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $first-break-point) {
+  .movieInfo__meta {
+    flex-direction: column;
+    justify-content: center;
+    width: 100%; // height: 400px;
+    &__top {
+      @include center-flex;
+      &__poster {
+        width: 250px;
       }
     }
   }
