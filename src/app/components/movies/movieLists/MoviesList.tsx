@@ -65,7 +65,7 @@ export default function MoviesList({
   }
 
   useEffect(() => {
-    if (!searchQuery) {
+    if (searchQuery == null) {
       window.addEventListener('scroll', handleScroll);
       return () => window.removeEventListener('scroll', handleScroll);
     }
