@@ -1,0 +1,10 @@
+.textView {
+  &__readMore {
+    cursor: pointer;
+    color: var(--primary-color);
+  }
+}
+
+.textView__readMore:hover {
+  text-decoration: underline;
+}

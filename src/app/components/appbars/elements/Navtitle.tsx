@@ -13,8 +13,13 @@ export default function Navtitle() {
     router.push('/');
   }
   return (
-    <div className={styles.navbar__start__title} onClick={goHome}>
-      noovies
+    <div>
+      <div className={styles.navbar__start__title} onClick={goHome}>
+        noovies
+      </div>
+      <div className={styles.navbar__start__char} onClick={goHome}>
+        n
+      </div>
     </div>
   );
 }

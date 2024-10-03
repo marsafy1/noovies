@@ -4,6 +4,12 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
+// Icons
+import { MagnifyingGlassIcon } from '@heroicons/react/24/solid';
+
+// Components
+import CircleButton from '@/app/components/utils/Buttons/CircleButton';
+
 // Styles
 import styles from '@/app/styles/components/appbars/navbar.module.scss';
 
@@ -31,6 +37,12 @@ export default function Search() {
         onChange={(e) => setQuery(e.target.value)} // Update query state on input change
         onKeyDown={handleKeyDown} // Detect when the Enter key is pressed
       />
+      <div className={styles.navbar__start__search__icon}>
+        <CircleButton
+          icon={<MagnifyingGlassIcon />}
+          handleClick={handleSearch}
+        />
+      </div>
     </div>
   );
 }

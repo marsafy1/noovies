@@ -15,12 +15,21 @@
   &__start {
     @include h-flex;
     &__title {
+      display: block;
+      color: var(--primary-color);
+      font-weight: bolder;
+      font-size: 30px;
+      cursor: pointer;
+    }
+    &__char {
+      display: none;
       color: var(--primary-color);
       font-weight: bolder;
       font-size: 30px;
       cursor: pointer;
     }
     &__search {
+      position: relative;
       margin-left: 20px;
       margin-right: 20px;
       padding: 10px;
@@ -49,6 +58,16 @@
       &__input-field::placeholder {
         color: #bbb;
       }
+
+      &__icon {
+        position: absolute;
+        top: 50%;
+        right: 1em;
+        color: red;
+        transform: translateY(-50%);
+        width: 30px;
+        height: 30px;
+      }
     }
   }
   &__end {
@@ -62,11 +81,22 @@
       text-decoration: none !important;
       color: inherit;
       cursor: pointer;
+
       &Active {
         color: $active-item;
         text-decoration: underline;
         border-bottom: 1px solid $active-item;
+        font-weight: bold;
       }
     }
+  }
+}
+
+@media only screen and (max-width: $first-break-point) {
+  .navbar__start__title {
+    display: none;
+  }
+  .navbar__start__char {
+    display: block;
   }
 }

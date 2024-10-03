@@ -6,6 +6,7 @@ import { Review } from '@/app/interfaces/reviews';
 
 // Component imports
 import Avatar from '@/app/components/utils/Avatar';
+import TextView from '@/app/components/utils/TextView';
 
 // Styles
 import styles from '@/app/styles/components/reviews/reviewCard.module.scss';
@@ -37,7 +38,9 @@ export default function ReviewCard({ review }: { review: Review }) {
           </div>
         </div>
       </div>
-      <div className={styles.review__content}>{review.content}</div>
+      <div className={styles.review__content}>
+        <TextView text={review.content} maxLength={240} />
+      </div>
     </div>
   );
 }
