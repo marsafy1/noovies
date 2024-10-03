@@ -5,18 +5,18 @@ import React from 'react';
 import { Movie } from '@/app/interfaces/movies';
 
 // Component imports
-import MovieCard from '@/app/components/movies/MovieCard';
+import MovieCard from '@/app/components/movies/movieCards/MovieCard';
 import Empty from '@/app/components/feedback/Empty';
 
 // Styles
-import styles from '@/app/styles/components/movies/moviesSlider.module.scss';
+import styles from '@/app/styles/content/movies.module.scss';
 
-export default function MovieListRow({ movies }: { movies: Movie[] }) {
+export default function MoviesList({ movies }: { movies: Movie[] }) {
   function isEmptyMovies() {
     return !movies || movies.length == 0;
   }
   return (
-    <div className={styles.movieSlider__list}>
+    <div className={styles.movies__normalMovies__list}>
       {!isEmptyMovies() &&
         movies.map((movie: Movie, index: number) => {
           return <MovieCard key={index} movie={movie} />;

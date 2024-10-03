@@ -6,8 +6,8 @@ import React, { useEffect, useState } from 'react';
 import { Movie } from '@/app/interfaces/movies';
 
 // Component imports
-import TopMovieCard from '@/app/components/movies/TopMovieCard';
-import TopSideMovieCard from '@/app/components/movies/TopSideMovieCard';
+import TopMovieCard from '@/app/components/movies/movieCards/TopMovieCard';
+import TopSideMovieCard from '@/app/components/movies/movieCards/TopSideMovieCard';
 
 // Styles
 import styles from '@/app/styles/content/movies.module.scss';

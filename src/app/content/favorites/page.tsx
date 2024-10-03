@@ -7,16 +7,16 @@ import React, { useState, useEffect } from 'react';
 import { Movie } from '@/app/interfaces/movies';
 
 // Component imports
-import MovieCard from '@/app/components/movies/MovieCard';
+import MovieCard from '@/app/components/movies/movieCards/MovieCard';
 import Empty from '@/app/components/feedback/Empty';
 
 // Styles
-import moviesStyles from '@/app/styles/content/movies.module.scss';
 import styles from '@/app/styles/content/favorites.module.scss';
 
 // Service imports
 import { get } from '@/app/services/api/requests';
 import Loading from '@/app/components/feedback/Loading';
+import FavoritesSection from '@/app/sections/FavoritesSection';
 
 export default function Favorites() {
   const [favoriteIds, setFavoriteIds] = useState<number[]>([]);
@@ -65,11 +65,7 @@ export default function Favorites() {
           <Loading />
         </div>
       ) : favorites.length > 0 ? (
-        <div className={moviesStyles.movies__normalMovies__list}>
-          {favorites.map((movie: Movie, index: number) => {
-            return <MovieCard key={index} movie={movie} />;
-          })}
-        </div>
+        <FavoritesSection favorites={favorites} />
       ) : (
         <div className="h-100-without-nav">
           <Empty title="No Favorites yet!" />

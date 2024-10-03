@@ -6,7 +6,7 @@ import React, { useEffect, useState } from 'react';
 import { Movie } from '@/app/interfaces/movies';
 
 // Component imports
-import MovieListRow from '@/app/components/movies/MovieListRow';
+import MovieListRow from '@/app/components/movies/movieLists/MovieListRow';
 
 // Styles
 import styles from '@/app/styles/content/movies.module.scss';

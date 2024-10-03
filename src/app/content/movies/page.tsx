@@ -5,17 +5,17 @@ import React from 'react';
 import { Movie } from '@/app/interfaces/movies';
 
 // Component imports
-import MoviesContainer from '@/app/components/movies/MoviesContainer';
-import MovieSlider from '@/app/components/movies/MovieSlider';
+import MoviesContainer from '@/app/components/movies/moviesContainer/MoviesContainer';
+import MovieSlider from '@/app/components/movies/moviesContainer/MovieSliderContainer';
 import Loading from '@/app/components/feedback/Loading';
-import TrendingPlayshow from '@/app/components/movies/TrendingPlayshow';
+import TrendingPlayshow from '@/app/sections/TrendingPlayshow';
 
 // Styles
 import styles from '@/app/styles/content/movies.module.scss';
 
 // Service imports
 import { get } from '@/app/services/api/requests';
-import MoviesDisplay from '@/app/components/movies/MoviesDisplay';
+import MoviesDisplay from '@/app/sections/MoviesDisplay';
 
 export default async function Movies() {
   var loading = true;

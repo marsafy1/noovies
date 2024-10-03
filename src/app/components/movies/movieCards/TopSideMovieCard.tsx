@@ -11,7 +11,7 @@ import Language from '@/app/components/movies/movieCards/info/Language';
 import Adult from '@/app/components/movies/movieCards/info/Adult';
 import Runtime from '@/app/components/movies/movieCards/info/Runtime';
 import ReleaseDate from '@/app/components/movies/movieCards/info/ReleaseDate';
-import NavigationWrapper from './movieCards/wrappers/NavigationWrapper';
+import NavigationWrapper from './wrappers/NavigationWrapper';
 import SafeImage from '@/app/components/presentation/SafeImage';
 
 // Asset imports

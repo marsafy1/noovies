@@ -9,10 +9,10 @@ import { Movie } from '@/app/interfaces/movies';
 import { Bars3Icon, Squares2X2Icon } from '@heroicons/react/24/solid';
 
 // Component imports
-import MoviesContainer from '@/app/components/movies/MoviesContainer';
-import MovieSlider from '@/app/components/movies/MovieSlider';
+import MoviesContainer from '@/app/components/movies/moviesContainer/MoviesContainer';
+import MovieSlider from '@/app/components/movies/moviesContainer/MovieSliderContainer';
 import Loading from '@/app/components/feedback/Loading';
-import TrendingPlayshow from '@/app/components/movies/TrendingPlayshow';
+import TrendingPlayshow from '@/app/sections/TrendingPlayshow';
 import ViewSwitchButton from '@/app/components/utils/Buttons/ViewSwitchButton';
 
 // Styles

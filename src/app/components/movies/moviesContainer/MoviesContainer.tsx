@@ -5,7 +5,7 @@ import React from 'react';
 import { Movie } from '@/app/interfaces/movies';
 
 // Component imports
-import MoviesList from '@/app/components/movies/MoviesList';
+import MoviesList from '@/app/components/movies/movieLists/MoviesList';
 
 // Styles
 import styles from '@/app/styles/content/movies.module.scss';
