@@ -33,3 +33,9 @@
     }
   }
 }
+
+@media only screen and (max-width: $first-break-point) {
+  .detailedMetaMovieInfo__cast__container__members {
+    flex-direction: column;
+  }
+}
