@@ -1,30 +1,28 @@
 // Colors
-// $primary-color: rgb(250, 238, 85);
 $gradient-primary-color: linear-gradient(
   45deg,
   rgba(187, 122, 5, 1) 27%,
   rgba(194, 184, 65, 1) 74%
 );
-// $background-color: rgb(18, 18, 18);
-// $cards-background: rgb(8, 8, 8);
+
+// Feedback
+$success-color: #03c03c;
+$error-color: #aa0000;
+
 // Constants
 $navbar-height: 70px;
 
 // Cards
 $movie-card-width: 200px;
 $movie-card-height: auto;
-
 $cards-border-radius: 5px;
+
 // Navbar
 $active-item: var(--primary-color);
 
 // Sizes
 $detailed-movie-cover-height: 80vh;
 $movie-info-move-top-by: calc($detailed-movie-cover-height / -2);
-
-// Feedback
-$success-color: #03c03c;
-$error-color: #aa0000;
 
 // Media Query Sizes
 $first-break-point: 950px;
