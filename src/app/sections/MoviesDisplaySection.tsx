@@ -58,7 +58,7 @@ export default function MoviesDisplaySection({ movies }: { movies: Movie[] }) {
           <MovieSlider title="Trending Now" path="/movie/popular" />
           <MovieSlider title="Top Rated" path="/movie/top_rated" />
           <MovieSlider title="Now Playing" path="/movie/now_playing" />
-          <MovieSlider title="Coming Soon" path="/movie/upcominfsdfdsag" />
+          <MovieSlider title="Coming Soon" path="/movie/upcoming" />
         </div>
       )}
     </div>

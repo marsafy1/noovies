@@ -27,7 +27,7 @@ export default function MoviesContainer({
           {subtitle && <span className="card-header-color"> - {subtitle}</span>}
         </h3>
       </div>
-      <MoviesList movies={movies} />
+      <MoviesList initialMovies={movies} />
     </div>
   );
 }
