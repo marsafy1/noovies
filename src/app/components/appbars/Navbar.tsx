@@ -2,10 +2,10 @@
 import React from 'react';
 
 // Component imports
-import ThemeSwitch from '@/app/components/appbars/ThemeSwitch';
-import Navtitle from '@/app/components/appbars/Navtitle';
-import NavItem from '@/app/components/appbars/NavItem';
-import Search from '@/app/components/appbars/Search';
+import ThemeSwitch from '@/app/components/appbars/elements/ThemeSwitch';
+import Navtitle from '@/app/components/appbars/elements/Navtitle';
+import NavItem from '@/app/components/appbars/elements/NavItem';
+import Search from '@/app/components/appbars/elements/Search';
 
 // Styles
 import styles from '@/app/styles/components/appbars/navbar.module.scss';
