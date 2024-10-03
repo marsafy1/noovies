@@ -1,20 +1,17 @@
 @import 'variables.scss';
 .member {
-  border: 1px solid lime;
-
   &__title {
     color: var(--primary-color);
   }
   &__list {
-    border: 1px solid blue;
-    // display: flex;
-    // display: grid;
-    // grid-template-columns: repeat(3, 1fr);
-    // gap: 10px;
     display: flex;
     flex-wrap: wrap;
-    padding: 10px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
     &__item {
+      cursor: pointer;
+      transition: color 0.2s;
       min-width: 100px;
       margin: 5px;
       display: flex;
@@ -29,4 +26,8 @@
       }
     }
   }
+}
+
+.member__list__item:hover {
+  color: var(--primary-color);
 }

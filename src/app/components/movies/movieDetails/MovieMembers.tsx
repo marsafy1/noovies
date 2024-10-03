@@ -8,7 +8,7 @@ import { memberTypes } from '@/app/enums/memberType';
 import { CrewMember, CastMember } from '@/app/interfaces/members';
 
 // Component imports
-import Avatar from '@/app/components/utils/Avatar';
+import Member from '@/app/components/movies/movieCards/info/Member';
 
 // Styles
 import styles from '@/app/styles/components/movieDetails/movieMembers.module.scss';
@@ -70,17 +70,7 @@ export default async function MovieMembers({
       </div>
       <div className={styles.member__list}>
         {members.map((member: Member) => {
-          return (
-            <div key={member.id} className={styles.member__list__item}>
-              <Avatar
-                src={`https://image.tmdb.org/t/p/w92${member.profile_path}`}
-              />
-              <span>
-                <strong>{member.original_name}</strong>
-                <small>{(member as CastMember).character}</small>
-              </span>
-            </div>
-          );
+          return <Member key={member.id} member={member} />;
         })}
       </div>
     </div>
