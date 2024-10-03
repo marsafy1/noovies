@@ -1,7 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# noovies
+noovies is a movie platform built with React and Next.js that allows users to explore trending and new movies. Users can view detailed information about movies, including cast and reviews. Additionally, users can like or dislike movies and save them to their favorites and discover similar movies based on a current movie. The platform includes a dark and light theme toggle for a personalized viewing experience.
 
+## Structure 
+```bash
+
+├── assets (For images)
+│   └── defaults
+├── components (UI Components to allow usability and consistency)
+│   ├── appbars
+│   ├── feedback
+│   ├── movies
+│   ├── presentation
+│   ├── reviews
+│   └── utils (Generic components such as Buttons, Avatars...)
+├── content (Pages) <- routing happens here
+│   ├── favorites
+│   └── movies
+├── enums (Constant enums)
+│   └── memberType.ts
+├── fonts
+│   ├── GeistMonoVF.woff
+│   └── GeistVF.woff
+├── interfaces (Defining types here)
+│   ├── members.ts
+│   ├── movies.ts
+│   ├── navItem.ts
+│   ├── reviews.ts
+│   └── stateStore
+├── layout.tsx
+├── page.tsx
+├── sections (Main sections)
+│   ├── FavoritesSection.tsx
+│   ├── MoviesDisplaySection.tsx
+│   ├── TrendingPlayshowSection.tsx
+│   ├── movieDetails
+│   └── moviesContainer
+├── services (Services such as navigatiohs and API calls for consistency and reusability)
+│   ├── api
+│   └── navigation.ts
+├── store (For global state management)
+│   └── themeStore.ts
+└── styles (Custom styling)
+    ├── animations.scss
+    ├── components
+    ├── content
+    ├── dynamicVariables.scss
+    ├── globals.scss
+    ├── layout.scss
+    ├── mixins.scss
+    ├── pages
+    ├── sections
+    └── variables.scss
+```
 ## Getting Started
-
 First, run the development server:
 
 ```bash
@@ -16,21 +67,5 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
