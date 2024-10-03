@@ -3,9 +3,6 @@
 // External libraries
 import React from 'react';
 
-// Enums
-import { memberTypes } from '@/app/enums/memberType';
-
 // Interfaces
 import { CrewMember, CastMember } from '@/app/interfaces/members';
 
@@ -14,9 +11,6 @@ import Avatar from '@/app/components/utils/Avatar';
 
 // Styles
 import styles from '@/app/styles/components/movieDetails/movieMembers.module.scss';
-
-// Services
-import { get } from '@/app/services/api/requests';
 
 /*
   MovieMemberCard component (Client Component)

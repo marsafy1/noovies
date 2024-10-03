@@ -5,8 +5,6 @@ import React from 'react';
 import { Movie } from '@/app/interfaces/movies';
 
 // Components
-import MoviesContainer from '@/app/sections/moviesContainer/MoviesContainer';
-import MovieSlider from '@/app/sections/moviesContainer/MovieSliderContainer';
 import Loading from '@/app/components/feedback/Loading';
 import TrendingPlayshowSection from '@/app/sections/TrendingPlayshowSection';
 import MoviesDisplaySection from '@/app/sections/MoviesDisplaySection';

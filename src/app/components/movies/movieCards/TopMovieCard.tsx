@@ -7,13 +7,8 @@ import { Movie } from '@/app/interfaces/movies';
 // Components
 import VoteAverage from '@/app/components/movies/movieCards/info/VoteAverage';
 import VoteCount from '@/app/components/movies/movieCards/info/VoteCount';
-import Language from '@/app/components/movies/movieCards/info/Language';
-import Adult from '@/app/components/movies/movieCards/info/Adult';
-import Runtime from '@/app/components/movies/movieCards/info/Runtime';
-import ReleaseDate from '@/app/components/movies/movieCards/info/ReleaseDate';
 import NavigationWrapper from '@/app/components/movies/movieCards/wrappers/NavigationWrapper';
 import SafeImage from '@/app/components/presentation/SafeImage';
-import MovieRank from '@/app/components/movies/movieCards/wrappers/MovieRank';
 
 // Assets
 import BackdropPlaceholder from '@/app/assets/defaults/movies/backdrop-placeholder.png';

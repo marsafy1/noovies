@@ -11,7 +11,6 @@ import styles from '@/app/styles/components/movieDetails/meta/mainMetaMovieInfo.
 import VoteAverage from '@/app/components/movies/movieCards/info/VoteAverage';
 import VoteCount from '@/app/components/movies/movieCards/info/VoteCount';
 import Language from '@/app/components/movies/movieCards/info/Language';
-import Adult from '@/app/components/movies/movieCards/info/Adult';
 import Runtime from '@/app/components/movies/movieCards/info/Runtime';
 import ReleaseDate from '@/app/components/movies/movieCards/info/ReleaseDate';
 import PlayTrailer from '@/app/components/movies/movieCards/info/PlayTrailer';

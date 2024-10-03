@@ -12,15 +12,10 @@ import { Bars3Icon, Squares2X2Icon } from '@heroicons/react/24/solid';
 // Components
 import MoviesContainer from '@/app/sections/moviesContainer/MoviesContainer';
 import MovieSlider from '@/app/sections/moviesContainer/MovieSliderContainer';
-import Loading from '@/app/components/feedback/Loading';
-import TrendingPlayshow from '@/app/sections/TrendingPlayshowSection';
 import ViewSwitchButton from '@/app/components/utils/Buttons/ViewSwitchButton';
 
 // Styles
 import styles from '@/app/styles/sections/movieDisplay.module.scss';
-
-// Services
-import { get } from '@/app/services/api/requests';
 
 /*
   MovieDisplaySection component (Client Component)

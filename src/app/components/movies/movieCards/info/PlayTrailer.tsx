@@ -9,9 +9,6 @@ import Tooltip from '@/app/components/utils/Tooltip';
 // Icons
 import { PlayIcon } from '@heroicons/react/24/solid';
 
-// Interfaces
-import { DetailedMovie } from '@/app/interfaces/movies';
-
 // Styles
 import styles from '@/app/styles/components/movies/info/info.module.scss';
 

@@ -2,17 +2,12 @@
 import React from 'react';
 
 // Interfaces
-import {
-  MovieIDParams,
-  DetailedMovie,
-  DEFAULT_DETAILED_MOVIE,
-} from '@/app/interfaces/movies';
+import { MovieIDParams, DetailedMovie } from '@/app/interfaces/movies';
 
 // Components
 import MovieCoverSection from '@/app/sections/movieDetails/MovieCoverSection';
 import MovieInfoSection from '@/app/sections/movieDetails/MovieInfoSection';
 import MovieReviewsSection from '@/app/sections/movieDetails/MovieReviewsSection';
-import DetailedMetaMovieInfo from '@/app/components/movies/movieDetails/meta/DetailedMetaMovieInfo';
 import Empty from '@/app/components/feedback/Empty';
 
 // Styles

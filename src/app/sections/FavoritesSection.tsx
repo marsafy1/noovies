@@ -6,7 +6,6 @@ import { Movie } from '@/app/interfaces/movies';
 
 // Components
 import MovieCard from '@/app/components/movies/movieCards/MovieCard';
-import Empty from '@/app/components/feedback/Empty';
 
 // Styles
 import moviesStyles from '@/app/styles/content/movies.module.scss';
