@@ -9,47 +9,42 @@ noovies is a movie platform built with React and Next.js integrated with [TMDB A
 
 
 ## Table of Contents
-
+- [Getting Started](#getting-started)
+- [Features](#features)
+- [Structure](#structure)
 - [Application Design](#application-design)
 - [Naming Conventions](#naming-conventions)
-- [Structure](#structure)
-- [Getting Started](#getting-started)
+- [Challenges](#challenges)
 
-  
-## Application Design
-- **No external** UI libraries (such as Tailwind, Bootstrap, or MUI5) were used, highlighting my ability to tailor custom styles from scratch. The only installed package is Heroicons, used solely for icons.
-- **Performance Optimization**
-     - **Server-Side Rendering (SSR)**: Was used for fetching data to leave the client with less responsibilities and to enhance SEO as well. Some data were left for the client because they are lightweight and not crucial for SEO such as movie reviews!
-     - **Static Site Generation (SSG)**: Was utilized for pages that do not require real-time data.
-     - **Lazy Loading**: Was mostly use for images. Utilizing the power of nextJS.
-     - **Client Components**: Was used whenever we needed interaction with a DOM element.
-     - **Appropriate Images Size**: TMDB provides multiple sizes, instead of getting the best, we get the appropriate size depending on the component size.
-     - **Paging**: Getting movies in batches(pages) in the homeland page.
-     - **Handling errors**: All errors are handled gracefully with try/catch statements. Including searching for a movie with invalid ID.
-     
+## Getting Started
+Install the dependencies and run the server.
 
-## Naming Conventions
+```bash
+# Install dependencies using Bun
+bun install
 
-### 1. React Components
-   - **Format**: PascalCase
-   - **Example**: `MovieCard`, `ThemeSwitch`
+# Run the development server
+bun dev
+```
 
-### 2. Variables and Functions
-   - **Format**: camelCase
-   - **Example**: `handleClick`, `movieTitle`
-
-### 3. SCSS Files and Variables
-   - **Format**: camelCase
-   - **Example**: `$primaryColor`, `$backgroundDark`
-
-### 4. SCSS Class Names (BEM Methodology)
-   - **Format**: Block-Element-Modifier (BEM)
-   - **Example**: `block__elementModifier`
-     - **Block**: The name of the component (e.g., `movieCard`)
-     - **Element**: A child of the block (e.g., `movieCard__title`)
-     - **Modifier**: A variant or state of the block/element (e.g., `movieCard__titleLarge`)
-
+## Features
+### Required Features
+- **Display a list of movies**
+- **Search for a movie by name**
+- **View a movie details page**
+- **Add/Remove a movie from your list**
+- **View your favorite movies**
+### Bonus Features
+- **Animations** throughout the whole app, such as when you like/dislike a movie, loading and a vertical slideshow for top movies.
+- **Different Viewing Styles** for the homeland page, you can either see the movies in a grid or in reels-like manner.
+- **Light/Dark Theme** for a more customized, personal experience.
+- **Similar/Suggested Movies** showing similar movies to the one you are currently viewing.
+- **Movie Reviews** with the ability to visit the profile of the author.
+- **Visting Profiles** you can visit the profile of commentators and leading movie cast.
+- **Automatic Movies Addition** whenever the user reaches the end of the page (with a limit of 10 pages).
+- 
 ## Structure 
+**Dependency Structure**: The main pages are located inside the `content` folder. Each page is composed of sections, and sections are built from individual components.
 ```bash
 
 ├── assets (For images)
@@ -100,18 +95,56 @@ noovies is a movie platform built with React and Next.js integrated with [TMDB A
     ├── sections
     └── variables.scss
 ```
-## Getting Started
-First, run the development server:
+  
+## Application Design
+- **No external** UI libraries (such as Tailwind, Bootstrap, or MUI5) were used, highlighting my ability to tailor custom styles from scratch. The only installed package is Heroicons, used solely for icons.
+- **Performance Optimization**
+     - **Server-Side Rendering (SSR)**: Was used for fetching data to leave the client with less responsibilities and to enhance SEO as well. Some data were left for the client because they are lightweight and not crucial for SEO such as movie reviews!
+     - **Static Site Generation (SSG)**: Was utilized for pages that do not require real-time data.
+     - **Lazy Loading**: Was mostly use for images. Utilizing the power of nextJS.
+     - **Client Components**: Was used whenever we needed interaction with a DOM element.
+     - **Appropriate Images Size**: TMDB provides multiple sizes, instead of getting the best, we get the appropriate size depending on the component size.
+     - **Paging**: Getting movies in batches(pages) in the homeland page.
+     - **Handling errors & empty results**: All errors are handled gracefully with try/catch statements. Including searching for a movie with invalid ID.
+     - **Utilizing media queries**: to create a responsive application 
+     
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Naming Conventions
+
+### 1. React Components
+   - **Format**: PascalCase
+   - **Example**: `MovieCard`, `ThemeSwitch`
+
+### 2. Variables and Functions
+   - **Format**: camelCase
+   - **Example**: `handleClick`, `movieTitle`
+
+### 3. SCSS Files and Variables
+   - **Format**: camelCase
+   - **Example**: `$primaryColor`, `$backgroundDark`
+
+### 4. SCSS Class Names (BEM Methodology)
+   - **Format**: Block-Element-Modifier (BEM)
+   - **Example**: `block__elementModifier`
+     - **Block**: The name of the component (e.g., `movieCard`)
+     - **Element**: A child of the block (e.g., `movieCard__title`)
+     - **Modifier**: A variant or state of the block/element (e.g., `movieCard__titleLarge`)
+
+## Challenges
+
+### 1. Learning New Frameworks
+Adapting to frameworks like **Next.js** and **Zustand** introduced new paradigms, particularly in state management and server-side rendering (SSR).  
+**Solution**: I followed official documentation and built small, focused projects to understand their core concepts.
+
+### 2. Deciding Between SSR and Client Components
+Balancing **SSR** and **Client Components** required careful consideration to ensure optimal performance while maintaining a smooth user experience.  
+**Solution**: I used **SSR** for SEO-critical pages and **Client Components** for dynamic interactions.
+
+### 3. Writing CSS from Scratch
+Building the entire styling system without UI libraries like Tailwind or Bootstrap allowed me to improve my CSS skills while creating a custom design system.  
+**Solution**: I implemented **SCSS** with **BEM** methodology to keep the styles modular and maintainable.
+
+
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
