@@ -1,13 +1,13 @@
 // External libraries
 import React from 'react';
 
-// Interface imports
+// Interfaces
 import { DetailedMovie } from '@/app/interfaces/movies';
 
 // Styles
 import styles from '@/app/styles/components/movieDetails/meta/mainMetaMovieInfo.module.scss';
 
-// Component imports
+// Components
 import VoteAverage from '@/app/components/movies/movieCards/info/VoteAverage';
 import VoteCount from '@/app/components/movies/movieCards/info/VoteCount';
 import Language from '@/app/components/movies/movieCards/info/Language';
@@ -16,6 +16,11 @@ import Runtime from '@/app/components/movies/movieCards/info/Runtime';
 import ReleaseDate from '@/app/components/movies/movieCards/info/ReleaseDate';
 import PlayTrailer from '@/app/components/movies/movieCards/info/PlayTrailer';
 import Genre from '@/app/components/movies/movieCards/info/Genre';
+
+/*
+  MainMetaMovieInfo component
+  - Displays the primary and most important information about the movie.
+*/
 
 export default function MainMetaMovieInfo({
   movieDetails,

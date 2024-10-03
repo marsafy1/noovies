@@ -1,6 +1,13 @@
 'use client';
-import Image, { StaticImageData } from 'next/image';
+
+// External libraries
 import React from 'react';
+import Image, { StaticImageData } from 'next/image';
+
+/*
+  SafeImage component (Client Component)
+  - Displays an image safely using Next.js's Image component with optimized loading.
+*/
 
 export default function SafeImage({
   src,
@@ -17,7 +24,7 @@ export default function SafeImage({
   height?: number;
   width?: number;
 }) {
-  const [error, setError] = React.useState(false);
+  const [error, setError] = React.useState(src.includes('null'));
   return (
     <Image
       src={!error ? src : altSrc} // Use the imported image directly

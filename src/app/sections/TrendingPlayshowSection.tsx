@@ -1,16 +1,22 @@
 'use client';
-// External imports
+
+// External libraries
 import React, { useEffect, useState } from 'react';
 
-// Interface imports
+// Interfaces
 import { Movie } from '@/app/interfaces/movies';
 
-// Component imports
+// Components
 import TopMovieCard from '@/app/components/movies/movieCards/TopMovieCard';
 import TopSideMovieCard from '@/app/components/movies/movieCards/TopSideMovieCard';
 
 // Styles
 import styles from '@/app/styles/content/movies.module.scss';
+
+/*
+  TrendingPlayshowSection component (Client Component)
+  - Displays a section for trending and playing movies, including top and side movie cards.
+*/
 
 export default function TrendingPlayshowSection({
   trendingMovies,

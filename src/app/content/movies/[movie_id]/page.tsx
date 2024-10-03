@@ -1,14 +1,14 @@
 // External libraries
 import React from 'react';
 
-// Interface imports
+// Interfaces
 import {
   MovieIDParams,
   DetailedMovie,
   DEFAULT_DETAILED_MOVIE,
 } from '@/app/interfaces/movies';
 
-// Component imports
+// Components
 import MovieCoverSection from '@/app/sections/movieDetails/MovieCoverSection';
 import MovieInfoSection from '@/app/sections/movieDetails/MovieInfoSection';
 import MovieReviewsSection from '@/app/sections/movieDetails/MovieReviewsSection';
@@ -18,8 +18,13 @@ import Empty from '@/app/components/feedback/Empty';
 // Styles
 import styles from '@/app/styles/content/movieDetails.module.scss';
 
-// Service imports
+// Services
 import { get } from '@/app/services/api/requests';
+
+/*
+  MovieDetailsPage component
+  - Displays detailed information about a single movie, including cover, info, reviews, and metadata.
+*/
 
 export default async function page({ params }: { params: MovieIDParams }) {
   let loading = true;

@@ -1,10 +1,10 @@
 // External libraries
 import React from 'react';
 
-// Interface imports
+// Interfaces
 import { Movie } from '@/app/interfaces/movies';
 
-// Component imports
+// Components
 import MoviesContainer from '@/app/sections/moviesContainer/MoviesContainer';
 import MovieSlider from '@/app/sections/moviesContainer/MovieSliderContainer';
 import Loading from '@/app/components/feedback/Loading';
@@ -14,8 +14,13 @@ import MoviesDisplaySection from '@/app/sections/MoviesDisplaySection';
 // Styles
 import styles from '@/app/styles/content/movies.module.scss';
 
-// Service imports
+// Services
 import { get } from '@/app/services/api/requests';
+
+/*
+  TrendingMoviesPage component
+  - Displays trending movies and various movie sections as the landing page.
+*/
 
 export default async function Movies() {
   var loading = true;

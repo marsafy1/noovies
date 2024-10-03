@@ -1,9 +1,15 @@
 'use client';
+
 // External libraries
 import React, { MouseEventHandler, ReactElement } from 'react';
 
 // Styles
 import styles from '@/app/styles/components/utils/buttons.module.scss';
+
+/*
+  ViewSwitchButton component (Client Component)
+  - A button to switch between different grid views.
+*/
 
 export default function ViewSwitchButton({
   title,

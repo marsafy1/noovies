@@ -1,14 +1,15 @@
 'use client';
+
 // External libraries
 import React, { useState, useEffect } from 'react';
 
-// Interface imports
+// Interfaces
 import { Movie } from '@/app/interfaces/movies';
 
-// Import Icons
+// Icons
 import { Bars3Icon, Squares2X2Icon } from '@heroicons/react/24/solid';
 
-// Component imports
+// Components
 import MoviesContainer from '@/app/sections/moviesContainer/MoviesContainer';
 import MovieSlider from '@/app/sections/moviesContainer/MovieSliderContainer';
 import Loading from '@/app/components/feedback/Loading';
@@ -18,8 +19,13 @@ import ViewSwitchButton from '@/app/components/utils/Buttons/ViewSwitchButton';
 // Styles
 import styles from '@/app/styles/sections/movieDisplay.module.scss';
 
-// Service imports
+// Services
 import { get } from '@/app/services/api/requests';
+
+/*
+  MovieDisplaySection component (Client Component)
+  - Displays movies with various types (e.g., trending, slider, and different view modes).
+*/
 
 export default function MoviesDisplaySection({ movies }: { movies: Movie[] }) {
   // const [isGrid, setIsGrid] = useState<boolean>(() => {

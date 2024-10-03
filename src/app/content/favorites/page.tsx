@@ -3,20 +3,27 @@
 // External libraries
 import React, { useState, useEffect } from 'react';
 
-// Interface imports
+// Interfaces
 import { Movie } from '@/app/interfaces/movies';
 
-// Component imports
+// Components
 import MovieCard from '@/app/components/movies/movieCards/MovieCard';
 import Empty from '@/app/components/feedback/Empty';
+import Loading from '@/app/components/feedback/Loading';
+
+// Sections
+import FavoritesSection from '@/app/sections/FavoritesSection';
 
 // Styles
 import styles from '@/app/styles/content/favorites.module.scss';
 
-// Service imports
+// Services
 import { get } from '@/app/services/api/requests';
-import Loading from '@/app/components/feedback/Loading';
-import FavoritesSection from '@/app/sections/FavoritesSection';
+
+/*
+  FavoritesPage component (Client Component)
+  - Displays the user's favorite movies with loading and empty states.
+*/
 
 export default function Favorites() {
   const [favoriteIds, setFavoriteIds] = useState<number[]>([]);

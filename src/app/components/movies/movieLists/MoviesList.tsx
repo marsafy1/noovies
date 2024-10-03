@@ -1,18 +1,23 @@
 // External libraries
 import React, { useState, useEffect } from 'react';
 
-// Interface imports
+// Interfaces
 import { Movie } from '@/app/interfaces/movies';
 
-// Component imports
+// Components
 import MovieCard from '@/app/components/movies/movieCards/MovieCard';
 import Empty from '@/app/components/feedback/Empty';
 
 // Styles
 import styles from '@/app/styles/content/movies.module.scss';
 
-// Service imports
+// Services
 import { get } from '@/app/services/api/requests';
+
+/*
+  MoviesList component
+  - Displays a list of movies vertically.
+*/
 
 export default function MoviesList({
   initialMovies,

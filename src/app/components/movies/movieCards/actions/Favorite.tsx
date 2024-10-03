@@ -3,13 +3,18 @@
 // External libraries
 import React, { useEffect, useState } from 'react';
 
-// Component imports
+// Components
 import PrimaryButton from '@/app/components/utils/Buttons/PrimaryButton';
 import FavoriteButtonFeedback from '@/app/components/feedback/FavoriteButtonFeedback';
 
 // Styles
 import styles from '@/app/styles/components/movies/actions/favorite.module.scss';
 import btnStyles from '@/app/styles/components/utils/buttons.module.scss';
+
+/*
+  FavoriteButton component (Client Component)
+  - A button to add a movie to the favorites list.
+*/
 
 export default function Favorite({ movieId }: { movieId: number }) {
   const [isFavorite, setIsFavorite] = useState(false);

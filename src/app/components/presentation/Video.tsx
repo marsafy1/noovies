@@ -1,4 +1,10 @@
+// External libraries
 import React from 'react';
+
+/*
+  VideoDisplay component
+  - Displays a video player for media content.
+*/
 
 export default function Video({
   src,

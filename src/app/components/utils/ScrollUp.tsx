@@ -1,15 +1,21 @@
 'use client';
-// External imports
+
+// External libraries
 import React, { useState, useEffect } from 'react';
 
 // Icons
 import { ArrowUpIcon } from '@heroicons/react/24/solid';
 
-// Component imports
+// Components
 import CircleButton from '@/app/components/utils/Buttons/CircleButton';
 
-// Import Styles
+// Styles
 import styles from '@/app/styles/components/utils/scrollup.module.scss';
+
+/*
+  ScrollUpButton component (Client Component)
+  - Displays a button that allows the user to scroll back to the top when scrolling down the page.
+*/
 
 export default function ScrollUp() {
   const [isVisible, setIsVisible] = useState(false);

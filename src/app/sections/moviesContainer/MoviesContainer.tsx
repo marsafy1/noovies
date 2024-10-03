@@ -1,14 +1,19 @@
 // External libraries
 import React from 'react';
 
-// Interface imports
+// Interfaces
 import { Movie } from '@/app/interfaces/movies';
 
-// Component imports
+// Components
 import MoviesList from '@/app/components/movies/movieLists/MoviesList';
 
 // Styles
 import styles from '@/app/styles/content/movies.module.scss';
+
+/*
+  MovieVerticalContainer component
+  - Displays a vertical list of movies.
+*/
 
 export default function MoviesContainer({
   movies,

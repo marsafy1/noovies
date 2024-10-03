@@ -1,11 +1,16 @@
 // External libraries
 import React from 'react';
 
-// Component imports
+// Components
 import SafeImage from '@/app/components/presentation/SafeImage';
 
-// Asset imports
+// Assets
 import PosterPlaceholder from '@/app/assets/defaults/movies/poster-placeholder.png';
+
+/*
+  MoviePoster component
+  - Displays the poster of the movie within a movie card.
+*/
 
 export default function Poster({
   poster_path,

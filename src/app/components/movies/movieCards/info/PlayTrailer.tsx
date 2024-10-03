@@ -1,19 +1,24 @@
 'use client';
 
-// External Imports
+// External libraries
 import React, { useState } from 'react';
 
-// Import Components
+// Components
 import Tooltip from '@/app/components/utils/Tooltip';
 
-// Import Icons
+// Icons
 import { PlayIcon } from '@heroicons/react/24/solid';
 
-// Import Interfaces
+// Interfaces
 import { DetailedMovie } from '@/app/interfaces/movies';
 
-// Import Styles
+// Styles
 import styles from '@/app/styles/components/movies/info/info.module.scss';
+
+/*
+  PlayTrailerButton component (Client Component)
+  - Button to play the movie trailer in a new page.
+*/
 
 export default function PlayTrailer({ trailerKey }: { trailerKey: string }) {
   const [isTooltipVisible, setIsTooltipVisible] = useState(true);

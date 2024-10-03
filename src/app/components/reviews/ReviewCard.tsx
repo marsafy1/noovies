@@ -1,15 +1,20 @@
 // External libraries
 import React from 'react';
 
-// Interface imports
+// Interfaces
 import { Review } from '@/app/interfaces/reviews';
 
-// Component imports
+// Components
 import Avatar from '@/app/components/utils/Avatar';
 import TextView from '@/app/components/utils/TextView';
 
 // Styles
 import styles from '@/app/styles/components/reviews/reviewCard.module.scss';
+
+/*
+  ReviewCard component
+  - Displays a card for user reviews with the author's avatar and review content.
+*/
 
 export default function ReviewCard({ review }: { review: Review }) {
   function convertDateStringToReadableFormat(updated_at: string) {

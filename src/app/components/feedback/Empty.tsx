@@ -1,10 +1,16 @@
+// External libraries
 import React from 'react';
 
-// Import icons
+// Icons
 import { FaceFrownIcon } from '@heroicons/react/24/solid';
 
-// Import styles
+// Styles
 import styles from '@/app/styles/components/feedback/empty.module.scss';
+
+/*
+  Empty component (Client Component)
+  - Displays a customized message when there is no content available.
+*/
 
 export default function Empty({ title }: { title: string }) {
   return (

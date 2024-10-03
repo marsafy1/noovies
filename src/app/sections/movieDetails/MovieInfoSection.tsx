@@ -1,10 +1,10 @@
 // External libraries
 import React from 'react';
 
-// Interface imports
+// Interfaces
 import { DetailedMovie } from '@/app/interfaces/movies';
 
-// Component imports
+// Components
 import Favorite from '@/app/components/movies/movieCards/actions/Favorite';
 import Poster from '@/app/components/movies/movieCards/info/Poster';
 import MainMetaMovieInfo from '@/app/components/movies/movieDetails/meta/MainMetaMovieInfo';
@@ -12,6 +12,11 @@ import DetailedMetaMovieInfo from '@/app/components/movies/movieDetails/meta/Det
 
 // Styles
 import styles from '@/app/styles/sections/movieDetails/movieInfo.module.scss';
+
+/*
+  MovieInfoSection component
+  - Displays the main information and metadata about the movie, including favorite option, poster, and detailed info.
+*/
 
 export default function MovieInfoSection({
   movieDetails,

@@ -1,14 +1,20 @@
+// External libraries
 import React from 'react';
 
-// Interface imports
+// Interfaces
 import { Movie } from '@/app/interfaces/movies';
 
-// Component imports
+// Components
 import MovieCard from '@/app/components/movies/movieCards/MovieCard';
 import Empty from '@/app/components/feedback/Empty';
 
 // Styles
 import moviesStyles from '@/app/styles/content/movies.module.scss';
+
+/*
+  FavoritesSection component
+  - Displays the user's favorite movies in a list or shows an empty state if no favorites are available.
+*/
 
 export default function FavoritesSection({
   favorites,

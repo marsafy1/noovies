@@ -4,14 +4,19 @@ import React from 'react';
 // Styles
 import styles from '@/app/styles/components/movieDetails/meta/detailedMetaMovieInfo.module.scss';
 
-// Enums imports
+// Enums
 import { memberTypes } from '@/app/enums/memberType';
 
-// Interface imports
+// Interfaces
 import { DetailedMovie } from '@/app/interfaces/movies';
 
-// Component imports
+// Components
 import MovieMembers from '@/app/components/movies/movieDetails/MovieMembers';
+
+/*
+  DetailedMetaMovieInfo component
+  - Displays detailed information about the movie, including members like cast and crew.
+*/
 
 export default function DetailedMetaMovieInfo({
   movieDetails,

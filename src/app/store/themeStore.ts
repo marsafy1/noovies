@@ -1,6 +1,5 @@
 import { create } from 'zustand';
 import { ThemeStore } from '@/app/interfaces/stateStore/themeStore';
-import { persist } from 'zustand/middleware';
 
 const isBrowser = typeof window !== 'undefined';
 

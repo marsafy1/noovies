@@ -1,10 +1,10 @@
 // External libraries
 import React from 'react';
 
-// Interface imports
+// Interfaces
 import { Movie } from '@/app/interfaces/movies';
 
-// Component imports
+// Components
 import VoteAverage from '@/app/components/movies/movieCards/info/VoteAverage';
 import VoteCount from '@/app/components/movies/movieCards/info/VoteCount';
 import Language from '@/app/components/movies/movieCards/info/Language';
@@ -14,11 +14,16 @@ import ReleaseDate from '@/app/components/movies/movieCards/info/ReleaseDate';
 import NavigationWrapper from './wrappers/NavigationWrapper';
 import SafeImage from '@/app/components/presentation/SafeImage';
 
-// Asset imports
+// Assets
 import BackdropPlaceholder from '@/app/assets/defaults/movies/backdrop-placeholder.png';
 
 // Styles
 import styles from '@/app/styles/components/movies/topSideMovie.module.scss';
+
+/*
+  TopSideMovie component
+  - Displays top movies on the right side of the UI with essential movie details.
+*/
 
 export default function TopSideMovieCard({
   movie,

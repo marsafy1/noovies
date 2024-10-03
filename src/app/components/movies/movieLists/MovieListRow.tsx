@@ -1,16 +1,21 @@
 // External libraries
 import React from 'react';
 
-// Interface imports
+// Interfaces
 import { Movie } from '@/app/interfaces/movies';
 
-// Component imports
+// Components
 import MovieCard from '@/app/components/movies/movieCards/MovieCard';
 import Empty from '@/app/components/feedback/Empty';
 import Loading from '@/app/components/feedback/Loading';
 
 // Styles
 import styles from '@/app/styles/components/movies/moviesSlider.module.scss';
+
+/*
+  MoviesSlider component
+  - Displays a row of movies horizontally.
+*/
 
 export default function MovieListRow({
   movies,

@@ -1,12 +1,17 @@
-// External imports
+// External libraries
 import React from 'react';
 
 // Styles
 import styles from '@/app/styles/components/movies/actions/favorite.module.scss';
 import btnStyles from '@/app/styles/components/utils/buttons.module.scss';
 
-// Import Icons
+// Icons
 import { CheckCircleIcon } from '@heroicons/react/24/solid';
+
+/*
+  LikeStatusButton component (Client Component: from parent)
+  - Provides feedback for the like status with a button.
+*/
 
 export default function FavoriteButtonFeedback({
   isExpanded,

@@ -1,3 +1,8 @@
+/*
+  Review interface
+  - Defines the structure for a movie review, including author details, content, and metadata such as creation and update times.
+*/
+
 // Interfaces
 export interface Review {
   author: string;

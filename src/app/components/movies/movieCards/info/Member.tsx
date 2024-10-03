@@ -3,20 +3,25 @@
 // External libraries
 import React from 'react';
 
-// Enum imports
+// Enums
 import { memberTypes } from '@/app/enums/memberType';
 
-// Interface imports
+// Interfaces
 import { CrewMember, CastMember } from '@/app/interfaces/members';
 
-// Component imports
+// Components
 import Avatar from '@/app/components/utils/Avatar';
 
 // Styles
 import styles from '@/app/styles/components/movieDetails/movieMembers.module.scss';
 
-// Service imports
+// Services
 import { get } from '@/app/services/api/requests';
+
+/*
+  MovieMemberCard component (Client Component)
+  - Displays a card for crew, cast, or director members.
+*/
 
 export default function Member({
   member,

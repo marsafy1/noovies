@@ -1,8 +1,13 @@
-// External imports
+// External libraries
 import React, { useState } from 'react';
 
-// Import Styles
+// Styles
 import styles from '@/app/styles/components/utils/textView.module.scss';
+
+/*
+  TextView component
+  - Truncates text and shows a "Read More" option for text longer than the specified maximum length.
+*/
 
 export default function TextView({
   text,

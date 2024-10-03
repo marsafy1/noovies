@@ -1,3 +1,9 @@
+/*
+  Movie and Related Interfaces
+  - Defines the structure for movie objects including basic and detailed movie information.
+  - Provides default values for movies with `DEFAULT_MOVIE` and `DEFAULT_DETAILED_MOVIE`.
+*/
+
 // Interfaces
 export interface Movie {
   id: number;
@@ -39,6 +45,7 @@ export interface MovieGenre {
   id: number;
   name: string;
 }
+
 // Default Objects
 export const DEFAULT_MOVIE: Movie = {
   id: 0,

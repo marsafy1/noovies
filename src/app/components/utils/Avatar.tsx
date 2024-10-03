@@ -1,14 +1,19 @@
 // External libraries
 import React, { useState } from 'react';
 
-// Asset imports
+// Assets
 import DefaultAvatar from '@/app/assets/defaults/avatar/default_avatar.png';
 
-// Copmonents Import
+// Components
 import SafeImage from '@/app/components/presentation/SafeImage';
 
 // Styles
 import styles from '@/app/styles/components/utils/avatar.module.scss';
+
+/*
+  AvatarCircle component
+  - Displays a circular avatar with a default image fallback.
+*/
 
 export default function Avatar({ src }: { src: string }) {
   return (

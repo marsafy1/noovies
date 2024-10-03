@@ -4,8 +4,13 @@
 import React from 'react';
 import { useRouter } from 'next/navigation';
 
-// Service imports
+// Services
 import { navigateToMovieDetails } from '@/app/services/navigation';
+
+/*
+  MovieCardWrapper component (Client Component)
+  - A wrapper around a movie card that navigates to the movie details page on click.
+*/
 
 export default function NavigationWrapper({
   children,

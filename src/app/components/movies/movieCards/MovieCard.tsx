@@ -1,10 +1,10 @@
 // External libraries
 import React from 'react';
 
-// Interface imports
+// Interfaces
 import { Movie } from '@/app/interfaces/movies';
 
-// Component imports
+// Components
 import VoteAverage from '@/app/components/movies/movieCards/info/VoteAverage';
 import VoteCount from '@/app/components/movies/movieCards/info/VoteCount';
 import Language from '@/app/components/movies/movieCards/info/Language';
@@ -15,11 +15,16 @@ import NavigationWrapper from '@/app/components/movies/movieCards/wrappers/Navig
 import Favorite from '@/app/components/movies/movieCards/actions/Favorite';
 import SafeImage from '@/app/components/presentation/SafeImage';
 
-// Asset imports
+// Assets
 import PosterPlaceholder from '@/app/assets/defaults/movies/poster-placeholder.png';
 
 // Styles
 import styles from '@/app/styles/components/movies/movieCard.module.scss';
+
+/*
+  MovieCardInfo component
+  - Displays detailed information about the movie within a movie card.
+*/
 
 export default function MovieCard({ movie }: { movie: Movie }) {
   const posterSrc: string =

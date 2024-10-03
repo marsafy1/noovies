@@ -3,18 +3,23 @@
 // External libraries
 import React, { useState, useEffect } from 'react';
 
-// Interface imports
+// Interfaces
 import { Review } from '@/app/interfaces/reviews';
 
-// Component imports
+// Components
 import ReviewCard from '@/app/components/reviews/ReviewCard';
 import Empty from '@/app/components/feedback/Empty';
 
 // Styles
 import styles from '@/app/styles/content/movieDetails.module.scss';
 
-// Service imports
+// Services
 import { get } from '@/app/services/api/requests';
+
+/*
+  MovieReviewsSection component (Client Component)
+  - Displays the reviews for the movie, with a fallback for empty state.
+*/
 
 export default function MovieReviewsSection({ movieId }: { movieId: number }) {
   const apiToken = process.env.NEXT_PUBLIC_TMDB_API_TOKEN;

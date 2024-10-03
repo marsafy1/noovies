@@ -1,3 +1,9 @@
+/*
+  CrewMember and CastMember interfaces
+  - Defines the structure for crew and cast members in movie details.
+  - Provides default values for crew members with `DEFAULT_CREW_MEMBER`.
+*/
+
 // Interfaces
 export interface CrewMember {
   adult: boolean;
@@ -12,6 +18,7 @@ export interface CrewMember {
   department: string;
   job: string;
 }
+
 export interface CastMember {
   adult: boolean;
   gender: number;
@@ -28,7 +35,6 @@ export interface CastMember {
 }
 
 // Default Objects
-
 export const DEFAULT_CREW_MEMBER: CrewMember = {
   adult: false,
   gender: 0,

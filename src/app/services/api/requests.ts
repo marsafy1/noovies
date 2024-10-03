@@ -33,52 +33,52 @@ export async function get(endpoint: string, params?: QueryParams) {
   return response.json();
 }
 
-// // Generic POST request
-// export async function post(endpoint, data = {}) {
-//   const response = await fetch(`${BASE_URL}/${endpoint}`, {
-//     method: 'POST',
-//     headers: {
-//       'Content-Type': 'application/json',
-//     },
-//     body: JSON.stringify(data),
-//   });
+// Generic POST request
+export async function post(endpoint: string, data = {}) {
+  const response = await fetch(`${BASE_URL}/${endpoint}`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  });
 
-//   if (!response.ok) {
-//     throw new Error(`POST request failed: ${response.status}`);
-//   }
+  if (!response.ok) {
+    throw new Error(`POST request failed: ${response.status}`);
+  }
 
-//   return response.json();
-// }
+  return response.json();
+}
 
-// // Generic PUT request
-// export async function put(endpoint, data = {}) {
-//   const response = await fetch(`${BASE_URL}/${endpoint}`, {
-//     method: 'PUT',
-//     headers: {
-//       'Content-Type': 'application/json',
-//     },
-//     body: JSON.stringify(data),
-//   });
+// Generic PUT request
+export async function put(endpoint: string, data = {}) {
+  const response = await fetch(`${BASE_URL}/${endpoint}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  });
 
-//   if (!response.ok) {
-//     throw new Error(`PUT request failed: ${response.status}`);
-//   }
+  if (!response.ok) {
+    throw new Error(`PUT request failed: ${response.status}`);
+  }
 
-//   return response.json();
-// }
+  return response.json();
+}
 
-// // Generic DELETE request
-// export async function remove(endpoint) {
-//   const response = await fetch(`${BASE_URL}/${endpoint}`, {
-//     method: 'DELETE',
-//     headers: {
-//       'Content-Type': 'application/json',
-//     },
-//   });
+// Generic DELETE request
+export async function remove(endpoint: string) {
+  const response = await fetch(`${BASE_URL}/${endpoint}`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
 
-//   if (!response.ok) {
-//     throw new Error(`DELETE request failed: ${response.status}`);
-//   }
+  if (!response.ok) {
+    throw new Error(`DELETE request failed: ${response.status}`);
+  }
 
-//   return response.json();
-// }
+  return response.json();
+}

@@ -1,20 +1,25 @@
 // External libraries
 import React from 'react';
 
-// Enum imports
+// Enums
 import { memberTypes } from '@/app/enums/memberType';
 
-// Interface imports
+// Interfaces
 import { CrewMember, CastMember } from '@/app/interfaces/members';
 
-// Component imports
+// Components
 import Member from '@/app/components/movies/movieCards/info/Member';
 
 // Styles
 import styles from '@/app/styles/components/movieDetails/movieMembers.module.scss';
 
-// Service imports
+// Services
 import { get } from '@/app/services/api/requests';
+
+/*
+  MovieMembers component
+  - Displays movie members including cast and director.
+*/
 
 export default async function MovieMembers({
   movieId,

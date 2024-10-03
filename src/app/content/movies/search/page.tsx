@@ -4,15 +4,20 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 
-// Component imports
+// Components
 import MoviesContainer from '@/app/sections/moviesContainer/MoviesContainer';
+import Loading from '@/app/components/feedback/Loading';
 
-// Interface imports
+// Interfaces
 import { Movie } from '@/app/interfaces/movies';
 
-// Service imports
+// Services
 import { get } from '@/app/services/api/requests';
-import Loading from '@/app/components/feedback/Loading';
+
+/*
+  SearchResultsPage component (Client Component)
+  - Displays search results for movies based on user input.
+*/
 
 export default function Search() {
   const searchParams = useSearchParams(); // Get the search parameters
