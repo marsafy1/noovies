@@ -7,21 +7,34 @@ import { Movie } from '@/app/interfaces/movies';
 // Component imports
 import MovieCard from '@/app/components/movies/movieCards/MovieCard';
 import Empty from '@/app/components/feedback/Empty';
+import Loading from '@/app/components/feedback/Loading';
 
 // Styles
 import styles from '@/app/styles/components/movies/moviesSlider.module.scss';
 
-export default function MovieListRow({ movies }: { movies: Movie[] }) {
+export default function MovieListRow({
+  movies,
+  loading,
+}: {
+  movies: Movie[];
+  loading: boolean;
+}) {
   function isEmptyMovies() {
     return !movies || movies.length == 0;
   }
   return (
     <div className={styles.movieSlider__list}>
+      {loading && (
+        <div style={{ height: '150px', width: '100%' }}>
+          <Loading />
+        </div>
+      )}
       {!isEmptyMovies() &&
+        !loading &&
         movies.map((movie: Movie, index: number) => {
           return <MovieCard key={index} movie={movie} />;
         })}
-      {isEmptyMovies() && (
+      {isEmptyMovies() && !loading && (
         <div className="h-100-without-nav">
           <Empty title="Nothing found" />
         </div>

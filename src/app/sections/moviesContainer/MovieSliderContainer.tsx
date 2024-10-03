@@ -54,7 +54,7 @@ export default function MovieSlider({
       <div className={styles.movies__normalMovies__subtitle}>
         <h3>{title}</h3>
       </div>
-      <MovieListRow movies={movies} />
+      <MovieListRow movies={movies} loading={loading} />
     </div>
   );
 }
