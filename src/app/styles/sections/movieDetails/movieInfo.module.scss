@@ -5,9 +5,11 @@
   position: relative;
   &__meta {
     padding: 40px;
-    position: relative;
+    // position: relative;
     // top: -200px;
-    top: $movie-info-move-top-by;
+    // top: $movie-info-move-top-by;
+    position: absolute;
+    bottom: 0;
     display: flex;
     &__top {
       &__poster {
@@ -41,6 +43,8 @@
 
 @media only screen and (max-width: $first-break-point) {
   .movieInfo__meta {
+    position: relative;
+    // top: $movie-info-move-top-by;
     flex-direction: column;
     justify-content: center;
     width: 100%; // height: 400px;

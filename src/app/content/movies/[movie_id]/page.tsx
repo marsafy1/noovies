@@ -51,12 +51,17 @@ export default async function page({ params }: { params: MovieIDParams }) {
       </div>
     );
   }
-
+  let trailerKey: string =
+    movieDetails.videos.results.length > 0
+      ? movieDetails.videos.results[0].key
+      : '';
+  console.log('trailerkey');
+  console.log(trailerKey);
   return (
     <div className={styles.movieDetails}>
       <div className={styles.movieDetails__info}>
         <MovieCoverSection movieDetails={movieDetails} />
-        <MovieInfoSection movieDetails={movieDetails} trailerKey={0} />
+        <MovieInfoSection movieDetails={movieDetails} trailerKey={trailerKey} />
       </div>
       <MovieReviewsSection movieId={movieDetails.id} />
     </div>

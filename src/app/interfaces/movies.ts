@@ -23,7 +23,12 @@ export interface DetailedMovie extends Movie {
 }
 
 export interface MovieVideos {
-  results: string[];
+  results: Video[];
+}
+
+export interface Video {
+  key: string;
+  id: string;
 }
 
 export interface MovieIDParams {

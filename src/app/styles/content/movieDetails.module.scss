@@ -2,13 +2,14 @@
 @import 'mixins.scss';
 
 .movieDetails {
-  min-height: calc(100% - $movie-info-move-top-by);
+  // min-height: calc(100% - $movie-info-move-top-by);
   &__info {
     // height: calc(100% - $movie-info-move-top-by);
+    position: relative;
   }
   &__reviews {
     position: relative;
-    top: $movie-info-move-top-by;
+    // top: $movie-info-move-top-by;
     padding: 40px;
 
     &__title {

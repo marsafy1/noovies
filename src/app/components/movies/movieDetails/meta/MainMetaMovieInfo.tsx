@@ -22,7 +22,7 @@ export default function MainMetaMovieInfo({
   trailerKey,
 }: {
   movieDetails: DetailedMovie;
-  trailerKey: number;
+  trailerKey: string;
 }) {
   return (
     <div className={styles.mainMetaMovieInfo}>

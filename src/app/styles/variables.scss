@@ -19,7 +19,7 @@ $cards-border-radius: 5px;
 $active-item: var(--primary-color);
 
 // Sizes
-$detailed-movie-cover-height: 600px;
+$detailed-movie-cover-height: 80vh;
 $movie-info-move-top-by: calc($detailed-movie-cover-height / -2);
 
 // Feedback
@@ -27,4 +27,4 @@ $success-color: #03c03c;
 $error-color: #aa0000;
 
 // Media Query Sizes
-$first-break-point: 800px;
+$first-break-point: 950px;

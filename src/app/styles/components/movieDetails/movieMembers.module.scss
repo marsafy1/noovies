@@ -17,11 +17,12 @@
       display: flex;
       align-items: center;
       span {
+        color: white;
         display: flex;
         flex-direction: column;
         margin-left: 5px;
         small {
-          color: grey;
+          color: rgb(181, 181, 181);
         }
       }
     }
@@ -29,5 +30,7 @@
 }
 
 .member__list__item:hover {
-  color: var(--primary-color);
+  span {
+    color: var(--primary-color);
+  }
 }

@@ -15,7 +15,7 @@ import { DetailedMovie } from '@/app/interfaces/movies';
 // Import Styles
 import styles from '@/app/styles/components/movies/info/info.module.scss';
 
-export default function PlayTrailer({ trailerKey }: { trailerKey: number }) {
+export default function PlayTrailer({ trailerKey }: { trailerKey: string }) {
   const [isTooltipVisible, setIsTooltipVisible] = useState(true);
   function handleClick() {
     let trailerURL = `https://www.youtube.com/watch?v=${trailerKey}`;

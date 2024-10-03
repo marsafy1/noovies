@@ -18,7 +18,7 @@ export default function MovieInfoSection({
   trailerKey,
 }: {
   movieDetails: DetailedMovie;
-  trailerKey: number;
+  trailerKey: string;
 }) {
   return (
     <div className={styles.movieInfo__meta}>

@@ -4,8 +4,9 @@
 .movieCover {
   position: relative;
   overflow: hidden;
-  height: $detailed-movie-cover-height;
+  // height: $detailed-movie-cover-height;
 
+  max-height: $detailed-movie-cover-height;
   &__gradient {
     position: absolute;
     top: 0;
@@ -17,5 +18,11 @@
   img {
     object-fit: cover;
     width: 100%;
+  }
+}
+
+@media only screen and (max-width: $first-break-point) {
+  .movieCover {
+    display: none;
   }
 }
