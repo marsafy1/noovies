@@ -40,11 +40,16 @@ export default function MoviesList({
 
   // Scroll handler to fetch more movies when reaching the bottom
   function handleScroll() {
+    const height =
+      document.documentElement.scrollHeight -
+      document.documentElement.clientHeight;
+    const windowScroll = document.documentElement.scrollTop;
+
+    const scrolled = (windowScroll / height) * 100;
+
     if (page < MAX_PAGES) {
-      const bottom =
-        window.innerHeight + window.scrollY >= document.body.offsetHeight - 2;
-      if (bottom) {
-        setPage((prevPage) => prevPage + 1); // Increment page when bottom is reached
+      if (scrolled >= 100) {
+        setPage((prevPage) => prevPage + 1);
       }
     }
   }
