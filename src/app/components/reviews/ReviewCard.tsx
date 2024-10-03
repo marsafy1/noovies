@@ -16,12 +16,16 @@ export default function ReviewCard({ review }: { review: Review }) {
     const readableDate = date.toLocaleString();
     return readableDate;
   }
+  function handleClick() {
+    let memberURL = `https://www.themoviedb.org/u/${review.author_details.username}`;
+    window.open(memberURL, '_blank', 'noopener,noreferrer');
+  }
   return (
     <div className={styles.review}>
-      <div className={styles.review__header}>
+      <div className={styles.review__header} onClick={handleClick}>
         <div className={styles.review__header__author}>
           <Avatar
-            src={`https://image.tmdb.org/t/p/w200${review.author_details.avatar_path}`}
+            src={`https://image.tmdb.org/t/p/w154${review.author_details.avatar_path}`}
           />
           <div className={styles.review__header__author__meta}>
             <div className={styles.review__header__author__meta__name}>

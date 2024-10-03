@@ -13,6 +13,7 @@ import MovieCoverSection from '@/app/sections/movieDetails/MovieCoverSection';
 import MovieInfoSection from '@/app/sections/movieDetails/MovieInfoSection';
 import MovieReviewsSection from '@/app/sections/movieDetails/MovieReviewsSection';
 import DetailedMetaMovieInfo from '@/app/components/movies/movieDetails/meta/DetailedMetaMovieInfo';
+import Empty from '@/app/components/feedback/Empty';
 
 // Styles
 import styles from '@/app/styles/content/movieDetails.module.scss';
@@ -21,13 +22,9 @@ import styles from '@/app/styles/content/movieDetails.module.scss';
 import { get } from '@/app/services/api/requests';
 
 export default async function page({ params }: { params: MovieIDParams }) {
-  var loading = true;
-  const movieDetails = await getMovieDetails();
-  var loading = false;
-  var trailerKey: number =
-    movieDetails.videos.results.length > 0
-      ? movieDetails.videos.results[0].key
-      : null;
+  let loading = true;
+  let error = false;
+  let movieDetails: DetailedMovie | null = null;
 
   async function getMovieDetails() {
     try {
@@ -35,24 +32,33 @@ export default async function page({ params }: { params: MovieIDParams }) {
         append_to_response: 'videos',
       });
       return data;
-    } catch (error) {
-      console.log(error);
+    } catch (err) {
+      console.error('Error fetching movie details:', err);
+      error = true;
+      return null;
     }
+  }
+
+  // Fetch movie details
+  movieDetails = await getMovieDetails();
+  loading = false;
+
+  // If there's an error or movie details are not available
+  if (error || !movieDetails) {
+    return (
+      <div className="h-100vh">
+        <Empty title="An Error Occurred" />
+      </div>
+    );
   }
 
   return (
     <div className={styles.movieDetails}>
-      {!loading && (
-        <div className={styles.movieDetails__info}>
-          <MovieCoverSection movieDetails={movieDetails} />
-          <MovieInfoSection
-            movieDetails={movieDetails}
-            trailerKey={trailerKey}
-          />
-        </div>
-      )}
-      {/* <DetailedMetaMovieInfo movieDetails={movieDetails} /> */}
-      {!loading && <MovieReviewsSection movieId={movieDetails.id} />}
+      <div className={styles.movieDetails__info}>
+        <MovieCoverSection movieDetails={movieDetails} />
+        <MovieInfoSection movieDetails={movieDetails} trailerKey={0} />
+      </div>
+      <MovieReviewsSection movieId={movieDetails.id} />
     </div>
   );
 }

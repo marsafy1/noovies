@@ -10,6 +10,7 @@
   margin: 10px;
   padding: 15px;
   &__header {
+    cursor: pointer;
     &__author {
       @include h-flex;
       align-items: flex-end;
@@ -20,6 +21,7 @@
           // color: var(--primary-color);
           color: var(--card-header-color);
           font-weight: bold;
+          transition: color 0.1s;
         }
         &__time {
           font-size: 12px;
@@ -30,5 +32,11 @@
   }
   &__content {
     padding: 15px;
+  }
+}
+
+.review__header:hover {
+  .review__header__author__meta__name {
+    color: var(--primary-color);
   }
 }
