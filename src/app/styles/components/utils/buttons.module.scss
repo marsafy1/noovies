@@ -16,6 +16,12 @@
   span {
     font-size: max(1vw, 10px);
   }
+
+  &__icon {
+    margin-left: 4px;
+    width: 24px;
+    height: 24px;
+  }
 }
 
 .primaryBtn {

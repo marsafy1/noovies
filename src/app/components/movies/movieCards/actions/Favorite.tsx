@@ -7,6 +7,10 @@ import React, { useEffect, useState } from 'react';
 import PrimaryButton from '@/app/components/utils/Buttons/PrimaryButton';
 import FavoriteButtonFeedback from '@/app/components/feedback/FavoriteButtonFeedback';
 
+// Icons
+import { HeartIcon as SolidHeartIcon } from '@heroicons/react/24/solid';
+import { HeartIcon as OutlineHeartIcon } from '@heroicons/react/24/outline';
+
 // Styles
 import styles from '@/app/styles/components/movies/actions/favorite.module.scss';
 import btnStyles from '@/app/styles/components/utils/buttons.module.scss';
@@ -67,6 +71,13 @@ export default function Favorite({ movieId }: { movieId: number }) {
           title={isFavorite ? 'Liked' : 'Like'}
           handleClick={toggleFavorite}
           type={isFavorite ? 'primary' : 'secondary'}
+          icon={
+            isFavorite ? (
+              <SolidHeartIcon style={{ color: '#aa0000' }} />
+            ) : (
+              <OutlineHeartIcon />
+            )
+          }
         />
       </div>
       <FavoriteButtonFeedback

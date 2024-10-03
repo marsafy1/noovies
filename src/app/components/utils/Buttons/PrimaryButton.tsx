@@ -1,7 +1,7 @@
 'use client';
 
 // External libraries
-import React, { MouseEventHandler } from 'react';
+import React, { MouseEventHandler, ReactElement } from 'react';
 
 // Styles
 import styles from '@/app/styles/components/utils/buttons.module.scss';
@@ -15,10 +15,12 @@ export default function PrimaryButton({
   title,
   handleClick,
   type,
+  icon,
 }: {
   title: string;
   handleClick: MouseEventHandler;
   type?: string;
+  icon?: ReactElement;
 }) {
   let btnTypeClassName = 'primaryBtn';
   if (type === 'secondary') {
@@ -30,6 +32,7 @@ export default function PrimaryButton({
       onClick={handleClick}
     >
       <span>{title}</span>
+      {icon && <span className={styles.btn__icon}>{icon}</span>}
     </div>
   );
 }
