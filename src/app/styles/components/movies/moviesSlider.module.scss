@@ -1,0 +1,15 @@
+@import 'mixins.scss';
+.movieSlider {
+  padding: 20px;
+
+  &__subtitle {
+    color: var(--primary-color);
+    span {
+      font-weight: lighter;
+    }
+  }
+  &__list {
+    display: flex;
+    overflow-x: scroll;
+  }
+}

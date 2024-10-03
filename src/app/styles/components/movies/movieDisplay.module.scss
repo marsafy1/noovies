@@ -1,0 +1,14 @@
+@import 'variables.scss';
+
+.movieDisplay {
+  &__options {
+    padding: 20px;
+    &__btns {
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: $cards-border-radius;
+    }
+  }
+}

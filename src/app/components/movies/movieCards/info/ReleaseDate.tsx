@@ -9,7 +9,7 @@ export default function ReleaseDate({
 }) {
   if (!fullDate) {
     if (releaseDate) {
-      releaseDate.split('-')[0];
+      return releaseDate.split('-')[0];
     }
   }
   return (

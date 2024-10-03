@@ -6,14 +6,16 @@ import { Movie } from '@/app/interfaces/movies';
 
 // Component imports
 import MoviesContainer from '@/app/components/movies/MoviesContainer';
+import MovieSlider from '@/app/components/movies/MovieSlider';
 import Loading from '@/app/components/feedback/Loading';
+import TrendingPlayshow from '@/app/components/movies/TrendingPlayshow';
 
 // Styles
 import styles from '@/app/styles/content/movies.module.scss';
 
 // Service imports
 import { get } from '@/app/services/api/requests';
-import TrendingPlayshow from '@/app/components/movies/TrendingPlayshow';
+import MoviesDisplay from '@/app/components/movies/MoviesDisplay';
 
 export default async function Movies() {
   var loading = true;
@@ -40,7 +42,7 @@ export default async function Movies() {
         {loading && <Loading />}
       </div>
 
-      {!loading && <MoviesContainer movies={movies} title="Trending movies" />}
+      <MoviesDisplay movies={movies} />
     </div>
   );
 }
