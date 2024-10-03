@@ -47,7 +47,6 @@ export default function ScrollUp() {
   }, []);
 
   // Only render the button if it is visible
-
   return (
     <div
       className={`${styles.scrollUp} ${isVisible ? styles.scrollUp__visible : ''}`}

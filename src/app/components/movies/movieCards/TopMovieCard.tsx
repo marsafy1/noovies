@@ -34,10 +34,7 @@ export default function TopMovieCard({ movie }: { movie: Movie }) {
         <div className={styles.topMovieCard__info}>
           <div
             className={`${styles.topMovieCard__info__top} d-flex justify-content-between`}
-          >
-            {/* <Adult adult={movie.adult} /> */}
-            {/* <Language lang={movie.original_language} /> */}
-          </div>
+          ></div>
           <div className={styles.topMovieCard__info__bottom}>
             <div>
               <div className="d-flex align-items-center justify-content-between">
@@ -54,8 +51,6 @@ export default function TopMovieCard({ movie }: { movie: Movie }) {
                   <div className="ms-4">
                     <VoteCount count={movie.vote_count} />
                   </div>
-                  {/* <div className="white-circle"></div> */}
-                  {/* <ReleaseDate releaseDate={movie.release_date} /> */}
                 </div>
               </div>
               <p className={styles.topMovieCard__info__bottom__overview}>

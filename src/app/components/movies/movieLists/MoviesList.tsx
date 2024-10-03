@@ -52,7 +52,7 @@ export default function MoviesList({
 
     const scrolled = (windowScroll / height) * 100;
 
-    if (page < MAX_PAGES) {
+    if (page <= MAX_PAGES) {
       if (scrolled >= 100) {
         setPage((prevPage) => prevPage + 1);
       }

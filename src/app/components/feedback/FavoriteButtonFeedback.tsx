@@ -20,7 +20,6 @@ export default function FavoriteButtonFeedback({
   isExpanded: boolean;
   isFavorite: boolean;
 }) {
-  // const messsage = isFavorite ? 'Added to favorites' : 'Removed from favorites';
   const messsage = isFavorite ? 'Added' : 'Removed';
   const backgroundColor = isFavorite
     ? styles.favoriteBtnContainerGreen

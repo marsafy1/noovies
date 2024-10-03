@@ -48,9 +48,9 @@ export default function MovieSlider({
 
     const scrollInterval = setInterval(() => {
       if (scrollContainer) {
-        scrollContainer.scrollBy({ left: 2, behavior: 'smooth' }); // Scroll 2 pixels at a time
+        scrollContainer.scrollBy({ left: 2, behavior: 'smooth' }); // 2 pixels at a time
       }
-    }, 20); // Adjust the interval for speed (smaller means faster)
+    }, 20); // settting the scroll speed
 
     return () => clearInterval(scrollInterval); // Clean up on unmount
   }, []);

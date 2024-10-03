@@ -46,10 +46,7 @@ export default function TopSideMovieCard({
       <div className={styles.topSideMovieCard__info}>
         <div
           className={`${styles.topSideMovieCard__info__top} d-flex justify-content-between`}
-        >
-          {/* <Adult adult={movie.adult} /> */}
-          {/* <Language lang={movie.original_language} /> */}
-        </div>
+        ></div>
         <div className={styles.topSideMovieCard__info__bottom}>
           <div>
             <div className="d-flex align-items-center">

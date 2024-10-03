@@ -27,7 +27,7 @@ export default function SafeImage({
   const [error, setError] = React.useState(src.includes('null'));
   return (
     <Image
-      src={!error ? src : altSrc} // Use the imported image directly
+      src={!error ? src : altSrc} // Use the src image directly
       className={imgClassName}
       alt={alt}
       onError={() => setError(true)}

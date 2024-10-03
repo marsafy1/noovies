@@ -45,7 +45,6 @@ export default function MovieCard({ movie }: { movie: Movie }) {
             <div className={styles.movieCard__info}>
               <div className={styles.movieCard__info__top}>
                 <Language lang={movie.original_language} />
-                {/* <Adult adult={movie.adult} /> */}
                 <ReleaseDate
                   releaseDate={movie.release_date}
                   fullDate={false}

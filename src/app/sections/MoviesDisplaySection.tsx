@@ -23,17 +23,8 @@ import styles from '@/app/styles/sections/movieDisplay.module.scss';
 */
 
 export default function MoviesDisplaySection({ movies }: { movies: Movie[] }) {
-  // const [isGrid, setIsGrid] = useState<boolean>(() => {
-  //   // Get the initial value from localStorage or set it to true by default
-  //   const storedValue = localStorage.getItem('isGrid');
-  //   return storedValue ? JSON.parse(storedValue) : true;
-  // });
   const [isGrid, setIsGrid] = useState<boolean>(true);
-  // Store the value in localStorage whenever it changes
 
-  // useEffect(() => {
-  // localStorage.setItem('isGrid', JSON.stringify(isGrid));
-  // }, [isGrid]);
   return (
     <div className={styles.movieDisplay}>
       <div className={styles.movieDisplay__options}>

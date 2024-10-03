@@ -25,10 +25,6 @@ export default function DetailedMetaMovieInfo({
 }) {
   return (
     <div className={styles.detailedMetaMovieInfo}>
-      {/* <div className={styles.detailedMetaMovieInfo__overview}>
-        <h4>Overview</h4>
-        <span>{movieDetails.overview}</span>
-      </div> */}
       <div className={styles.detailedMetaMovieInfo__cast}>
         <div className={styles.detailedMetaMovieInfo__cast__container}>
           <div

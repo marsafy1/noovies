@@ -28,7 +28,7 @@ export default function PlayTrailer({ trailerKey }: { trailerKey: string }) {
       <div
         className={styles.playTrailer}
         onMouseEnter={() => setIsTooltipVisible(true)}
-        // onMouseLeave={() => setIsTooltipVisible(false)}
+        onMouseLeave={() => setIsTooltipVisible(false)}
         onClick={handleClick}
       >
         <div className={styles.playTrailer__icon}>

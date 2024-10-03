@@ -60,14 +60,6 @@ export default function MainMetaMovieInfo({
       <div className={styles.mainMetaMovieInfo__overview}>
         <div>
           <h4>Overview </h4>
-          {/* <iframe
-            width="300"
-            height="200"
-            src={`https://www.youtube.com/embed/${trailerKey}?autoplay=1&mute=1`} // Autoplay and mute parameters
-            title="YouTube video player"
-            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe> */}
           <PlayTrailer trailerKey={trailerKey} />
         </div>
         <span>{movieDetails.overview}</span>

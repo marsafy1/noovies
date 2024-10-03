@@ -56,10 +56,6 @@ export default function Favorite({ movieId }: { movieId: number }) {
 
   return (
     <div className={styles.favoriteBtnContainer}>
-      {/* <button onClick={toggleFavorite}>
-        {isFavorite ? 'Remove from Favorites' : 'Add to Favorites'}
-      </button> */}
-
       <FavoriteButtonFeedback
         isExpanded={isExpanded && !isFavorite}
         isFavorite={isFavorite}
