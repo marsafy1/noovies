@@ -1,4 +1,10 @@
 # noovies
+![React](https://img.shields.io/badge/react-61DAFB.svg?style=for-the-badge&logo=react&logoColor=white)
+![Next.js](https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
+![Zustand](https://img.shields.io/badge/zustand-000000?style=for-the-badge&logo=zustand&logoColor=white)
+![Sass](https://img.shields.io/badge/sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)
+![.ENV](https://img.shields.io/badge/dotenv-ECD53F.svg?style=for-the-badge&logo=dotenv&logoColor=white)
+
 noovies is a movie platform built with React and Next.js integrated with [TMDB API](https://www.themoviedb.org/documentation/api) that allows users to explore trending and new movies. Users can view detailed information about movies, including cast and reviews. Additionally, users can like or dislike movies and save them to their favorites and discover similar movies based on a current movie. The platform includes a dark and light theme toggle for a personalized viewing experience.
 
 ## Application Design
