@@ -24,7 +24,7 @@ export default function MoviesContainer({
       <div className={styles.movies__normalMovies__subtitle}>
         <h3>
           {title}
-          {subtitle && <span> - {subtitle}</span>}
+          {subtitle && <span className="card-header-color"> - {subtitle}</span>}
         </h3>
       </div>
       <MoviesList movies={movies} />

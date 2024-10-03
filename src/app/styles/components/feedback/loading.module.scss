@@ -8,13 +8,13 @@
   justify-content: center;
   align-items: center;
   height: 100%;
-  background-color: $cards-background;
+  background-color: var(--cards-background);
 
   &__icon {
     @include center-flex;
     width: 40px;
     height: 40px;
-    color: $primary-color;
+    color: var(--primary-color);
     animation: rotate 2s linear infinite;
   }
 }

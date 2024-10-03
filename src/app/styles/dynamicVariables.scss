@@ -1,0 +1,19 @@
+:root {
+  --primary-color: rgb(250, 238, 85);
+  --background-color: rgb(18, 18, 18);
+  --cards-background: rgb(8, 8, 8);
+  --font-color: rgb(255, 255, 255);
+  --card-header-color: rgb(255, 255, 255);
+
+  --movie-info-color: rgb(255, 255, 255);
+}
+
+[data-theme='dark'] {
+  --primary-color: rgb(212, 167, 66);
+  --background-color: rgb(247, 247, 250);
+  --cards-background: rgb(205, 205, 205);
+  --font-color: rgb(0, 0, 0);
+  --card-header-color: rgb(0, 0, 0);
+
+  --movie-info-color: rgb(255, 255, 255);
+}

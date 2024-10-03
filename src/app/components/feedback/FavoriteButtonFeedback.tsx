@@ -22,7 +22,7 @@ export default function FavoriteButtonFeedback({
     : styles.favoriteBtnContainerRed;
   return (
     <div
-      className={`${backgroundColor} ${btnStyles.btn} ${styles.favoriteBtnContainer__success} ${isExpanded ? styles.favoriteBtnContainer__successExpanded : ''}`}
+      className={`white-color ${backgroundColor} ${btnStyles.btn} ${styles.favoriteBtnContainer__success} ${isExpanded ? styles.favoriteBtnContainer__successExpanded : ''}`}
     >
       <p>{messsage}</p>
       <span>

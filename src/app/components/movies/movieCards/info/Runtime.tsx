@@ -17,7 +17,7 @@ export default function Runtime({ runtime }: { runtime: number | undefined }) {
     return <></>;
   } else {
     return (
-      <div className={styles.score}>
+      <div className={`${styles.score} movie-info-color`}>
         <div className={styles.score__icon}>
           <ClockIcon />
         </div>

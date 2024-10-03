@@ -15,6 +15,7 @@ import Adult from '@/app/components/movies/movieCards/info/Adult';
 import Runtime from '@/app/components/movies/movieCards/info/Runtime';
 import ReleaseDate from '@/app/components/movies/movieCards/info/ReleaseDate';
 import PlayTrailer from '@/app/components/movies/movieCards/info/PlayTrailer';
+import Genre from '@/app/components/movies/movieCards/info/Genre';
 
 export default function MainMetaMovieInfo({
   movieDetails,
@@ -33,15 +34,8 @@ export default function MainMetaMovieInfo({
 
       <div className={styles.mainMetaMovieInfo__infoTags}>
         <div className={styles.mainMetaMovieInfo__infoTags__genres}>
-          {movieDetails.genres.map((genre) => {
-            return (
-              <div
-                className={styles.mainMetaMovieInfo__genres__genre}
-                key={genre.id}
-              >
-                {genre.name}
-              </div>
-            );
+          {movieDetails.genres.map((genre, index) => {
+            return <Genre key={index} genre={genre} />;
           })}
           <div className="white-circle"></div>
           <b>

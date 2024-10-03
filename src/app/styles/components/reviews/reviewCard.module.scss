@@ -4,7 +4,7 @@
 .review {
   @include between-flex-v;
 
-  background-color: $cards-background;
+  background-color: var(--cards-background);
   border-radius: $cards-border-radius;
 
   margin: 10px;
@@ -17,8 +17,8 @@
       &__meta {
         margin-left: 5px;
         &__name {
-          // color: $primary-color;
-          color: white;
+          // color: var(--primary-color);
+          color: var(--card-header-color);
           font-weight: bold;
         }
         &__time {

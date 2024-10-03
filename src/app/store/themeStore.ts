@@ -1,15 +1,18 @@
 import { create } from 'zustand';
+import { ThemeStore } from '@/app/interfaces/stateStore/themeStore';
 import { persist } from 'zustand/middleware';
 
-interface ThemeState {
-  theme: string;
-  toggleTheme: () => void;
-}
-
-export const useThemeStore = create<ThemeState>((set) => ({
-  theme: 'light', // Default theme
-  toggleTheme: () =>
-    set((state) => ({
-      theme: state.theme === 'light' ? 'dark' : 'light',
-    })),
+export const useThemeStore = create<ThemeStore>((set) => ({
+  theme: localStorage.getItem('theme') || 'light',
+  setTheme: (newTheme: string) => {
+    localStorage.setItem('theme', newTheme);
+    set({ theme: newTheme });
+  },
+  toggleTheme: () => {
+    set((state) => {
+      const newTheme = state.theme === 'light' ? 'dark' : 'light';
+      localStorage.setItem('theme', newTheme);
+      return { theme: newTheme };
+    });
+  },
 }));

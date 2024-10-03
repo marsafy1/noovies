@@ -38,7 +38,6 @@ export default function Navbar() {
       </div>
 
       <div className={styles.navbar__end}>
-        {/* <ThemeSwitch /> */}
         <div className="d-flex">
           {navItems.map((navItem, index) => {
             return (
@@ -46,6 +45,7 @@ export default function Navbar() {
             );
           })}
         </div>
+        <ThemeSwitch />
       </div>
     </div>
   );

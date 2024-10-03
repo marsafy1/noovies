@@ -12,5 +12,7 @@ export default function ReleaseDate({
       releaseDate.split('-')[0];
     }
   }
-  return <div>{releaseDate.replaceAll('-', '/')}</div>;
+  return (
+    <div className="movie-info-color">{releaseDate.replaceAll('-', '/')}</div>
+  );
 }

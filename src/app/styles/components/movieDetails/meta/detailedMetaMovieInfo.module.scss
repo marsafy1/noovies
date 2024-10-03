@@ -11,7 +11,7 @@
   &__cast {
     &__container {
       h4 {
-        color: $primary-color;
+        color: var(--primary-color);
       }
 
       &__members {
@@ -24,7 +24,7 @@
 
   &__overview {
     h4 {
-      color: $primary-color;
+      color: var(--primary-color);
     }
 
     span {

@@ -11,7 +11,7 @@
     padding: 20px;
     margin-bottom: 50px;
     &__subtitle {
-      color: $primary-color;
+      color: var(--primary-color);
       margin-bottom: 20px;
     }
     &__list {
@@ -36,9 +36,8 @@
   &__normalMovies {
     padding: 20px;
     &__subtitle {
-      color: $primary-color;
+      color: var(--primary-color);
       span {
-        color: white;
         font-weight: lighter;
       }
     }

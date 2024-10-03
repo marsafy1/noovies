@@ -11,7 +11,7 @@
     top: $movie-info-move-top-by;
     padding: 40px;
     &__title {
-      color: $primary-color;
+      color: var(--primary-color);
     }
   }
 }

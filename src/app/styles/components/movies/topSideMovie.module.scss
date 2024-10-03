@@ -12,7 +12,7 @@
   transform: scale(0.9);
   cursor: pointer;
   &Choosen {
-    border: 5px solid $primary-color;
+    border: 5px solid var(--primary-color);
     transform: scale(1);
   }
 
@@ -36,7 +36,7 @@
     }
     &__bottom {
       &__title {
-        color: $primary-color;
+        color: var(--primary-color);
         font-size: max(1vw, 14px);
       }
       width: 100%;

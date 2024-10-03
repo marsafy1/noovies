@@ -5,7 +5,7 @@
   &__membersGroup {
     border: 1px solid purple;
     &__title {
-      color: $primary-color;
+      color: var(--primary-color);
     }
     &__list {
       border: 1px solid blue;

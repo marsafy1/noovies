@@ -8,6 +8,7 @@ import { Review } from '@/app/interfaces/reviews';
 
 // Component imports
 import ReviewCard from '@/app/components/reviews/ReviewCard';
+import Empty from '@/app/components/feedback/Empty';
 
 // Styles
 import styles from '@/app/styles/content/movieDetails.module.scss';
@@ -49,9 +50,7 @@ export default function MovieReviews({ movieId }: { movieId: number }) {
           })}
         </div>
       )}
-      {!loading && reviews.length == 0 && (
-        <div className={styles.movieDetails__reviews__list}>Nothing yet!</div>
-      )}
+      {!loading && reviews.length == 0 && <Empty title="No Reviews yet" />}
     </div>
   );
 }

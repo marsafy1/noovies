@@ -7,7 +7,7 @@ import styles from '@/app/styles/components/movies/info/info.module.scss';
 
 export default function VoteCount({ count }: { count: number }) {
   return (
-    <div className={styles.score}>
+    <div className={`movie-info-color ${styles.score}`}>
       <div className={styles.score__icon}>
         <UsersIcon />
       </div>

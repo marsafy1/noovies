@@ -4,6 +4,7 @@
 // Pages
 // @import './pages/home.scss';
 @import 'variables.scss';
+@import 'dynamicVariables.scss';
 // Content
 // @import './content/movies.scss';
 // @import './content/movieDetails.scss';
@@ -34,7 +35,7 @@
 
 body {
   min-height: 100vh;
-  color: white;
+  color: var(--font-color);
   font-family: var(--font-geist-sans);
 }
 
@@ -43,7 +44,7 @@ body {
   flex-direction: column;
   min-height: calc(100vh - $navbar-height);
   width: 100%;
-  background: $background-color;
+  background: var(--background-color);
 
   position: absolute;
   top: $navbar-height;
@@ -75,4 +76,16 @@ body {
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+.white-color {
+  color: white;
+}
+
+.card-header-color {
+  color: var(--card-header-color);
+}
+
+.movie-info-color {
+  color: var(--movie-info-color);
 }

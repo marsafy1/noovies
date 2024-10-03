@@ -1,12 +1,12 @@
 // Colors
-$primary-color: rgb(250, 238, 85);
+// $primary-color: rgb(250, 238, 85);
 $gradient-primary-color: linear-gradient(
   45deg,
   rgba(187, 122, 5, 1) 27%,
   rgba(194, 184, 65, 1) 74%
 );
-$background-color: rgb(18, 18, 18);
-$cards-background: rgb(8, 8, 8);
+// $background-color: rgb(18, 18, 18);
+// $cards-background: rgb(8, 8, 8);
 // Constants
 $navbar-height: 70px;
 
@@ -16,7 +16,7 @@ $movie-card-height: 350px;
 
 $cards-border-radius: 5px;
 // Navbar
-$active-item: $primary-color;
+$active-item: var(--primary-color);
 
 // Sizes
 $detailed-movie-cover-height: 600px;
