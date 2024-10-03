@@ -50,14 +50,14 @@ export default async function MovieMembers({
     let members: Member[] = [];
     try {
       let data = await get(`movie/${movieId}/credits`);
-      console.log(data);
+
       if (castType == memberTypes.directors) {
         members = handleDirectorsPopulation(data.crew);
       } else if (castType == memberTypes.cast) {
         members = handleCastPopulation(data.cast);
       }
     } catch (error) {
-      console.log(error);
+      console.error(error);
     } finally {
       return members;
     }

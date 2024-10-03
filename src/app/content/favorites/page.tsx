@@ -33,7 +33,7 @@ export default function Favorites() {
       let data = await get(`movie/${movieId}`);
       return data;
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   }
 

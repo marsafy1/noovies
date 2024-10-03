@@ -14,7 +14,6 @@ export default function Poster({
   poster_path: string;
   size?: string;
 }) {
-  console.log(`https://image.tmdb.org/t/p/${size}${poster_path}`);
   return (
     <SafeImage
       src={`https://image.tmdb.org/t/p/${size}${poster_path}`}

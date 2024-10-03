@@ -20,7 +20,6 @@ export default function ThemeSwitch() {
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
-    console.log(document.documentElement.getAttribute('data-theme'));
   }, [theme]);
 
   return (

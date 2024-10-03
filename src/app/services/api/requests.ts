@@ -18,8 +18,6 @@ export async function get(endpoint: string, params?: QueryParams) {
       }
     });
   }
-  console.log('USING GET ');
-  console.log(url);
   const response = await fetch(url.href, {
     method: 'GET',
     headers: {

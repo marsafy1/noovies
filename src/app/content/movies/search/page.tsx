@@ -33,7 +33,7 @@ export default function Search() {
       });
       setMovies(data['results']);
     } catch (error) {
-      console.log(error);
+      console.error(error);
     } finally {
       setLoading(false);
     }

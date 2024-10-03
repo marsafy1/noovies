@@ -55,8 +55,7 @@ export default async function page({ params }: { params: MovieIDParams }) {
     movieDetails.videos.results.length > 0
       ? movieDetails.videos.results[0].key
       : '';
-  console.log('trailerkey');
-  console.log(trailerKey);
+
   return (
     <div className={styles.movieDetails}>
       <div className={styles.movieDetails__info}>
